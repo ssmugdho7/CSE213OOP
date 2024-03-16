@@ -42,8 +42,8 @@ public class LoginController implements Initializable {
                 "Field Technician", "Marketing Manager", "Customer Care Representative",
                  "Managing Director", "Efficient Support Representative", "Network Engineer");
         //defaultIdpass
-        userIdTextField.setText("Type yout id");
-        passwordTextField.setText("Type your Password");
+        userIdTextField.setText("test");
+        passwordTextField.setText("1234");
     }    
 
     @FXML

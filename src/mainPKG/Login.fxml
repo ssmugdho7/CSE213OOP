@@ -6,44 +6,21 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="657.0" prefWidth="837.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="mainPKG.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="701.0" style="-fx-background-color: ORANGE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainPKG.LoginController">
    <children>
-      <Label layoutX="185.0" layoutY="216.0" prefHeight="27.0" prefWidth="91.0" text="User ID" textFill="#321818">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="185.0" layoutY="270.0" prefHeight="27.0" prefWidth="91.0" text="Password" textFill="#170909">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="userIdTextField" layoutX="276.0" layoutY="210.0" opacity="0.65" prefHeight="39.0" prefWidth="270.0" style="-fx-background-radius: 88;">
-         <effect>
-            <ColorAdjust />
-         </effect>
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="passwordTextField" layoutX="276.0" layoutY="264.0" opacity="0.65" prefHeight="39.0" prefWidth="270.0" style="-fx-background-radius: 88;">
-         <effect>
-            <ColorAdjust />
-         </effect>
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </TextField>
-      <ComboBox fx:id="userTypeComboBox" layoutX="87.0" layoutY="152.0" opacity="0.75" prefHeight="39.0" prefWidth="533.0" promptText="Select User Type" style="-fx-background-radius: 88;">
+      <ComboBox fx:id="userTypeComboBox" layoutX="271.0" layoutY="138.0" opacity="0.75" prefHeight="39.0" prefWidth="355.0" promptText="Select User Type">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </ComboBox>
-      <Button layoutX="397.0" layoutY="309.0" mnemonicParsing="false" onAction="#forgotPasswordButtonOnClick" opacity="0.61" prefHeight="18.0" prefWidth="142.0" style="-fx-background-radius: 88;" text="Forgot Passwod?" textFill="#ff1313">
+      <Button layoutX="289.0" layoutY="318.0" mnemonicParsing="false" onAction="#forgotPasswordButtonOnClick" opacity="0.61" prefHeight="18.0" prefWidth="142.0" style="-fx-background-color: orange;" text="Forgot Passwod?" textFill="#a10000">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
@@ -51,7 +28,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="login" layoutX="444.0" layoutY="358.0" mnemonicParsing="false" onAction="#loginButtonOnClick" opacity="0.75" prefHeight="71.0" prefWidth="169.0" style="-fx-background-radius: 88;" text="Login" textFill="#1609ff">
+      <Button fx:id="login" layoutX="457.0" layoutY="318.0" mnemonicParsing="false" onAction="#loginButtonOnClick" opacity="0.75" prefHeight="39.0" prefWidth="169.0" text="Login" textFill="#1609ff">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -59,13 +36,71 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="signupButton" layoutX="88.0" layoutY="358.0" mnemonicParsing="false" onAction="#signUpButtonOnClick" opacity="0.75" prefHeight="71.0" prefWidth="169.0" style="-fx-background-radius: 88;" text="Sign Up" textFill="#0d00ff">
+      <Button fx:id="signupButton" layoutX="83.0" layoutY="319.0" mnemonicParsing="false" onAction="#signUpButtonOnClick" opacity="0.75" prefHeight="31.0" prefWidth="128.0" style="-fx-background-color: red;" text="Sign Up" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="16.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+      </Button>
+      <Label layoutX="71.0" layoutY="49.0" prefHeight="55.0" prefWidth="524.0" text="WELCOME TO LINK3" textFill="#c61616">
+         <font>
+            <Font name="Century Schoolbook Bold" size="43.0" />
+         </font>
+      </Label>
+      <Label layoutX="83.0" layoutY="291.0" text="New to our platform?" textFill="#ee0303">
+         <font>
+            <Font name="Garamond" size="15.0" />
+         </font>
+      </Label>
+      <VBox layoutX="271.0" layoutY="201.0" prefHeight="90.0" prefWidth="355.0">
+         <children>
+            <HBox prefHeight="53.0" prefWidth="607.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="91.0" text="User ID" textFill="#321818">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="userIdTextField" opacity="0.65" prefHeight="39.0" prefWidth="270.0">
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="36.0" prefWidth="607.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="91.0" text="Password" textFill="#170909">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="passwordTextField" opacity="0.65" prefHeight="39.0" prefWidth="270.0">
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <ImageView fitHeight="129.0" fitWidth="128.0" layoutX="83.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/download.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="83.0" layoutY="424.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="548.0" text="About us" textFill="#ab0f0f">
+         <font>
+            <Font name="Constantia Bold" size="17.0" />
+         </font>
       </Button>
    </children>
 </AnchorPane>
