@@ -4,18 +4,13 @@
  */
 package mainPKG;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -27,23 +22,23 @@ public class Marketing_Manager_MainDashboardController implements Initializable 
     @FXML
     private VBox goalsVBox;
     @FXML
+    private Button fundingRequestButton;
+    @FXML
+    private Button analysisOffersButton;
+    @FXML
+    private Button softwareAdvertisementButton;
+    @FXML
+    private Button promotionalAdButton;
+    @FXML
+    private Button equipmentRequestButton;
+    @FXML
+    private Button networkTaskButton;
+    @FXML
+    private Button adminApprovalButton;
+    @FXML
+    private Button emailToSponsorsButton;
+    @FXML
     private Button logoutButton;
-    @FXML
-    private Button reqReimbursement;
-    @FXML
-    private Button termsAndPolicy;
-    @FXML
-    private Button attndnce;
-    @FXML
-    private Button CostAnalysis;
-    @FXML
-    private Button ostmanagement;
-    @FXML
-    private Button CustomerRating;
-    @FXML
-    private Button riskfactors;
-    @FXML
-    private Button auditreportView;
 
     /**
      * Initializes the controller class.
@@ -51,51 +46,42 @@ public class Marketing_Manager_MainDashboardController implements Initializable 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    }    
+
+    @FXML
+    private void handleFundingRequest(ActionEvent event) {
+    }
+
+    @FXML
+    private void handleAnalysisOffers(ActionEvent event) {
+    }
+
+    @FXML
+    private void handleSoftwareAdvertisement(ActionEvent event) {
+    }
+
+    @FXML
+    private void handlePromotionalAd(ActionEvent event) {
+    }
+
+    @FXML
+    private void handleEquipmentRequest(ActionEvent event) {
+    }
+
+    @FXML
+    private void handleNetworkTask(ActionEvent event) {
+    }
+
+    @FXML
+    private void handleAdminApproval(ActionEvent event) {
+    }
+
+    @FXML
+    private void handleEmailToSponsors(ActionEvent event) {
     }
 
     @FXML
     private void handleLogout(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            Stage currentStage = (Stage) logoutButton.getScene().getWindow();
-            currentStage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
-
-    @FXML
-    private void reqReimbursementOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void termsAndPolicyOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void attndnceOnClk(ActionEvent event) {
-    }
-
-    @FXML
-    private void CostAnalysisOnClk(ActionEvent event) {
-    }
-
-    @FXML
-    private void ostmanagementOnClk(ActionEvent event) {
-    }
-
-    @FXML
-    private void CustomerRatingOnClk(ActionEvent event) {
-    }
-
-    @FXML
-    private void riskfactorsonclk(ActionEvent event) {
-    }
-
-    @FXML
-    private void auditreportViewOnClk(ActionEvent event) {
-    }
-
+    
 }
