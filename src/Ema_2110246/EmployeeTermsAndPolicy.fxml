@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ema_2110246.EmployeeTermsAndPolicyController">
-    
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="718.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ema_2110246.EmployeeTermsAndPolicyController">
+   <children>
+      <Label fx:id="viewEmployeeTermAndPolicy" layoutX="194.0" layoutY="22.0" prefHeight="21.0" prefWidth="294.0" text="View Employee Terms &amp; Policy " textFill="WHITE">
+         <font>
+            <Font name="Arial Bold Italic" size="19.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="seeTextArea" layoutX="82.0" layoutY="68.0" prefHeight="231.0" prefWidth="533.0" />
+      <Button fx:id="backButton" layoutX="291.0" layoutY="331.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" text="Back" />
+   </children>
 </AnchorPane>
