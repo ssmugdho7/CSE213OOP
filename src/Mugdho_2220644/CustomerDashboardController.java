@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package Ema_2110246;
+package Mugdho_2220644;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,7 +17,7 @@ import javafx.scene.layout.BorderPane;
  *
  * @author Lenovo
  */
-public class FieldTechnicianDashboardController implements Initializable {
+public class CustomerDashboardController implements Initializable {
 
     @FXML
     private BorderPane borderPane;
@@ -33,27 +33,31 @@ public class FieldTechnicianDashboardController implements Initializable {
     }    
 
     @FXML
-    private void requestReimbursementButtonOnClick(ActionEvent event) {
+    private void payBillButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void viewNotificationFromCustomerCareRepresentativeButtonOnClick(ActionEvent event) {
+    private void viewAndDownloadInvoiceButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void readCustomerComplainButtonOnClick(ActionEvent event) {
+    private void requestForServiceButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void readUpdatedNetworkInfoButtonOnClick(ActionEvent event) {
+    private void complainButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void writeRequiredTechnicalSupportButtonOnClick(ActionEvent event) {
+    private void giveRatingsButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void writeRequiredNetworkEngineerSupportButtonOnClick(ActionEvent event) {
+    private void sendMessageForTechnicalSupportButtonOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void feedbackFromTechnicalSupportButtonOnClick(ActionEvent event) {
     }
 
     @FXML
@@ -61,11 +65,7 @@ public class FieldTechnicianDashboardController implements Initializable {
     }
 
     @FXML
-    private void attendanceCheckInButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void employeeTermsAndPolicyButtonOnClick(ActionEvent event) {
+    private void viewTermsAndPolicyButtonOnClick(ActionEvent event) {
     }
 
     @FXML

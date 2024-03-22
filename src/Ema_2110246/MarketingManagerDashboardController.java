@@ -37,6 +37,34 @@ public class MarketingManagerDashboardController implements Initializable {
         // TODO
     }    
 
+
+    @FXML
+    private void identifyRiskFactorsButtonOnClick(ActionEvent event) throws IOException{
+        Parent parent = FXMLLoader.load(getClass().getResource("RiskFactorsReport.fxml"));
+        borderPane.setCenter(parent);
+    }
+
+
+    @FXML
+    private void gobackButtonOnClick(ActionEvent event) {
+    }
+
+
+    @FXML
+    private void logOutButtonOnClick(ActionEvent event)          {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+
+            Stage currentStage = (Stage) logOutButton.getScene().getWindow();
+            currentStage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     @FXML
     private void requestReimbursementButtonOnClick(ActionEvent event) {
     }
@@ -54,17 +82,7 @@ public class MarketingManagerDashboardController implements Initializable {
     }
 
     @FXML
-    private void identifyRiskFactorsButtonOnClick(ActionEvent event) throws IOException{
-        Parent parent = FXMLLoader.load(getClass().getResource("RiskFactorsReport.fxml"));
-        borderPane.setCenter(parent);
-    }
-
-    @FXML
     private void tbaButtonOnClick(ActionEvent event) {
-    }
-
-    @FXML
-    private void gobackButtonOnClick(ActionEvent event) {
     }
 
     @FXML
@@ -75,18 +93,5 @@ public class MarketingManagerDashboardController implements Initializable {
     private void viewEmployeeTermsAndPolicyButtonOnClick(ActionEvent event) {
     }
 
-    @FXML
-    private void logOutButtonOnClick(ActionEvent event)          {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
 
-            Stage currentStage = (Stage) logOutButton.getScene().getWindow();
-            currentStage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
 }
