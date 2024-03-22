@@ -40,7 +40,7 @@ public class LoginController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         userTypeComboBox.getItems().addAll("Accountant", "Customer",
                 "Field Technician", "Marketing Manager", "Customer Care Representative",
-                 "Managing Director", "Efficient Support Representative", "Network Engineer");
+                 "Managing Director", "Technical Support Representative", "Network Engineer");
         //defaultIdpass
         userIdTextField.setText("test");
         passwordTextField.setText("1234");
@@ -77,45 +77,45 @@ public class LoginController implements Initializable {
                 //SceneChange newScene= new SceneChange();
                 //newScene.Scenechanger(currentStage, "User_1_MainDashboard.fxml");
 
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Customer_MainDashboard.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Mugdho_2220644/CustomerDashboard.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 currentStage.setScene(scene);
             }
             if (userType.equals("Accountant")) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Accountant_MainDashboard.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Mugdho_2220644/AccountantDashboard.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 currentStage.setScene(scene);
             }
             if (userType.equals("Field Technician")) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Field_Technician_MainDashboard.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Ema_2110246/FieldTechnicianDashboard.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 currentStage.setScene(scene);
             }
             if (userType.equals("Marketing Manager")) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Marketing_Manager_MainDashboard.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Ema_2110246/MarketingManagerDashboard.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 currentStage.setScene(scene);
             }
             if (userType.equals("Customer Care Representative")) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Customer_Care_Representative_MainDashboard.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Jami_2211508/CustomerCareRepresentative_MainDashboard.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 currentStage.setScene(scene);
             }
             if (userType.equals("Managing Director")) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Managing_Director_MainDashboard.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Jami_2211508/ManagingDirectorDashboard.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 currentStage.setScene(scene);
             }
-            if (userType.equals("Efficient Support Representative")) {
+            if (userType.equals("Technical Support Representative")) {
 //                SceneChange newScene = new SceneChange();
 //                newScene.Scenechanger(currentStage, "Efficient_Support_Representative_MainDashboard.fxml");
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Efficient_Support_Representative_MainDashBoard.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Tasin_2211161/TechnicalSupportRepresentativeDashBoard.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             currentStage.setScene(scene);
@@ -126,7 +126,7 @@ public class LoginController implements Initializable {
             if (userType.equals("Network Engineer")) {
 //                SceneChange newScene = new SceneChange();
 //                newScene.Scenechanger(currentStage, "Network_Engineer_MainDashboard.fxml");
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Network_Engineer_MainDashBoard.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Tasin_2211161/NetworkEngineerDashBoard.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             currentStage.setScene(scene);
