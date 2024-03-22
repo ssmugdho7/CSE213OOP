@@ -8,6 +8,6 @@ package Jami_2211508;
  *
  * @author Lenovo
  */
-public class Customer_Care_Representative {
+public class ManagingDirector {
     
 }
