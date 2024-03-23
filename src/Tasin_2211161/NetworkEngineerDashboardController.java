@@ -48,9 +48,6 @@ public class NetworkEngineerDashboardController implements Initializable {
     private void writeUpdatedNetworkInfoButtonOnClick(ActionEvent event) {
     }
 
-    @FXML
-    private void identifyRiskFactorsButtonOnClick(ActionEvent event) {
-    }
 
     @FXML
     private void tbaButtonOnClick(ActionEvent event) {
