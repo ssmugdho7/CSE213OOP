@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="mainPKG.EmployeeAttendanceController">
+   <children>
+      <ComboBox fx:id="EmpDesignatioonComboBox" layoutX="21.0" layoutY="134.0" prefHeight="31.0" prefWidth="211.0" promptText="Employee Designation" />
+      <DatePicker fx:id="checkInDateDatepicker" layoutX="118.0" layoutY="54.0" prefHeight="31.0" prefWidth="127.0" />
+      <Label layoutX="21.0" layoutY="59.0" text="Check in Date" textFill="#f8f8f8">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="104.0" text="Working hours details / remarks:" textFill="#f8f8f8">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="remarksTextArea" layoutX="241.0" layoutY="104.0" prefHeight="67.0" prefWidth="322.0" />
+      <ComboBox fx:id="overtimeCombobox" layoutX="261.0" layoutY="54.0" prefHeight="31.0" prefWidth="298.0" promptText="Overtime hours" />
+      <Label layoutX="164.0" layoutY="14.0" text="Employee attendance check in:" textFill="#f8f8f8" underline="true">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="Tableview" layoutX="22.0" layoutY="180.0" prefHeight="200.0" prefWidth="477.0">
+        <columns>
+          <TableColumn fx:id="desigCol" prefWidth="105.0" text="Designation" />
+          <TableColumn fx:id="datecol" prefWidth="71.0" text="Date" />
+            <TableColumn fx:id="overtimecol" minWidth="0.0" prefWidth="120.0" text="Overtime hours" />
+            <TableColumn fx:id="remarksCol" minWidth="0.0" prefWidth="180.0" text="Remarks" />
+        </columns>
+      </TableView>
+      <Button layoutX="509.0" layoutY="349.0" mnemonicParsing="false" onAction="#submitButtonOnClick" text="Submit" />
+      <Button layoutX="510.0" layoutY="308.0" mnemonicParsing="false" onAction="#LoadOnClick" text="Load" />
+   </children>
+</AnchorPane>
