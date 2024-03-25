@@ -6,13 +6,15 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mugdho_2220644.AccountantDashboardController">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="650.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mugdho_2220644.AccountantDashboardController">
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
          <menus>
             <Menu mnemonicParsing="false" text="Tasks">
                <items>
@@ -21,7 +23,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#writePayrollButtonOnClick" text="Write Payroll" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Edit">
+            <Menu mnemonicParsing="false" text="External Tasks">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#writeAuditReportButtonOnClick" text="Write Audit Report" />
                   <MenuItem mnemonicParsing="false" onAction="#generateInvoiceButtonOnClick" text="Generate Invoice" />
@@ -37,19 +39,32 @@
       </MenuBar>
    </top>
    <bottom>
-      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
          <buttons>
-            <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#logOutButtonOnClick" text="log out" />
+            <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#logOutButtonOnClick" prefHeight="31.0" prefWidth="148.0" text="Log Out" textFill="#da1b1b" />
          </buttons>
       </ButtonBar>
    </bottom>
    <left>
-      <VBox prefHeight="328.0" prefWidth="295.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="378.0" prefWidth="277.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="47.0" prefWidth="216.0" text="Accountant Dashboard" />
-            <ImageView fitHeight="150.0" fitWidth="273.0" pickOnBounds="true" preserveRatio="true" />
-            <Button mnemonicParsing="false" onAction="#viewAttendanceButtonOnClick" prefHeight="31.0" prefWidth="273.0" text="View Attendence of other Employees" />
-            <Button mnemonicParsing="false" onAction="#employeeTermsAndPolicyButtonOnClick" prefHeight="31.0" prefWidth="274.0" text="Employee terms and policy" />
+            <Label prefHeight="47.0" prefWidth="299.0" text="User: Accountant" textFill="#b91d1d">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="26.0" />
+               </font></Label>
+            <ImageView fitHeight="265.0" fitWidth="247.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/images%20(1).png" />
+               </image></ImageView>
+            <Button mnemonicParsing="false" onAction="#viewAttendanceButtonOnClick" prefHeight="31.0" prefWidth="342.0" style="-fx-background-color: red;" text="View Attendence of Employees" textFill="WHITE">
+               <font>
+                  <Font name="Rockwell Extra Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#employeeTermsAndPolicyButtonOnClick" prefHeight="31.0" prefWidth="342.0" style="-fx-background-color: green;" text="Employee terms and policy" textFill="WHITE">
+               <font>
+                  <Font name="Rockwell Extra Bold" size="14.0" />
+               </font></Button>
          </children>
       </VBox>
    </left>
