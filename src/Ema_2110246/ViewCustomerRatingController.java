@@ -6,7 +6,9 @@ package Ema_2110246;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
@@ -14,6 +16,9 @@ import javafx.fxml.Initializable;
  * @author ASUS
  */
 public class ViewCustomerRatingController implements Initializable {
+
+    @FXML
+    private Label helloLabel;
 
     /**
      * Initializes the controller class.
