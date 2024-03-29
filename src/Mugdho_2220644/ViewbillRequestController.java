@@ -10,30 +10,28 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 /**
  * FXML Controller class
  *
  * @author Lenovo
  */
-public class GenerateInvoiceController implements Initializable {
+public class ViewbillRequestController implements Initializable {
 
     @FXML
-    private TextField customerIDTExtFeild;
+    private TableView<?> invoiceRequestsTableview;
     @FXML
-    private TextArea adressTextRAea;
+    private TableColumn<?, ?> serviceCall;
     @FXML
-    private DatePicker InvoicesDate;
+    private TableColumn<?, ?> dateCol;
     @FXML
-    private ListView<?> servicesTextArea;
+    private TableColumn<?, ?> idCol;
     @FXML
-    private TextField amountTextFeild;
+    private TableColumn<?, ?> addCol;
     @FXML
-    private Button invoicereqButton;
+    private Button returnButton;
 
     /**
      * Initializes the controller class.
@@ -44,11 +42,15 @@ public class GenerateInvoiceController implements Initializable {
     }    
 
     @FXML
-    private void generteInVoiceOnClk(ActionEvent event) {
+    private void SearchyIDTExtFeild(ActionEvent event) {
     }
 
     @FXML
-    private void invReqsOnClick(ActionEvent event) {
+    private void loadButtonAfterSearchTextfeildByIDOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void returnButtonInClk(ActionEvent event) {
     }
     
 }

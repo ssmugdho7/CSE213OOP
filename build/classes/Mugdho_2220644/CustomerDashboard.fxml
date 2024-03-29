@@ -25,7 +25,7 @@
          <menus>
             <Menu mnemonicParsing="false" text="Bill">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#payBillButtonOnClick" text="Pay Bill" />
+                  <MenuItem mnemonicParsing="false" onAction="#payBillButtonOnClick" text="Pay Bill and send invoice request" />
                   <MenuItem mnemonicParsing="false" onAction="#viewAndDownloadInvoiceButtonOnClick" text="View and Download Invoice" />
                   <MenuItem mnemonicParsing="false" onAction="#requestForServiceButtonOnClick" text="Request For Service" />
                </items>

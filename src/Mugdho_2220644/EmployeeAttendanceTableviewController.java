@@ -10,30 +10,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
  * @author Lenovo
  */
-public class GenerateInvoiceController implements Initializable {
+public class EmployeeAttendanceTableviewController implements Initializable {
 
-    @FXML
-    private TextField customerIDTExtFeild;
-    @FXML
-    private TextArea adressTextRAea;
-    @FXML
-    private DatePicker InvoicesDate;
-    @FXML
-    private ListView<?> servicesTextArea;
-    @FXML
-    private TextField amountTextFeild;
-    @FXML
-    private Button invoicereqButton;
 
     /**
      * Initializes the controller class.
@@ -43,12 +32,5 @@ public class GenerateInvoiceController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void generteInVoiceOnClk(ActionEvent event) {
-    }
-
-    @FXML
-    private void invReqsOnClick(ActionEvent event) {
-    }
     
 }

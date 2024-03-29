@@ -9,9 +9,8 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
@@ -20,20 +19,18 @@ import javafx.scene.control.TextField;
  *
  * @author Lenovo
  */
-public class GenerateInvoiceController implements Initializable {
+public class SendInvoiceRequestController implements Initializable {
 
     @FXML
-    private TextField customerIDTExtFeild;
+    private TextField userIDTextFeild;
     @FXML
-    private TextArea adressTextRAea;
+    private TextField addresstextfeild;
     @FXML
-    private DatePicker InvoicesDate;
+    private DatePicker reqDatepicker;
     @FXML
-    private ListView<?> servicesTextArea;
+    private ComboBox<?> servicesComboBox;
     @FXML
-    private TextField amountTextFeild;
-    @FXML
-    private Button invoicereqButton;
+    private TextArea detailsofinvReq;
 
     /**
      * Initializes the controller class.
@@ -44,11 +41,11 @@ public class GenerateInvoiceController implements Initializable {
     }    
 
     @FXML
-    private void generteInVoiceOnClk(ActionEvent event) {
+    private void sendOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void invReqsOnClick(ActionEvent event) {
+    private void LoadToTextAreaOnClick(ActionEvent event) {
     }
     
 }
