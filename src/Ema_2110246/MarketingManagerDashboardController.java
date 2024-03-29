@@ -13,6 +13,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -28,6 +29,8 @@ public class MarketingManagerDashboardController implements Initializable {
     private BorderPane borderPane;
     @FXML
     private Button logOutButton;
+    @FXML
+    private PieChart PIECHARTCUSTOMERRATINGS;
 
     /**
      * Initializes the controller class.
@@ -77,9 +80,6 @@ public class MarketingManagerDashboardController implements Initializable {
     private void paymentCostManagementButtonOnClick(ActionEvent event) {
     }
 
-    @FXML
-    private void readCustomerRatingButtonOnClick(ActionEvent event) {
-    }
 
     @FXML
     private void tbaButtonOnClick(ActionEvent event) {
@@ -91,6 +91,10 @@ public class MarketingManagerDashboardController implements Initializable {
 
     @FXML
     private void viewEmployeeTermsAndPolicyButtonOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void WriteupdatedRatesAndcontrolPipularpackageChartchart(ActionEvent event) {
     }
 
 

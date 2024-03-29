@@ -1,44 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 
-
-<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="701.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mugdho_2220644.EmployeeAttendanceTableviewController">
+<AnchorPane id="AnchorPane" prefHeight="559.0" prefWidth="560.0" style="-fx-background-color: blue;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Mugdho_2220644.EmployeeAttendanceTableviewController">
    <children>
-      <ComboBox fx:id="EmpDesignatioonComboBox" layoutX="21.0" layoutY="134.0" prefHeight="31.0" prefWidth="211.0" promptText="Employee Designation" />
-      <DatePicker fx:id="checkInDateDatepicker" layoutX="118.0" layoutY="54.0" prefHeight="31.0" prefWidth="127.0" />
-      <Label layoutX="21.0" layoutY="59.0" text="Check in Date" textFill="#f8f8f8">
+      <ComboBox fx:id="EmpDesignatioonComboBox" layoutX="31.0" layoutY="144.0" prefHeight="31.0" prefWidth="211.0" promptText="Employee Designation" />
+      <DatePicker fx:id="checkInDateDatepicker" layoutX="32.0" layoutY="101.0" prefHeight="31.0" prefWidth="211.0" />
+      <Label layoutX="32.0" layoutY="81.0" text="Check in Date" textFill="#f8f8f8">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="21.0" layoutY="104.0" text="Working hours details / remarks:" textFill="#f8f8f8">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <TextArea fx:id="remarksTextArea" layoutX="241.0" layoutY="104.0" prefHeight="67.0" prefWidth="322.0" />
-      <ComboBox fx:id="overtimeCombobox" layoutX="261.0" layoutY="54.0" prefHeight="31.0" prefWidth="298.0" promptText="Overtime hours" />
-      <Label layoutX="164.0" layoutY="14.0" text="Employee attendance check in:" textFill="#f8f8f8" underline="true">
-         <font>
-            <Font name="System Bold Italic" size="18.0" />
-         </font>
-      </Label>
-      <TableView fx:id="Tableview" layoutX="22.0" layoutY="180.0" prefHeight="332.0" prefWidth="477.0">
-        <columns>
-          <TableColumn fx:id="desigCol" prefWidth="105.0" text="Designation" />
-          <TableColumn fx:id="datecol" prefWidth="71.0" text="Date" />
+      <TableView fx:id="Tableview" layoutX="32.0" layoutY="190.0" prefHeight="324.0" prefWidth="477.0">
+         <columns>
+            <TableColumn fx:id="desigCol" prefWidth="105.0" text="Designation" />
+            <TableColumn fx:id="datecol" prefWidth="71.0" text="Date" />
             <TableColumn fx:id="overtimecol" minWidth="0.0" prefWidth="120.0" text="Overtime hours" />
             <TableColumn fx:id="remarksCol" minWidth="0.0" prefWidth="180.0" text="Remarks" />
-        </columns>
+         </columns>
       </TableView>
-      <Button layoutX="537.0" layoutY="475.0" mnemonicParsing="false" onAction="#submitButtonOnClick" text="Submit" />
-      <Button layoutX="537.0" layoutY="435.0" mnemonicParsing="false" onAction="#LoadOnClick" prefHeight="31.0" prefWidth="67.0" text="Load" />
-      <Button fx:id="BAck" layoutX="590.0" layoutY="39.0" mnemonicParsing="false" onAction="#BAckOnClk" text="Back" />
+      <Button layoutX="453.0" layoutY="144.0" mnemonicParsing="false" text="View" />
+      <Label layoutX="22.0" layoutY="28.0" text="Employee attendence" textFill="WHITE">
+         <font>
+            <Font name="Lucida Bright" size="34.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -38,6 +38,10 @@ public class AccountantDashboardController implements Initializable {
     private BarChart<Employee, ?> employeeAttendenceBarChart;
     @FXML
     private ComboBox<String> monthComboBox;
+    @FXML
+    private Button empatten;
+    @FXML
+    private Button emptermsbutton;
 
     /**
      * Initializes the controller class.
@@ -146,13 +150,33 @@ public class AccountantDashboardController implements Initializable {
     }
 
     @FXML
-    private void viewAttendanceButtonOnClick(ActionEvent event) {
+    private void viewAttendanceButtonOnClick(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EmployeeAttendanceTableview.fxml"));
+        Parent parent = fxmlLoader.load();
+        
+        // Retrieve preferred height and width from the loaded parent node
+        double prefHeight = parent.prefHeight(USE_COMPUTED_SIZE);
+        double prefWidth = parent.prefWidth(USE_COMPUTED_SIZE);
+        
+        Stage stage = new Stage();
+        stage.setTitle("viewAttendance");
+        stage.setScene(new Scene(parent, prefWidth, prefHeight));
+        stage.show();
     }
-
     @FXML
-    private void employeeTermsAndPolicyButtonOnClick(ActionEvent event) {
+    private void employeeTermsAndPolicyButtonOnClick(ActionEvent event)throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EmployeeTermsAndPolicy.fxml"));
+        Parent parent = fxmlLoader.load();
+        
+        // Retrieve preferred height and width from the loaded parent node
+        double prefHeight = parent.prefHeight(USE_COMPUTED_SIZE);
+        double prefWidth = parent.prefWidth(USE_COMPUTED_SIZE);
+        
+        Stage stage = new Stage();
+        stage.setTitle("employeeTermsAndPolicy");
+        stage.setScene(new Scene(parent, prefWidth, prefHeight));
+        stage.show();
     }
-
     @FXML
     private void logOutButtonOnClick(ActionEvent event) {        try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));

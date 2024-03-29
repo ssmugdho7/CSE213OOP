@@ -6,7 +6,12 @@ package Mugdho_2220644;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.TextArea;
 
 /**
  * FXML Controller class
@@ -15,6 +20,13 @@ import javafx.fxml.Initializable;
  */
 public class RequestForServiceController implements Initializable {
 
+    @FXML
+    private ComboBox<?> serviceComboBox;
+    @FXML
+    private TabPane tabPane;
+    @FXML
+    private TextArea detailsTextArea;
+
     /**
      * Initializes the controller class.
      */
@@ -22,5 +34,9 @@ public class RequestForServiceController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void RequestServicOnClick(ActionEvent event) {
+    }
     
 }

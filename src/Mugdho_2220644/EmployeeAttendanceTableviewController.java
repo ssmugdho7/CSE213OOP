@@ -23,6 +23,21 @@ import javafx.scene.control.TextArea;
  */
 public class EmployeeAttendanceTableviewController implements Initializable {
 
+    @FXML
+    private ComboBox<?> EmpDesignatioonComboBox;
+    @FXML
+    private DatePicker checkInDateDatepicker;
+    @FXML
+    private TableView<?> Tableview;
+    @FXML
+    private TableColumn<?, ?> desigCol;
+    @FXML
+    private TableColumn<?, ?> datecol;
+    @FXML
+    private TableColumn<?, ?> overtimecol;
+    @FXML
+    private TableColumn<?, ?> remarksCol;
+
 
     /**
      * Initializes the controller class.
