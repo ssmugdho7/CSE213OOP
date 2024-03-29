@@ -8,6 +8,6 @@ package Mugdho_2220644;
  *
  * @author Lenovo
  */
-public class Accountant {
+public class EmpAttendanceRecords {
     
 }
