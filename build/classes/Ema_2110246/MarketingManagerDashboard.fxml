@@ -6,29 +6,31 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ema_2110246.MarketingManagerDashboardController">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="731.0" prefWidth="971.0" style="-fx-background-color: #7fffd4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ema_2110246.MarketingManagerDashboardController">
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar style="-fx-background-color: white;" BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="Tasks">
+          <Menu mnemonicParsing="false" style="-fx-background-color: white;" text="Tasks">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#requestReimbursementButtonOnClick" text="Request  Reimbursement" />
                   <MenuItem mnemonicParsing="false" onAction="#paymentCostChartButtonOnClick" text="Payment Cost Chart" />
                   <MenuItem mnemonicParsing="false" onAction="#paymentCostManagementButtonOnClick" text="Payment Cost Management" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" style="-fx-background-color: white;" text="External Tasks">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#readCustomerRatingButtonOnClick" text="Read Customer Rating" />
                   <MenuItem mnemonicParsing="false" onAction="#identifyRiskFactorsButtonOnClick" text="Identify Risk Factors" />
-                  <MenuItem mnemonicParsing="false" onAction="#tbaButtonOnClick" text="TBA" />
+                  <MenuItem mnemonicParsing="false" onAction="#tbaButtonOnClick" text=" View Audit Report" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Navigator">
+          <Menu mnemonicParsing="false" style="-fx-background-color: white;" text="Navigator">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#gobackButtonOnClick" text="go back" />
             </items>
@@ -44,12 +46,27 @@
       </ButtonBar>
    </bottom>
    <left>
-      <VBox prefHeight="328.0" prefWidth="217.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="659.0" prefWidth="385.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Marketing Manager Dashboard" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-            <Button mnemonicParsing="false" onAction="#attendanceCheckInButtonOnClick" prefHeight="31.0" prefWidth="196.0" text="Attendance check in" />
-            <Button mnemonicParsing="false" onAction="#viewEmployeeTermsAndPolicyButtonOnClick" text="Employee terms and policy" />
+            <Label />
+            <ImageView fitHeight="72.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/download.png" />
+               </image></ImageView>
+            <Label text="User: Marketing Manager">
+               <font>
+                  <Font name="Arial Bold Italic" size="32.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="410.0" fitWidth="393.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Marketing-Management.gif" />
+               </image>
+            </ImageView>
+            <Label layoutX="10.0" layoutY="103.0" />
+            <Button mnemonicParsing="false" onAction="#attendanceCheckInButtonOnClick" prefHeight="31.0" prefWidth="413.0" style="-fx-background-color: black; -fx-background-radius: 77;" text="Attendance check in" textFill="WHITE" />
+            <Label layoutX="10.0" layoutY="103.0" />
+            <Button mnemonicParsing="false" onAction="#viewEmployeeTermsAndPolicyButtonOnClick" prefHeight="31.0" prefWidth="415.0" style="-fx-background-color: black; -fx-background-radius: 77;" text="Employee terms and policy" textFill="WHITE" />
          </children>
       </VBox>
    </left>
