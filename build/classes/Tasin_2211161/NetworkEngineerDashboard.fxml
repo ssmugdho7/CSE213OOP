@@ -24,7 +24,7 @@
             <Menu mnemonicParsing="false" text="Edit">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#writeUpdatedNetworkInfoButtonOnClick" text="Write Updated Network Info" />
-                  <MenuItem mnemonicParsing="false" onAction="#identifyRiskFactorsButtonOnClick" text="TBA" />
+                  <MenuItem mnemonicParsing="false" onAction="#tbaButtonOnClick" text="TBA" />
                   <MenuItem mnemonicParsing="false" onAction="#tbaButtonOnClick" text="TBA" />
                </items>
             </Menu>
