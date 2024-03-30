@@ -21,47 +21,47 @@
             <Font name="Arial Rounded MT Bold" size="25.0" />
          </font>
       </Label>
-      <Button contentDisplay="CENTER" layoutX="21.0" layoutY="121.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="352.0" style="-fx-background-radius: 20; -fx-background-color: #008B8B;" text="Custome's Complain" textAlignment="CENTER" textFill="WHITE">
+      <Button contentDisplay="CENTER" layoutX="21.0" layoutY="121.0" mnemonicParsing="false" onAction="#CustomeComplainButtonOnClick" prefHeight="46.0" prefWidth="352.0" style="-fx-background-radius: 20; -fx-background-color: #008B8B;" text="Custome's Complain" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button contentDisplay="CENTER" layoutX="21.0" layoutY="190.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="352.0" style="-fx-background-radius: 20; -fx-background-color: #008B8B;" text="Request Reimnursement" textAlignment="CENTER" textFill="WHITE">
+      <Button contentDisplay="CENTER" layoutX="21.0" layoutY="190.0" mnemonicParsing="false" onAction="#RequestReimnursementButtonOnClick" prefHeight="46.0" prefWidth="352.0" style="-fx-background-radius: 20; -fx-background-color: #008B8B;" text="Request Reimnursement" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button contentDisplay="CENTER" layoutX="21.0" layoutY="259.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="352.0" style="-fx-background-radius: 20; -fx-background-color: #008B8B;" text="Assign Duty to Field Technician" textAlignment="CENTER" textFill="WHITE">
+      <Button contentDisplay="CENTER" layoutX="21.0" layoutY="259.0" mnemonicParsing="false" onAction="#AssignDutytoFieldTechnicianButtonOnClick" prefHeight="46.0" prefWidth="352.0" style="-fx-background-radius: 20; -fx-background-color: #008B8B;" text="Assign Duty to Field Technician" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button contentDisplay="CENTER" layoutX="21.0" layoutY="328.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="352.0" style="-fx-background-radius: 20; -fx-background-color: #008B8B;" text="Assign Duty to Network Engineer" textAlignment="CENTER" textFill="WHITE">
+      <Button contentDisplay="CENTER" layoutX="21.0" layoutY="328.0" mnemonicParsing="false" onAction="#AssignDutytoNetworkEngineerButtonOnClick" prefHeight="46.0" prefWidth="352.0" style="-fx-background-radius: 20; -fx-background-color: #008B8B;" text="Assign Duty to Network Engineer" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button contentDisplay="CENTER" layoutX="21.0" layoutY="607.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="352.0" style="-fx-background-radius: 20; -fx-background-color: #008B8B;" text="Customer Ratings" textAlignment="CENTER" textFill="WHITE">
+      <Button contentDisplay="CENTER" layoutX="21.0" layoutY="607.0" mnemonicParsing="false" onAction="#CustomerRatingsButtonOnClick" prefHeight="46.0" prefWidth="352.0" style="-fx-background-radius: 20; -fx-background-color: #008B8B;" text="Customer Ratings" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button contentDisplay="CENTER" layoutX="21.0" layoutY="396.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="352.0" style="-fx-background-radius: 20; -fx-background-color: #008B8B;" text="Assign Duty to Technical Support" textAlignment="CENTER" textFill="WHITE">
+      <Button contentDisplay="CENTER" layoutX="21.0" layoutY="396.0" mnemonicParsing="false" onAction="#AssignDutytoTechnicalSupportButtonOnClick" prefHeight="46.0" prefWidth="352.0" style="-fx-background-radius: 20; -fx-background-color: #008B8B;" text="Assign Duty to Technical Support" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button contentDisplay="CENTER" layoutX="21.0" layoutY="466.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="352.0" style="-fx-background-radius: 20; -fx-background-color: #008B8B;" text="Attendence &amp; OverTime" textAlignment="CENTER" textFill="WHITE">
+      <Button contentDisplay="CENTER" layoutX="21.0" layoutY="466.0" mnemonicParsing="false" onAction="#AttendenceOverTimeButtonOnClick" prefHeight="46.0" prefWidth="352.0" style="-fx-background-radius: 20; -fx-background-color: #008B8B;" text="Attendence &amp; OverTime" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button contentDisplay="CENTER" layoutX="21.0" layoutY="538.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="352.0" style="-fx-background-radius: 20; -fx-background-color: #008B8B;" text="Terms &amp; Policy" textAlignment="CENTER" textFill="WHITE">
+      <Button contentDisplay="CENTER" layoutX="21.0" layoutY="538.0" mnemonicParsing="false" onAction="#TermsPolicyButtonOnClick" prefHeight="46.0" prefWidth="352.0" style="-fx-background-radius: 20; -fx-background-color: #008B8B;" text="Terms &amp; Policy" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="81.0" layoutY="681.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="233.0" style="-fx-background-color: red; -fx-background-radius: 20;" text="Log Out">
+      <Button layoutX="81.0" layoutY="681.0" mnemonicParsing="false" onAction="#LogOutButtonOnClick" prefHeight="46.0" prefWidth="233.0" style="-fx-background-color: red; -fx-background-radius: 20;" text="Log Out">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>

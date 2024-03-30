@@ -1,56 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jami_2211508.ManagingDirectorDashboardController">
-   <top>
-      <MenuBar prefWidth="649.0" BorderPane.alignment="CENTER">
-         <menus>
-            <Menu mnemonicParsing="false" text="Tasks">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#readPayrollDataButtonOnClick" text="Read Payroll Data" />
-                  <MenuItem mnemonicParsing="false" onAction="#readAuditReportButtonOnClick" text="Read Audit Report" />
-                  <MenuItem mnemonicParsing="false" onAction="#readProcessedReimbursementButtonOnClick" text="Read Processed Reimbursement" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Edit">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#viewSuggestionOfCostManagementButtonOnClick" text="View Suggestion of Cost Management " />
-                  <MenuItem mnemonicParsing="false" onAction="#paymentCostChartAnalysisButtonOnClick" text="Payment Cost Chart Analysis" />
-                  <MenuItem mnemonicParsing="false" onAction="#readRiskFactorsofCompanyButtonOnClick" text="Read Risk Factors of Company" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Navigator">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#gobackButtonOnClick" text="go back" />
-               </items>
-            </Menu>
-         </menus>
-      </MenuBar>
-   </top>
-   <bottom>
-      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <buttons>
-            <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#logOutButtonOnClick" text="log out" />
-         </buttons>
-      </ButtonBar>
-   </bottom>
-   <left>
-      <VBox prefHeight="328.0" prefWidth="325.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label text="Managing Director Dashboard" />
-            <ImageView fitHeight="150.0" fitWidth="276.0" pickOnBounds="true" preserveRatio="true" />
-            <Button mnemonicParsing="false" onAction="#writeTermsAndPolicyForEmployeesButtonOnClick" prefHeight="31.0" prefWidth="278.0" text="Write Terms And Policy for Employees" />
-            <Button layoutX="10.0" layoutY="181.0" mnemonicParsing="false" onAction="#writeTermsAndPolicyForCustomerButtonOnClick" prefHeight="31.0" prefWidth="278.0" text="Write Terms And Policy for Customers" />
-         </children>
-      </VBox>
-   </left>
-</BorderPane>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="679.0" prefWidth="889.0" style="-fx-background-color: #DDA0DD; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="7.0" layoutY="160.0" mnemonicParsing="false" onAction="#ViewPayrollDataOnClick" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="View Payroll Data" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="119.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/download.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="135.0" layoutY="45.0" text="Managing Director" textFill="#0e3638">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="7.0" layoutY="213.0" mnemonicParsing="false" onAction="#ViewAuditReportOnClick" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="View Audit Report" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="7.0" layoutY="265.0" mnemonicParsing="false" onAction="#ViewReimbursementProcessOnClick" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="View Reimbursement Process" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="7.0" layoutY="316.0" mnemonicParsing="false" onAction="#WriteTermsPolicyOnClick" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="Write Terms &amp; Policy" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="7.0" layoutY="369.0" mnemonicParsing="false" onAction="#ViewExtimatedCostButtonOnClick" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="View Extimated Cost" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="7.0" layoutY="422.0" mnemonicParsing="false" onAction="#ViewRiskFactorsButtonOnClick" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="View Risk Factors" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="7.0" layoutY="472.0" mnemonicParsing="false" onAction="#ViewAttendenceOvertimeButtonOnClick" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="View Attendence &amp; Overtime" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="7.0" layoutY="525.0" mnemonicParsing="false" onAction="#suggestionsforchangesButtonOnClick" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="suggestions for changes" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="50.0" layoutY="611.0" mnemonicParsing="false" onAction="#LogOutButtonOnClick" prefHeight="44.0" prefWidth="238.0" style="-fx-background-color: red; -fx-background-radius: 20;" text="Log Out" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
