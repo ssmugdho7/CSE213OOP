@@ -1,32 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mugdho_2220644.CustomerDashboardController">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="949.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mugdho_2220644.CustomerDashboardController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
          <menus>
-            <Menu mnemonicParsing="false" text="Tasks">
+            <Menu mnemonicParsing="false" text="Bill">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#payBillButtonOnClick" text="Pay Bill" />
+                  <MenuItem mnemonicParsing="false" onAction="#payBillButtonOnClick" text="Pay Bill and send invoice request" />
                   <MenuItem mnemonicParsing="false" onAction="#viewAndDownloadInvoiceButtonOnClick" text="View and Download Invoice" />
                   <MenuItem mnemonicParsing="false" onAction="#requestForServiceButtonOnClick" text="Request For Service" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Edit">
+            <Menu mnemonicParsing="false" text="Help and feedback">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#complainButtonOnClick" text="Complain" />
-                  <MenuItem mnemonicParsing="false" onAction="#giveRatingsButtonOnClick" text="Give Ratings" />
-                  <MenuItem mnemonicParsing="false" onAction="#sendMessageForTechnicalSupportButtonOnClick" text="Send Message For Technical Support" />
-                  <MenuItem mnemonicParsing="false" onAction="#feedbackFromTechnicalSupportButtonOnClick" text="Feedback From Technical Support" />
+                  <MenuItem mnemonicParsing="false" onAction="#giveRatingsButtonOnClick" text="User Ratings" />
+                  <MenuItem mnemonicParsing="false" onAction="#sendMessageForTechnicalSupportButtonOnClick" text="Request for Technical Support" />
+                  <MenuItem mnemonicParsing="false" onAction="#feedbackFromTechnicalSupportButtonOnClick" text="Technical Support Feedback" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Navigator">
@@ -40,17 +49,87 @@
    <bottom>
       <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <buttons>
-            <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#logOutButtonOnClick" text="log out" />
+            <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#logOutButtonOnClick" prefHeight="31.0" prefWidth="599.0" text="Log Out">
+               <font>
+                  <Font name="Elephant" size="17.0" />
+               </font></Button>
          </buttons>
       </ButtonBar>
    </bottom>
    <left>
-      <VBox prefHeight="328.0" prefWidth="217.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="577.0" prefWidth="347.0" style="-fx-background-color: #8c39a0;" BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="21.0" prefWidth="188.0" text="Customer Dashboard" />
+            <Label />
+            <Label prefHeight="34.0" prefWidth="361.0" text="Customer Dashboard" textFill="WHITE">
+               <font>
+                  <Font name="MS UI Gothic" size="32.0" />
+               </font></Label>
+            <ImageView fitHeight="185.0" fitWidth="354.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/emDash.gif" />
+               </image>
+            </ImageView>
             <ImageView fitHeight="150.0" fitWidth="193.0" pickOnBounds="true" preserveRatio="true" />
-            <Button mnemonicParsing="false" onAction="#viewTermsAndPolicyButtonOnClick" prefHeight="31.0" prefWidth="193.0" text=" Terms and Policy" />
+            <Button mnemonicParsing="false" onAction="#viewTermsAndPolicyButtonOnClick" prefHeight="31.0" prefWidth="350.0" text=" Terms and Policy" textFill="#000000f2" />
+            <Label />
+            <Hyperlink fx:id="link3hyperlonk" prefHeight="29.0" prefWidth="356.0" text="Link3.net" textFill="WHITE" />
+            <Hyperlink fx:id="speedtesthyperlink" text="https://www.link3.net/speed-test" textFill="WHITE" />
          </children>
       </VBox>
    </left>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Updated Rates">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #1c9692;">
+                     <children>
+                        <TableView fx:id="internetRates" layoutX="41.0" layoutY="205.0" prefHeight="273.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn fx:id="sppedCol" prefWidth="110.0" text="Speed" />
+                            <TableColumn fx:id="netRateCol" prefWidth="40.0" text="Rate" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="41.0" layoutY="131.0" prefHeight="21.0" prefWidth="205.0" text="Rates:" textFill="#ffe9e9">
+                           <font>
+                              <Font name="Magneto Bold" size="39.0" />
+                           </font>
+                        </Label>
+                        <PieChart fx:id="popularpackagesPieChart" layoutX="280.0" layoutY="203.0" prefHeight="275.0" prefWidth="308.0" title="Popular packages" />
+                        <Label layoutX="332.0" layoutY="146.0" prefHeight="21.0" prefWidth="205.0" text="Ratio:" textFill="#ffe9e9">
+                           <font>
+                              <Font name="Magneto Bold" size="39.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="105.0" fitWidth="121.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/download.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Installation and other Fees">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: gray;">
+                     <children>
+                        <TableView fx:id="installationfeeTAble" layoutX="47.0" layoutY="149.0" prefHeight="360.0" prefWidth="268.0">
+                          <columns>
+                            <TableColumn fx:id="serviceCol" prefWidth="117.0" text="Service" />
+                            <TableColumn fx:id="servicecostCol" prefWidth="150.0" text="Cost" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="47.0" layoutY="85.0" prefHeight="21.0" prefWidth="226.0" text="Technician fees" textFill="WHITE">
+                           <font>
+                              <Font name="Tw Cen MT Condensed" size="45.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
 </BorderPane>

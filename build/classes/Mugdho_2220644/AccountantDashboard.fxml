@@ -73,13 +73,13 @@
                   <Image url="@../images/1709525058335.gif" />
                </image></ImageView>
             <Label prefHeight="21.0" prefWidth="282.0" />
-            <Button mnemonicParsing="false" onAction="#viewAttendanceButtonOnClick" prefHeight="31.0" prefWidth="365.0" style="-fx-background-color: black; -fx-background-radius: 77;" text="Employee Attendence" textFill="WHITE">
+            <Button fx:id="empatten" mnemonicParsing="false" onAction="#viewAttendanceButtonOnClick" prefHeight="31.0" prefWidth="365.0" style="-fx-background-color: black; -fx-background-radius: 77;" text="Employee Attendence" textFill="WHITE">
                <font>
                   <Font name="Rockwell Extra Bold" size="14.0" />
                </font>
             </Button>
             <Label prefHeight="21.0" prefWidth="266.0" />
-            <Button mnemonicParsing="false" onAction="#employeeTermsAndPolicyButtonOnClick" prefHeight="31.0" prefWidth="342.0" style="-fx-background-color: black; -fx-background-radius: 77;" text="Employee terms and policy" textFill="WHITE">
+            <Button fx:id="emptermsbutton" mnemonicParsing="false" onAction="#employeeTermsAndPolicyButtonOnClick" prefHeight="31.0" prefWidth="342.0" style="-fx-background-color: black; -fx-background-radius: 77;" text="Employee terms and policy" textFill="WHITE">
                <font>
                   <Font name="Rockwell Extra Bold" size="14.0" />
                </font></Button>
@@ -145,4 +145,21 @@
         </content>
       </ScrollPane>
    </right>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
+         <children>
+            <Label contentDisplay="CENTER" prefHeight="139.0" prefWidth="343.0" style="-fx-background-color: #02ff63;" text="Customer Count" textAlignment="JUSTIFY" textFill="#0a0a0a">
+               <font>
+                  <Font name="System Bold" size="41.0" />
+               </font>
+            </Label>
+            <Label fx:id="customerCountShow" contentDisplay="CENTER" layoutX="45.0" layoutY="123.0" prefHeight="139.0" prefWidth="343.0" style="-fx-background-color: yellow;" text="00" textAlignment="JUSTIFY" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="96.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="224.0" fitWidth="311.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </VBox>
+   </center>
 </BorderPane>

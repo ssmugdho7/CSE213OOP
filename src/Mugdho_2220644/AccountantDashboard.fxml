@@ -11,6 +11,8 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -73,13 +75,13 @@
                   <Image url="@../images/1709525058335.gif" />
                </image></ImageView>
             <Label prefHeight="21.0" prefWidth="282.0" />
-            <Button mnemonicParsing="false" onAction="#viewAttendanceButtonOnClick" prefHeight="31.0" prefWidth="365.0" style="-fx-background-color: black; -fx-background-radius: 77;" text="Employee Attendence" textFill="WHITE">
+            <Button fx:id="empatten" mnemonicParsing="false" onAction="#viewAttendanceButtonOnClick" prefHeight="31.0" prefWidth="365.0" style="-fx-background-color: black; -fx-background-radius: 77;" text="Employee Attendence" textFill="WHITE">
                <font>
                   <Font name="Rockwell Extra Bold" size="14.0" />
                </font>
             </Button>
             <Label prefHeight="21.0" prefWidth="266.0" />
-            <Button mnemonicParsing="false" onAction="#employeeTermsAndPolicyButtonOnClick" prefHeight="31.0" prefWidth="342.0" style="-fx-background-color: black; -fx-background-radius: 77;" text="Employee terms and policy" textFill="WHITE">
+            <Button fx:id="emptermsbutton" mnemonicParsing="false" onAction="#employeeTermsAndPolicyButtonOnClick" prefHeight="31.0" prefWidth="342.0" style="-fx-background-color: black; -fx-background-radius: 77;" text="Employee terms and policy" textFill="WHITE">
                <font>
                   <Font name="Rockwell Extra Bold" size="14.0" />
                </font></Button>
@@ -145,4 +147,42 @@
         </content>
       </ScrollPane>
    </right>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Customer count">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <VBox layoutX="26.0" layoutY="51.0" prefHeight="268.0" prefWidth="305.0" style="-fx-background-radius: 55; -fx-background-color: red;">
+                           <children>
+                              <ImageView fitHeight="321.0" fitWidth="345.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/field%20tec.gif" />
+                                 </image>
+                              </ImageView>
+                              <Label contentDisplay="CENTER" prefHeight="139.0" prefWidth="343.0" style="-fx-background-color: #02ff63;" text="Customer Count" textAlignment="JUSTIFY" textFill="#0a0a0a">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="customerCountShow" contentDisplay="CENTER" prefHeight="139.0" prefWidth="343.0" style="-fx-background-color: yellow;" text="00" textAlignment="JUSTIFY" textFill="RED">
+                                 <font>
+                                    <Font name="System Bold" size="35.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Employee Count">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
 </BorderPane>

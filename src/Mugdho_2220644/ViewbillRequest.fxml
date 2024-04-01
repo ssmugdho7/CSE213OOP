@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="491.0" style="-fx-background-color: aqua;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Mugdho_2220644.ViewbillRequestController">
+   <children>
+      <TableView fx:id="invoiceRequestsTableview" layoutX="39.0" layoutY="116.0" prefHeight="254.0" prefWidth="400.0">
+        <columns>
+          <TableColumn fx:id="serviceCall" prefWidth="110.0" text="Service" />
+          <TableColumn fx:id="dateCol" prefWidth="89.0" text="Date" />
+            <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="addCol" prefWidth="75.0" text="Address" />
+        </columns>
+      </TableView>
+      <Label layoutX="63.0" layoutY="39.0" text="Customer Invoice Requests" underline="true">
+         <font>
+            <Font name="Trebuchet MS" size="25.0" />
+         </font>
+      </Label>
+      <TextField layoutX="39.0" layoutY="79.0" onAction="#SearchyIDTExtFeild" prefHeight="31.0" prefWidth="137.0" promptText="search ID" />
+      <Button layoutX="387.0" layoutY="79.0" mnemonicParsing="false" onAction="#loadButtonAfterSearchTextfeildByIDOnClick" text="Load">
+         <font>
+            <Font name="Nirmala UI Semilight" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="returnButton" layoutX="374.0" layoutY="36.0" mnemonicParsing="false" onAction="#returnButtonInClk" text="Return" />
+   </children>
+</AnchorPane>
