@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="701.0" prefWidth="895.0" style="-fx-background-color: #72A0C1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tasin_2211161.AccurateTicketManagementController">
+   <children>
+      <Text layoutX="280.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Accurate Ticket Management">
+         <font>
+            <Font name="Impact" size="28.0" />
+         </font>
+      </Text>
+      <Text layoutX="51.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ticket Details View:" wrappingWidth="228.13671875">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="51.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ticket Type:" wrappingWidth="228.13671875">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="51.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Assign Ticket: " wrappingWidth="228.13671875">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="51.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ticket Status Tracker:" wrappingWidth="228.13671875">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text layoutX="674.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ticket Notification" wrappingWidth="163.13671875">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <TextField fx:id="ticketDetailsViewField" layoutX="266.0" layoutY="204.0" prefHeight="28.0" prefWidth="215.0" />
+      <ComboBox layoutX="266.0" layoutY="273.0" prefHeight="28.0" prefWidth="215.0" />
+      <ComboBox layoutX="266.0" layoutY="337.0" prefHeight="28.0" prefWidth="215.0" />
+      <RadioButton layoutX="266.0" layoutY="403.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="139.0" style="-fx-content-display: #DB2D43;" text="In Progress" />
+      <RadioButton layoutX="419.0" layoutY="403.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="139.0" text="Pending" />
+      <RadioButton layoutX="585.0" layoutY="403.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="139.0" text="Resolved" />
+      <ImageView fitHeight="80.0" fitWidth="126.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../BackUp%20Project%20Folder/Link3_Technologies_Ltd_Logo.svg.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

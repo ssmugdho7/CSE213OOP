@@ -16,8 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="762.0" prefWidth="1039.0" style="-fx-background-color: #91A3B0;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Tasin_2211161.ReceiveTicketNotificationController">
+<AnchorPane id="AnchorPane" prefHeight="762.0" prefWidth="1039.0" style="-fx-background-color: #91A3B0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tasin_2211161.ReceiveTicketNotificationController">
    <children>
       <Text layoutX="350.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ticket Notification" wrappingWidth="326.416015625">
          <font>
@@ -47,8 +46,8 @@
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField layoutX="240.0" layoutY="207.0" prefHeight="32.0" prefWidth="252.0" />
-      <TextField layoutX="240.0" layoutY="248.0" prefHeight="32.0" prefWidth="252.0" />
+      <TextField fx:id="ticketIdField" layoutX="240.0" layoutY="207.0" prefHeight="32.0" prefWidth="252.0" />
+      <TextField fx:id="customerNameField" layoutX="240.0" layoutY="248.0" prefHeight="32.0" prefWidth="252.0" />
       <ImageView fitHeight="68.0" fitWidth="69.0" layoutX="642.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../BackUp%20Project%20Folder/vecteezy_bell-icon-png-transparent-notification-png_10366202.png" />
@@ -94,8 +93,8 @@
             <Font size="18.0" />
          </font>
       </RadioButton>
-      <TextArea layoutX="240.0" layoutY="291.0" prefHeight="200.0" prefWidth="414.0" />
-      <Button layoutX="36.0" layoutY="691.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="153.0" style="-fx-background-color: red; -fx-border-radius: 200; -fx-border-radius: 200; -fx-background-radius: 200;" text="Go back" textFill="WHITE">
+      <TextArea fx:id="issueDescriptionField" layoutX="240.0" layoutY="291.0" prefHeight="200.0" prefWidth="414.0" />
+      <Button layoutX="36.0" layoutY="691.0" mnemonicParsing="false" onAction="#goBackOnAction" prefHeight="38.0" prefWidth="153.0" style="-fx-background-color: red; -fx-border-radius: 200; -fx-border-radius: 200; -fx-background-radius: 200;" text="Go back" textFill="WHITE">
          <font>
             <Font size="27.0" />
          </font>
