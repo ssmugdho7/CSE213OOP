@@ -1,48 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.BarChart?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="679.0" prefWidth="902.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ema_2110246.CostAnalysisChartController">
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Ema_2110246.CostAnalysisChartController">
    <children>
-      <Label fx:id="costAnalysisLabel" layoutX="229.0" layoutY="27.0" prefHeight="37.0" prefWidth="311.0" text=" View Cost Ratio of Subscribers" textAlignment="CENTER" textFill="WHITE" underline="true">
+      <PieChart fx:id="viewPieChart" layoutX="72.0" layoutY="83.0" prefHeight="234.0" prefWidth="468.0" style="-fx-background-color: white;" />
+      <Label fx:id="costAnalysisLabel" layoutX="231.0" layoutY="33.0" prefHeight="21.0" prefWidth="138.0" text="Cost Analysis" textFill="WHITE">
          <font>
-            <Font name="Arial Bold Italic" size="20.0" />
+            <Font name="Arial Bold Italic" size="18.0" />
          </font>
       </Label>
-      <PieChart fx:id="viewPieChart" layoutX="563.0" layoutY="140.0" prefHeight="396.0" prefWidth="321.0" style="-fx-background-color: white;" />
-      <Button fx:id="backButton" layoutX="777.0" layoutY="11.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="113.0" style="-fx-background-radius: 77;" text="Back">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font></Button>
-      <Label fx:id="costAnalysisLabel1" layoutX="632.0" layoutY="82.0" prefHeight="37.0" prefWidth="159.0" text="Cost Ratio Chart" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="Arial Bold Italic" size="20.0" />
-         </font>
-      </Label>
-      <Button fx:id="backButton1" layoutX="375.0" layoutY="563.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="236.0" style="-fx-background-radius: 77;" text="Load Information">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font>
-      </Button>
-      <BarChart layoutX="82.0" layoutY="122.0" prefHeight="441.0" prefWidth="362.0">
-        <xAxis>
-          <CategoryAxis side="BOTTOM" />
-        </xAxis>
-        <yAxis>
-          <NumberAxis side="LEFT" />
-        </yAxis>
-      </BarChart>
-      <Label layoutX="209.0" layoutY="630.0" prefHeight="37.0" prefWidth="557.0" style="-fx-background-radius: 77; -fx-background-color: white;" text="Note: Chart is generated from Estimated Cost Analysis" underline="true">
-         <font>
-            <Font name="System Bold Italic" size="20.0" />
-         </font>
-      </Label>
+      <Button fx:id="backButton" layoutX="237.0" layoutY="345.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="138.0" text="Back" />
    </children>
 </AnchorPane>
