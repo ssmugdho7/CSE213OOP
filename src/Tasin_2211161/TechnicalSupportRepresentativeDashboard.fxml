@@ -9,7 +9,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="842.0" prefWidth="1217.0" style="-fx-background-color: #89CFF0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="406.0" layoutY="59.0" style="-fx-background-color: coral;">
@@ -22,37 +21,37 @@
             <Font name="Franklin Gothic Medium" size="30.0" />
          </font>
       </Text>
-      <Button layoutX="43.0" layoutY="123.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Receive Ticket Notification">
+      <Button layoutX="43.0" layoutY="123.0" mnemonicParsing="false" onAction="#receiveTicketNotificationOnAction" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Receive Ticket Notification">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="43.0" layoutY="189.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Review Ticket Details">
+      <Button layoutX="43.0" layoutY="189.0" mnemonicParsing="false" onAction="#reviewTicketDetailsOnAction" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Review Ticket Details">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="43.0" layoutY="256.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Prioritize and Assign Ticket">
+      <Button layoutX="43.0" layoutY="256.0" mnemonicParsing="false" onAction="#prioritizeAndAssignTicketOnAction" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Prioritize and Assign Ticket">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="43.0" layoutY="322.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Resolve Ticket">
+      <Button layoutX="43.0" layoutY="322.0" mnemonicParsing="false" onAction="#resolveTicketOnAction" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Resolve Ticket">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="43.0" layoutY="386.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Access Knowledge Base">
+      <Button layoutX="43.0" layoutY="386.0" mnemonicParsing="false" onAction="#accessKnowledgeBaseOnAction" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Access Knowledge Base">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="43.0" layoutY="453.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Provide Step-by-Step Guidance">
+      <Button layoutX="43.0" layoutY="453.0" mnemonicParsing="false" onAction="#provideStepbyStepGuidanceOnAction" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Provide Step-by-Step Guidance">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="43.0" layoutY="521.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Initiate Contact with Customer">
+      <Button layoutX="43.0" layoutY="521.0" mnemonicParsing="false" onAction="#initiateContactWithCustomerOnAction" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Initiate Contact with Customer">
          <font>
             <Font size="16.0" />
          </font>
@@ -62,12 +61,12 @@
             <Image url="@../../../../BackUp%20Project%20Folder/Link3_Technologies_Ltd_Logo.svg.png" />
          </image>
       </ImageView>
-      <Button layoutX="43.0" layoutY="592.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Rate Service Experience">
+      <Button layoutX="43.0" layoutY="592.0" mnemonicParsing="false" onAction="#rateServiceExperienceOnAction" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Rate Service Experience">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="92.0" layoutY="677.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="137.0" style="-fx-background-color: red; -fx-background-radius: 200;" text="Logout">
+      <Button layoutX="92.0" layoutY="677.0" mnemonicParsing="false" onAction="#logoutOnAction" prefHeight="45.0" prefWidth="137.0" style="-fx-background-color: red; -fx-background-radius: 200;" text="Logout">
          <font>
             <Font size="24.0" />
          </font>
