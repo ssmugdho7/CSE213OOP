@@ -1,23 +1,14 @@
-
 package Mugdho_2220644;
+
 import java.io.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class AuditReport implements Serializable {
-    private String title;
-    private String findings;
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("AuditReport{");
-        sb.append("title=").append(title);
-        sb.append(", findings=").append(findings);
-        sb.append(", recommendations=").append(recommendations);
-        sb.append(", comments=").append(comments);
-        sb.append(", auditDate=").append(auditDate);
-        sb.append('}');
-        return sb.toString();
+        return "AuditReport{" + "title=" + title + ", findings=" + findings + ", recommendations=" + recommendations + ", comments=" + comments + ", auditDate=" + auditDate + '}';
     }
 
     public String getTitle() {
@@ -59,6 +50,9 @@ public class AuditReport implements Serializable {
     public void setAuditDate(LocalDate auditDate) {
         this.auditDate = auditDate;
     }
+
+    private String title;
+    private String findings;
     private String recommendations;
     private String comments;
     private LocalDate auditDate;
@@ -71,16 +65,31 @@ public class AuditReport implements Serializable {
         this.auditDate = auditDate;
     }
 
-    // Getters and setters
-    // Add getters and setters for each field
-
-    // Write method to write AuditReport object to file
-    public void writeToFile(String filename) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
-            oos.writeObject(this);
-            System.out.println("Audit report saved successfully.");
+       public static void writeToFile(ArrayList<AuditReport> reports, String filename) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename, true))) {
+            for (AuditReport report : reports) {
+                oos.writeObject(report);
+            }
+            System.out.println("Audit reports saved successfully.");
         } catch (IOException e) {
-            System.err.println("Error writing audit report to file: " + e.getMessage());
+            System.err.println("Error writing audit reports to file: " + e.getMessage());
         }
+    }
+public static ArrayList<AuditReport> readFromFile(String filename) {
+        ArrayList<AuditReport> reports = new ArrayList<>();
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
+            while (true) {
+                try {
+                    AuditReport report = (AuditReport) ois.readObject();
+                    reports.add(report);
+                } catch (EOFException e) {
+                    break; // End of file reached
+                }
+            }
+            System.out.println("Audit reports loaded successfully.");
+        } catch (IOException | ClassNotFoundException e) {
+            System.err.println("Error reading audit reports from file: " + e.getMessage());
+        }
+        return reports;
     }
 }

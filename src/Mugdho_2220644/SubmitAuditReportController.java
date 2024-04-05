@@ -6,6 +6,7 @@ package Mugdho_2220644;
 
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -34,18 +35,18 @@ public class SubmitAuditReportController implements Initializable {
     private TextArea CommentsTextArea;
     @FXML
     private DatePicker auditDate;
-
+    private ArrayList<AuditReport> reports = new ArrayList<>();
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void SubMitButtoNOnClk(ActionEvent event) {
-         String title = TitleTextFeild.getText();
+        String title = TitleTextFeild.getText();
         String findings = FindingsTextArea.getText();
         String recommendations = RecomendationTextArea.getText();
         String comments = CommentsTextArea.getText();
@@ -69,9 +70,12 @@ public class SubmitAuditReportController implements Initializable {
             return;
         }
 
-        // If all validations pass, create AuditReport object and write to file
+        // If all validations pass, create AuditReport object and add it to the ArrayList
         AuditReport report = new AuditReport(title, findings, recommendations, comments, date);
-        report.writeToFile("AuditReport.bin");
+        reports.add(report);
+
+        // Write ArrayList to file
+        AuditReport.writeToFile(reports, "AuditReport.bin");
 
         // Clear all fields after submission
         clearFields();
@@ -95,7 +99,5 @@ public class SubmitAuditReportController implements Initializable {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
-    
     }
-    
 }
