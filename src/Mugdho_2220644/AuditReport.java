@@ -65,7 +65,8 @@ public class AuditReport implements Serializable {
         this.auditDate = auditDate;
     }
 
-       public static void writeToFile(ArrayList<AuditReport> reports, String filename) {
+    // Method to write AuditReport objects to a file
+    public static void writeToFile(ArrayList<AuditReport> reports, String filename) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename, true))) {
             for (AuditReport report : reports) {
                 oos.writeObject(report);
@@ -75,21 +76,30 @@ public class AuditReport implements Serializable {
             System.err.println("Error writing audit reports to file: " + e.getMessage());
         }
     }
+
 public static ArrayList<AuditReport> readFromFile(String filename) {
-        ArrayList<AuditReport> reports = new ArrayList<>();
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
-            while (true) {
-                try {
-                    AuditReport report = (AuditReport) ois.readObject();
+    ArrayList<AuditReport> reports = new ArrayList<>();
+    try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
+        while (true) {
+            try {
+                // Read an object from the file
+                Object obj = ois.readObject();
+                if (obj instanceof AuditReport) {
+                    // If the object is an instance of AuditReport, add it to the list
+                    AuditReport report = (AuditReport) obj;
                     reports.add(report);
-                } catch (EOFException e) {
-                    break; // End of file reached
                 }
+            } catch (EOFException e) {
+                // End of file reached
+                break;
             }
-            System.out.println("Audit reports loaded successfully.");
-        } catch (IOException | ClassNotFoundException e) {
-            System.err.println("Error reading audit reports from file: " + e.getMessage());
         }
-        return reports;
+        System.out.println("Audit reports loaded successfully.");
+    } catch (IOException | ClassNotFoundException e) {
+        System.err.println("Error reading audit reports from file: " + e.getMessage());
     }
+    return reports;
+}
+
+
 }
