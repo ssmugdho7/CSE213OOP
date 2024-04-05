@@ -4,10 +4,17 @@
  */
 package Mugdho_2220644;
 
+import java.time.LocalDate;
+import mainPKG.User;
+
 /**
  *
  * @author Lenovo
  */
-public class Accountant {
+public class Accountant extends User{
+    
+    public Accountant(String fullName, String userName, String phoneNumber, String password, LocalDate Dob) {
+        super(fullName, userName, phoneNumber, password, Dob);
+    }
     
 }
