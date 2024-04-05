@@ -6,7 +6,6 @@ package Mugdho_2220644;
 
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,13 +27,13 @@ public class SubmitAuditReportController implements Initializable {
     @FXML
     private TextField TitleTextFeild;
     @FXML
+    private TextArea FindingsTextArea;
+    @FXML
+    private TextArea RecomendationTextArea;
+    @FXML
+    private TextArea CommentsTextArea;
+    @FXML
     private DatePicker auditDate;
-    @FXML
-    private TextArea findingsTextArea;
-    @FXML
-    private TextArea recommendationsTextArea;
-    @FXML
-    private TextArea commentsTextArea;
 
     /**
      * Initializes the controller class.
@@ -45,58 +44,58 @@ public class SubmitAuditReportController implements Initializable {
     }    
 
     @FXML
-    private void submitButtonOnClick(ActionEvent event) {
-       
-        String reportTitle = TitleTextFeild.getText().trim();
-        String reportFindings = findingsTextArea.getText().trim();
-        LocalDate reportDate = auditDate.getValue(); 
- String reportRecommendations =  recommendationsTextArea.getText(); 
-        String reportComments =   commentsTextArea.getText();
-        
-        
-        
-        if (isValidInput(reportTitle, reportFindings,reportRecommendations,reportComments)) {
-//            Accountant.saveAuditReport(reportTitle, reportDescription);
-//            generatePDF(reportTitle, reportDescription);
-            showConfirmationAlert("Report submitted successfully.");
-            clearFields();
-        } 
-        
-        else {
-            showErrorAlert("Invalid input. Please check title and description.");
-            clearFields();
+    private void SubMitButtoNOnClk(ActionEvent event) {
+         String title = TitleTextFeild.getText();
+        String findings = FindingsTextArea.getText();
+        String recommendations = RecomendationTextArea.getText();
+        String comments = CommentsTextArea.getText();
+        LocalDate date = auditDate.getValue();
+
+        // Validate if all fields are filled
+        if (title.isEmpty() || findings.isEmpty() || recommendations.isEmpty() || comments.isEmpty() || date == null) {
+            showAlert("Error", "Please fill in all fields before submitting.");
+            return;
         }
-   
-    }
-    
-   public boolean isValidInput(String reportTitle, String reportFindings,String reportRecommendations,String reportComments) 
-   {
-        return reportTitle.length() > 0 && reportFindings.length() >0 && reportRecommendations.length() >0 && reportComments.length() >0;
-    }
 
-    private void showConfirmationAlert(String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Confirmation");
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
+        // Validate character limits
+        if (!isValidLength(title, 25) || !isValidLength(findings, 100) || !isValidLength(recommendations, 100) || !isValidLength(comments, 100)) {
+            showAlert("Error", "Input length exceeds limit.");
+            return;
+        }
 
-    private void showErrorAlert(String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
+        // Validate date
+        if (date.isAfter(LocalDate.now())) {
+            showAlert("Error", "Audit date cannot be in the future.");
+            return;
+        }
+
+        // If all validations pass, create AuditReport object and write to file
+        AuditReport report = new AuditReport(title, findings, recommendations, comments, date);
+        report.writeToFile("AuditReport.bin");
+
+        // Clear all fields after submission
+        clearFields();
     }
 
     private void clearFields() {
         TitleTextFeild.clear();
-        findingsTextArea.clear();
-        recommendationsTextArea.clear();
-        commentsTextArea.clear();
-    
-    } 
-}
+        FindingsTextArea.clear();
+        RecomendationTextArea.clear();
+        CommentsTextArea.clear();
+        auditDate.setValue(null);
+    }
 
- 
+    private boolean isValidLength(String text, int maxLength) {
+        return text.length() <= maxLength;
+    }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    
+    }
+    
+}
