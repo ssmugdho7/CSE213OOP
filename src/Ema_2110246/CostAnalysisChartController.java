@@ -20,11 +20,15 @@ import javafx.scene.control.Label;
 public class CostAnalysisChartController implements Initializable {
 
     @FXML
-    private PieChart viewPieChart;
-    @FXML
     private Label costAnalysisLabel;
     @FXML
+    private PieChart viewPieChart;
+    @FXML
     private Button backButton;
+    @FXML
+    private Label costAnalysisLabel1;
+    @FXML
+    private Button backButton1;
 
     /**
      * Initializes the controller class.

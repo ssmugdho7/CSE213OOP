@@ -19,7 +19,7 @@ import javafx.scene.control.TextArea;
 /**
  * FXML Controller class
  *
- * @author Lenovo
+ * @author ASUS
  */
 public class EmployeeAttendanceController implements Initializable {
 
