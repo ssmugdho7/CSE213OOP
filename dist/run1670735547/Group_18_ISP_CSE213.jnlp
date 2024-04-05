@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Group_18_ISP_CSE213.jnlp">
+  <information>
+    <title>Group_18_ISP_CSE213</title>
+    <vendor>Lenovo</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Group_18_ISP_CSE213.jar" size="10103112" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="mainPKG.main"  name="Group_18_ISP_CSE213" />
+  <update check="always"/>
+</jnlp>
