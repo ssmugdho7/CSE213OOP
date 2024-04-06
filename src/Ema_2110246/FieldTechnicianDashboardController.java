@@ -51,7 +51,7 @@ public class FieldTechnicianDashboardController implements Initializable {
 
     @FXML
     private void viewNotificationFromCustomerCareRepresentativeButtonOnClick(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(" Field_ViewNotification.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Field_ViewNotification.fxml"));
         Parent parent = fxmlLoader.load();
 
         // Retrieve preferred height and width from the loaded parent node
