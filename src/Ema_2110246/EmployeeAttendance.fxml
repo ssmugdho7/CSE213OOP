@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="701.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ema_2110246.EmployeeAttendanceController">
+<AnchorPane id="AnchorPane" prefHeight="528.0" prefWidth="701.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ema_2110246.EmployeeAttendanceController">
    <children>
       <ComboBox fx:id="EmpDesignatioonComboBox" layoutX="21.0" layoutY="134.0" prefHeight="31.0" prefWidth="211.0" promptText="Employee Designation" />
       <DatePicker fx:id="checkInDateDatepicker" layoutX="118.0" layoutY="54.0" prefHeight="31.0" prefWidth="127.0" />
@@ -31,7 +31,7 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TableView fx:id="Tableview" layoutX="22.0" layoutY="180.0" prefHeight="332.0" prefWidth="477.0">
+      <TableView fx:id="Tableview" layoutX="22.0" layoutY="180.0" prefHeight="332.0" prefWidth="509.0">
         <columns>
           <TableColumn fx:id="desigCol" prefWidth="105.0" text="Designation" />
           <TableColumn fx:id="datecol" prefWidth="71.0" text="Date" />
@@ -39,8 +39,8 @@
             <TableColumn fx:id="remarksCol" minWidth="0.0" prefWidth="180.0" text="Remarks" />
         </columns>
       </TableView>
-      <Button layoutX="537.0" layoutY="475.0" mnemonicParsing="false" onAction="#submitButtonOnClick" text="Submit" />
-      <Button layoutX="537.0" layoutY="435.0" mnemonicParsing="false" onAction="#LoadOnClick" prefHeight="31.0" prefWidth="67.0" text="Load" />
-      <Button fx:id="BAck" layoutX="590.0" layoutY="39.0" mnemonicParsing="false" onAction="#BAckOnClk" text="Back" />
+      <Button layoutX="552.0" layoutY="419.0" mnemonicParsing="false" onAction="#submitButtonOnClick" prefHeight="31.0" prefWidth="134.0" style="-fx-background-radius: 77;" text="Submit" />
+      <Button layoutX="552.0" layoutY="361.0" mnemonicParsing="false" onAction="#LoadOnClick" prefHeight="31.0" prefWidth="134.0" style="-fx-background-radius: 77;" text="Load" />
+      <Button fx:id="BAck" layoutX="555.0" layoutY="481.0" mnemonicParsing="false" onAction="#BAckOnClk" prefHeight="31.0" prefWidth="127.0" style="-fx-background-radius: 77;" text="Back" />
    </children>
 </AnchorPane>
