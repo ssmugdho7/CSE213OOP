@@ -60,21 +60,55 @@ public class MarketingManagerDashboardController implements Initializable {
         
 
     @FXML
-    private void paymentCostChartButtonOnClick(ActionEvent event) {
+    private void paymentCostChartButtonOnClick(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Cost Analysis chart.fxml"));
+        Parent parent = fxmlLoader.load();
+
+        // Retrieve preferred height and width from the loaded parent node
+        double prefHeight = parent.prefHeight(USE_COMPUTED_SIZE);
+        double prefWidth = parent.prefWidth(USE_COMPUTED_SIZE);
+
+        Stage stage = new Stage();
+        stage.setTitle("Payment Cost Chart ");
+        stage.setScene(new Scene(parent, prefWidth, prefHeight));
+        stage.show();
         
     }
 
     @FXML
-    private void paymentCostManagementButtonOnClick(ActionEvent event) {
+    private void paymentCostManagementButtonOnClick(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Cost Management.fxml"));
+        Parent parent = fxmlLoader.load();
+
+        // Retrieve preferred height and width from the loaded parent node
+        double prefHeight = parent.prefHeight(USE_COMPUTED_SIZE);
+        double prefWidth = parent.prefWidth(USE_COMPUTED_SIZE);
+
+        Stage stage = new Stage();
+        stage.setTitle(" Payment Cost Management ");
+        stage.setScene(new Scene(parent, prefWidth, prefHeight));
+        stage.show();
         
     }
 
     @FXML
     private void WriteupdatedRatesAndcontrolPipularpackageChartchart(ActionEvent event) {
+        
     }
 
     @FXML
-    private void identifyRiskFactorsButtonOnClick(ActionEvent event) {
+    private void identifyRiskFactorsButtonOnClick(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("RiskFactorsReport.fxml"));
+        Parent parent = fxmlLoader.load();
+
+        // Retrieve preferred height and width from the loaded parent node
+        double prefHeight = parent.prefHeight(USE_COMPUTED_SIZE);
+        double prefWidth = parent.prefWidth(USE_COMPUTED_SIZE);
+
+        Stage stage = new Stage();
+        stage.setTitle("Identify Risk Factors ");
+        stage.setScene(new Scene(parent, prefWidth, prefHeight));
+        stage.show();
         
     }
 
@@ -84,12 +118,34 @@ public class MarketingManagerDashboardController implements Initializable {
     }
 
     @FXML
-    private void attendanceCheckInButtonOnClick(ActionEvent event) {
+    private void attendanceCheckInButtonOnClick(ActionEvent event)throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EmployeeAttendance.fxml"));
+        Parent parent = fxmlLoader.load();
+
+        // Retrieve preferred height and width from the loaded parent node
+        double prefHeight = parent.prefHeight(USE_COMPUTED_SIZE);
+        double prefWidth = parent.prefWidth(USE_COMPUTED_SIZE);
+
+        Stage stage = new Stage();
+        stage.setTitle("Attendance Check in ");
+        stage.setScene(new Scene(parent, prefWidth, prefHeight));
+        stage.show();
         
     }
 
     @FXML
-    private void viewEmployeeTermsAndPolicyButtonOnClick(ActionEvent event) {
+    private void viewEmployeeTermsAndPolicyButtonOnClick(ActionEvent event)throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EmployeeTermsAndPolicy.fxml"));
+        Parent parent = fxmlLoader.load();
+
+        // Retrieve preferred height and width from the loaded parent node
+        double prefHeight = parent.prefHeight(USE_COMPUTED_SIZE);
+        double prefWidth = parent.prefWidth(USE_COMPUTED_SIZE);
+
+        Stage stage = new Stage();
+        stage.setTitle(" View EmployeeTermAndPolicy");
+        stage.setScene(new Scene(parent, prefWidth, prefHeight));
+        stage.show();
         
         
         
@@ -98,6 +154,17 @@ public class MarketingManagerDashboardController implements Initializable {
 
     @FXML
     private void logOutButtonOnClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/mainPKG/Login.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+
+            Stage currentStage = (Stage) logOutButton.getScene().getWindow();
+            currentStage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
         
        
     }
