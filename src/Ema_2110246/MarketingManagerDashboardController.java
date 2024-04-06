@@ -42,15 +42,31 @@ public class MarketingManagerDashboardController implements Initializable {
     }    
 
     @FXML
-    private void requestReimbursementButtonOnClick(ActionEvent event) {
+    private void requestReimbursementButtonOnClick(ActionEvent event)throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("RequestReimbursementPayment.fxml"));
+        Parent parent = fxmlLoader.load();
+
+        // Retrieve preferred height and width from the loaded parent node
+        double prefHeight = parent.prefHeight(USE_COMPUTED_SIZE);
+        double prefWidth = parent.prefWidth(USE_COMPUTED_SIZE);
+
+        Stage stage = new Stage();
+        stage.setTitle("Request Reimbursement Payment ");
+        stage.setScene(new Scene(parent, prefWidth, prefHeight));
+        stage.show();
+        
+        
     }
+        
 
     @FXML
     private void paymentCostChartButtonOnClick(ActionEvent event) {
+        
     }
 
     @FXML
     private void paymentCostManagementButtonOnClick(ActionEvent event) {
+        
     }
 
     @FXML
@@ -59,6 +75,7 @@ public class MarketingManagerDashboardController implements Initializable {
 
     @FXML
     private void identifyRiskFactorsButtonOnClick(ActionEvent event) {
+        
     }
 
 
@@ -68,14 +85,21 @@ public class MarketingManagerDashboardController implements Initializable {
 
     @FXML
     private void attendanceCheckInButtonOnClick(ActionEvent event) {
+        
     }
 
     @FXML
     private void viewEmployeeTermsAndPolicyButtonOnClick(ActionEvent event) {
+        
+        
+        
+        
     }
 
     @FXML
     private void logOutButtonOnClick(ActionEvent event) {
+        
+       
     }
 
     @FXML
