@@ -6,12 +6,12 @@ package Ema_2110246;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
+iimport javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+mport javafx.fxml.Initializable;
+
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
-
 /**
  * FXML Controller class
  *
@@ -19,11 +19,11 @@ import javafx.scene.layout.BorderPane;
  */
 public class FieldTechnicianDashboardController implements Initializable {
 
+
     @FXML
     private BorderPane borderPane;
     @FXML
     private Button logOutButton;
-
     /**
      * Initializes the controller class.
      */
@@ -31,7 +31,7 @@ public class FieldTechnicianDashboardController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
+    
     @FXML
     private void requestReimbursementButtonOnClick(ActionEvent event) {
     }
@@ -70,6 +70,7 @@ public class FieldTechnicianDashboardController implements Initializable {
 
     @FXML
     private void logOutButtonOnClick(ActionEvent event) {
+        
     }
-    
+
 }
