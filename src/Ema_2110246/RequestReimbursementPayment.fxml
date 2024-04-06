@@ -10,38 +10,52 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="549.0" prefWidth="749.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main_pkg.RequestReimbursementPaymentController">
+
+<AnchorPane id="AnchorPane" prefHeight="531.0" prefWidth="740.0" style="-fx-background-color: #ffbb98;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Ema_2110246.RequestReimbursementPaymentController">
    <children>
-      <Label layoutX="89.0" layoutY="40.0" text="Request Reimbursement Payment" textAlignment="CENTER" textFill="WHITE">
+      <Label layoutX="99.0" layoutY="50.0" style="-fx-background-color: #fbf0c3; -fx-background-color: #ffbb98;" text="Request Reimbursement Payment" textFill="#344648">
          <font>
             <Font name="System Bold Italic" size="33.0" />
          </font>
       </Label>
-      <Label layoutX="51.0" layoutY="141.0" prefHeight="25.0" prefWidth="124.0" text="Employee Name" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Label>
-      <TextField fx:id="employeeNameField" layoutX="212.0" layoutY="138.0" prefHeight="25.0" prefWidth="150.0" />
-      <Label layoutX="43.0" layoutY="237.0" prefHeight="25.0" prefWidth="162.0" text="Expense Description" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="43.0" layoutY="283.0" prefHeight="25.0" prefWidth="131.0" text="Expense Amount" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Label>
-      <TextField fx:id="expenseAmountField" layoutX="212.0" layoutY="280.0" prefHeight="25.0" prefWidth="150.0" />
-      <Label layoutX="497.0" layoutY="131.0" prefHeight="26.0" prefWidth="150.0" text="Payment Method" textFill="WHITE">
+      <Label layoutX="53.0" layoutY="151.0" prefHeight="25.0" prefWidth="146.0" text="Employee Name" textFill="#344648">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <RadioButton fx:id="bankTransferRadioButton" layoutX="497.0" layoutY="175.0" text="Bank Transfer" textFill="WHITE" />
-      <RadioButton fx:id="checkRadioButton" layoutX="497.0" layoutY="213.0" text="Check" textFill="WHITE" />
-      <Button layoutX="585.0" layoutY="506.0" onAction="#submitButtonOnClick" prefHeight="25.0" prefWidth="150.0" style="-fx-background-radius: 77;" text="Submit Request">
+      <Label layoutX="54.0" layoutY="195.0" prefHeight="26.0" prefWidth="130.0" text="Designation" textFill="#344648">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="247.0" prefHeight="25.0" prefWidth="162.0" text="Expense Description" textFill="#344648">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="293.0" prefHeight="26.0" prefWidth="150.0" text="Expense Amount" textFill="#344648">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="57.0" layoutY="340.0" prefHeight="25.0" prefWidth="124.0" text="Request Date" textFill="#344648">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="designationComboBox" layoutX="222.0" layoutY="192.0" prefWidth="150.0" />
+      <ComboBox fx:id="ExpenseDescriptionComboBox" layoutX="222.0" layoutY="244.0" prefWidth="150.0" />
+      <TextField fx:id="expenseAmountField" layoutX="222.0" layoutY="290.0" prefHeight="25.0" prefWidth="150.0" />
+      <DatePicker fx:id="reimbursementDate" layoutX="222.0" layoutY="337.0" prefHeight="17.0" prefWidth="150.0" />
+      <Label layoutX="507.0" layoutY="141.0" prefHeight="26.0" prefWidth="150.0" text="Payment Method" textFill="#344648">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="bankTransferRadioButton" layoutX="507.0" layoutY="185.0" prefHeight="21.0" prefWidth="146.0" text="Bank Transfer" textFill="#344648" />
+      <RadioButton fx:id="checkRadioButton" layoutX="507.0" layoutY="223.0" prefHeight="21.0" prefWidth="82.0" text="Check" textFill="#344648" />
+      <RadioButton fx:id="mobileBankingRadioButton" ellipsisString="" layoutX="507.0" layoutY="265.0" mnemonicParsing="false" text="Mobile Banking" textFill="#344648" />
+      <Button layoutX="557.0" layoutY="485.0" onAction="#submitButtonOnClick" prefHeight="31.0" prefWidth="162.0" style="-fx-background-radius: 77;" text="Submit Request">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
@@ -49,19 +63,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ComboBox fx:id="ExpenseDescriptionComboBox" layoutX="212.0" layoutY="234.0" prefWidth="150.0" />
-      <RadioButton fx:id="mobileBankingRadioButton" layoutX="497.0" layoutY="255.0" mnemonicParsing="false" text="Mobile Banking" textFill="WHITE" />
-      <ComboBox fx:id="designationComboBox" layoutX="212.0" layoutY="182.0" prefWidth="150.0" />
-      <Label layoutX="50.0" layoutY="185.0" text="Designation" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Label>
-      <DatePicker fx:id="reimbursementDate" layoutX="212.0" layoutY="327.0" prefHeight="17.0" prefWidth="150.0" />
-      <Label layoutX="47.0" layoutY="330.0" prefHeight="25.0" prefWidth="124.0" text="Request Date" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Label>
+      <TextField fx:id="employeeNameField" layoutX="222.0" layoutY="148.0" prefHeight="25.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
