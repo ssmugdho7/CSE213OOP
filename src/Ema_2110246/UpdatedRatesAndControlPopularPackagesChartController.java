@@ -13,7 +13,7 @@ import javafx.fxml.Initializable;
  *
  * @author ASUS
  */
-public class ViewCustomerRatingController implements Initializable {
+public class UpdatedRatesAndControlPopularPackagesChartController implements Initializable {
 
     /**
      * Initializes the controller class.

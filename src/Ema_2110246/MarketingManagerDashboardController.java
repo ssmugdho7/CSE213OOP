@@ -92,7 +92,18 @@ public class MarketingManagerDashboardController implements Initializable {
     }
 
     @FXML
-    private void WriteupdatedRatesAndcontrolPipularpackageChartchart(ActionEvent event) {
+    private void WriteupdatedRatesAndcontrolPipularpackageChartchart(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("updated rates and control popular packages chart.fxml"));
+        Parent parent = fxmlLoader.load();
+
+        // Retrieve preferred height and width from the loaded parent node
+        double prefHeight = parent.prefHeight(USE_COMPUTED_SIZE);
+        double prefWidth = parent.prefWidth(USE_COMPUTED_SIZE);
+
+        Stage stage = new Stage();
+        stage.setTitle(" Updated rates and control popular packages chart");
+        stage.setScene(new Scene(parent, prefWidth, prefHeight));
+        stage.show();
         
     }
 
@@ -143,7 +154,7 @@ public class MarketingManagerDashboardController implements Initializable {
         double prefWidth = parent.prefWidth(USE_COMPUTED_SIZE);
 
         Stage stage = new Stage();
-        stage.setTitle(" View EmployeeTermAndPolicy");
+        stage.setTitle("  EmployeeTermAndPolicy");
         stage.setScene(new Scene(parent, prefWidth, prefHeight));
         stage.show();
         

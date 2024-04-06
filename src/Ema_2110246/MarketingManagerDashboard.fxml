@@ -31,7 +31,6 @@
               <MenuItem mnemonicParsing="false" onAction="#WriteupdatedRatesAndcontrolPipularpackageChartchart" text="Write updated rates and control popular packages chart" />
                   <MenuItem mnemonicParsing="false" onAction="#identifyRiskFactorsButtonOnClick" text="Identify Risk Factors" />
                   <MenuItem mnemonicParsing="false" onAction="#viewAuditOnClk" text="View Audit Report" />
-                  <MenuItem mnemonicParsing="false" onAction="#WriteupdatedRatesAndcontrolPipularpackageChartchart" text="View Customer Ratings" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" style="-fx-background-color: white;" text="Navigator">
