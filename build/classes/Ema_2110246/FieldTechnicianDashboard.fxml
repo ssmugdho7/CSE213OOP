@@ -51,7 +51,7 @@
             <Label />
             <ImageView fitHeight="88.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Documents/GitHub/CSE213OOP/src/images/download.jpeg" />
+                  <Image url="@../images/download.png" />
                </image></ImageView>
             <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="414.0" text="User: Field Technician Dashboard">
                <font>
@@ -60,7 +60,7 @@
             </Label>
             <ImageView fitHeight="405.0" fitWidth="438.0" layoutX="10.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Documents/GitHub/CSE213OOP/src/images/field%20tec.gif" />
+                  <Image url="@../images/field%20tec.gif" />
                </image>
             </ImageView>
             <Label layoutX="10.0" layoutY="332.0" />
