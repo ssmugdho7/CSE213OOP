@@ -100,11 +100,11 @@
     </TableView>
 
     <!-- Total Salary Label -->
-    <Label fx:id="totalSalaryLabel" layoutX="20.0" layoutY="610.0" text="Total Salary:">
+    <Label layoutX="20.0" layoutY="610.0" text="Total Salary:">
       <font>
          <Font name="System Bold" size="14.0" />
       </font></Label>
-   <ComboBox fx:id="fildercOMBOBOX" layoutX="564.0" layoutY="65.0" prefWidth="150.0" promptText="Filter by" />
+   <ComboBox fx:id="fildercOMBOBOX" layoutX="564.0" layoutY="65.0" onAction="#filtercomboinClk" prefWidth="150.0" promptText="Filter by" />
    <Label fx:id="totalSallaryLabel" layoutX="123.0" layoutY="602.0" prefHeight="39.0" prefWidth="161.0" />
    <Label layoutX="18.0" layoutY="14.0" prefHeight="39.0" prefWidth="407.0" text="Payroll processing">
       <font>

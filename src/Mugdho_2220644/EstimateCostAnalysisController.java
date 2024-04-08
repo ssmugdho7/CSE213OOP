@@ -4,32 +4,38 @@
  */
 package Mugdho_2220644;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
+
+import java.io.Serializable;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-/**
- * FXML Controller class
- *
- * @author Lenovo
- */
-public class EstimateCostAnalysisController implements Initializable {
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+
+public class EstimateCostAnalysisController implements Initializable,Serializable {
+    
+    private ArrayList<CostEstimation> costEstimations = new ArrayList<>();
+    private final String fileName = "costEstimation.bin";
 
     @FXML
-    private TextField subscriberField;
+    private TextField subscriberTextField;
+
     @FXML
-    private TextField revenueField;
+    private TextField revenueTextField;
+
     @FXML
-    private TextField fixedCostsField;
+    private TextField fixedCostsTextField;
+
     @FXML
-    private TextField variableCostsField;
+    private TextField variableCostsTextField;
+
     @FXML
-    private TextField additionalCostsField;
+    private TextField additionalCostsTextField;
     @FXML
     private Label totalRevenueLabel;
     @FXML
@@ -37,18 +43,28 @@ public class EstimateCostAnalysisController implements Initializable {
     @FXML
     private Label netProfitLabel;
     @FXML
-    private Button SubmitToMDOnClick;
+    private Button submitToMDButton;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-
-    @FXML
-    private void calculateCosts(ActionEvent event) {
+    public void initialize(URL location, ResourceBundle resources) {
+        // Initialization code here
     }
     
+    @FXML
+    void calculateCostButtonOnClick(ActionEvent event) {
+        int subscriber = Integer.parseInt(subscriberTextField.getText());
+        float revenue = Float.parseFloat(revenueTextField.getText());
+        float fixedCosts = Float.parseFloat(fixedCostsTextField.getText());
+        float variableCosts = Float.parseFloat(variableCostsTextField.getText());
+        float additionalCost = Float.parseFloat(additionalCostsTextField.getText());
+
+        CostEstimation costEstimation = new CostEstimation(subscriber, revenue, fixedCosts, variableCosts, additionalCost);
+        costEstimations.add(costEstimation);
+    }
+
+    @FXML
+    void submitButtonToMDOnClick(ActionEvent event) {
+        CostEstimation.writeToFile(costEstimations, fileName);
+    }
+
 }

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="600.0" style="-fx-background-color: #1497ab;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Mugdho_2220644.EstimateCostAnalysisController">
+<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="600.0" style="-fx-background-color: #1497ab;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mugdho_2220644.EstimateCostAnalysisController">
     <children>
         <VBox layoutX="50.0" layoutY="50.0" spacing="10">
             <Label style="-fx-font-size: 18px;" text="ISP Monthly Cost Slip Estimation" textFill="#e3dd00" />
@@ -32,34 +32,34 @@
                   <font>
                      <Font name="Comic Sans MS Bold" size="15.0" />
                   </font></Label>
-                    <TextField fx:id="subscriberField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <TextField fx:id="subscriberTextField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
                     <Label text="Average Revenue per Subscriber ($):" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1">
                   <font>
                      <Font name="Comic Sans MS Bold" size="15.0" />
                   </font></Label>
-                    <TextField fx:id="revenueField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <TextField fx:id="revenueTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                     <Label text="Fixed Costs ($):" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="2">
                   <font>
                      <Font name="Comic Sans MS Bold" size="15.0" />
                   </font></Label>
-                    <TextField fx:id="fixedCostsField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <TextField fx:id="fixedCostsTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                     <Label text="Variable Costs per Subscriber ($):" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="3">
                   <font>
                      <Font name="Comic Sans MS Bold" size="15.0" />
                   </font></Label>
-                    <TextField fx:id="variableCostsField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <TextField fx:id="variableCostsTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                     <Label text="Additional Costs ($):" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="4">
                   <font>
                      <Font name="Comic Sans MS Bold" size="15.0" />
                   </font></Label>
-                    <TextField fx:id="additionalCostsField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    <TextField fx:id="additionalCostsTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                 </children>
             </GridPane>
-            <Button onAction="#calculateCosts" prefHeight="22.0" prefWidth="490.0" text="Calculate" />
+            <Button onAction="#calculateCostButtonOnClick" prefHeight="22.0" prefWidth="490.0" text="Calculate Cost" />
             <Label fx:id="totalRevenueLabel" />
             <Label fx:id="totalCostsLabel" />
             <Label fx:id="netProfitLabel" />
         </VBox>
-      <Button fx:id="SubmitToMDOnClick" layoutX="393.0" layoutY="385.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="152.0" text="Submit" />
+      <Button fx:id="submitToMDButton" layoutX="393.0" layoutY="385.0" mnemonicParsing="false" onAction="#submitButtonToMDOnClick" prefHeight="31.0" prefWidth="152.0" text="Submit" />
     </children>
 </AnchorPane>
