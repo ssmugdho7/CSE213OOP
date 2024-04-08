@@ -91,13 +91,14 @@ public class PayrollProcessingController implements Initializable {
         sallaryMonthCombobox.getItems().addAll("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
 
         // Initialize TableView
+        fildercOMBOBOX.getItems().addAll("Latest Date", "Month");
         initializeTableView();
 
         // Initialize records list
         records = new ArrayList<>();
 
         // Listener for searchTextField
-        searchTextField.textProperty().addListener((observable, oldValue, newValue) -> searchButtonClicked());
+        searchTextField.textProperty().addListener((observable, oldValue, newValue) -> searchRecordsByEmpId());
     }
 
     private void initializeTableView() {
@@ -122,46 +123,98 @@ public class PayrollProcessingController implements Initializable {
 
     @FXML
     private void calculateTotalSalaryButtonClicked(ActionEvent event) {
-        float totalSalary = Float.parseFloat(salaryTextField.getText())
-                + Float.parseFloat(bonusesTextField.getText())
-                + Float.parseFloat(overtimeTextField.getText());
-        totalSalaryLabel.setText(String.valueOf(totalSalary));
+        try {
+            String salaryText = salaryTextField.getText();
+            String bonusesText = bonusesTextField.getText();
+            String overtimeText = overtimeTextField.getText();
+
+            if (salaryText.isEmpty() || bonusesText.isEmpty() || overtimeText.isEmpty()) {
+                showAlert(AlertType.ERROR, "Error", "Fields are empty", "Please enter values in all fields.");
+                return;
+            }
+
+            float salary = Float.parseFloat(salaryText);
+            float bonuses = Float.parseFloat(bonusesText);
+            float overtime = Float.parseFloat(overtimeText);
+
+            float totalSalary = salary + bonuses + overtime;
+            totalSallaryLabel.setText(String.valueOf(totalSalary));
+        } catch (NumberFormatException e) {
+            showAlert(AlertType.ERROR, "Error", "Invalid input", "Please enter valid numbers in salary, bonuses, and overtime fields.");
+        }
     }
 
     @FXML
     private void saveRecordButtonClicked(ActionEvent event) {
-               if (validateInput()) {
-        try {
-            int userId = Math.round(Float.parseFloat(userIdTextField.getText()));
-int salary = (int) Math.round(Float.parseFloat(salaryTextField.getText()));
-
-           
-            int bonuses = (int) Math.round(Float.parseFloat(bonusesTextField.getText()));
-            int overtime = (int) Math.round(Float.parseFloat(overtimeTextField.getText()));
-
-            Payroll payroll = new Payroll(
-                salary,
-                bonuses,
-                overtime,
-                sallaryMonthCombobox.getValue(),
-                sallaryDate.getValue(),
-                userId,
-                nameTextField.getText(),
-                designationComboBox.getValue(),
-                paymentMethodComboBox.getValue()
-            );
-            records.add(payroll);
-            payroll.writeToBinaryFile(records);
-            updateTableView();
-        } catch (NumberFormatException e) {
-            showAlert(AlertType.ERROR, "Error", "Invalid input. Please enter valid numeric values.", "");
+        if (validateSysInput()) {
+            Payroll newPayroll = createPayrollFromInput();
+            if (newPayroll != null) {
+                records.add(newPayroll);
+                updateTableView();
+                newPayroll.writeToBinaryFile(records);
+                clearInputFields();
+            } else {
+                showAlert(Alert.AlertType.ERROR, "Error", "Failed to save record", "Please fill up all the fields properly.");
+            }
         }
     }
+
+    private void clearInputFields() {
+        userIdTextField.clear();
+        nameTextField.clear();
+        designationComboBox.getSelectionModel().clearSelection();
+        paymentMethodComboBox.getSelectionModel().clearSelection();
+        salaryTextField.clear();
+        bonusesTextField.clear();
+        overtimeTextField.clear();
+        sallaryMonthCombobox.getSelectionModel().clearSelection();
+        sallaryDate.setValue(null);
+    }
+
+    private boolean validateSysInput() {
+        if (userIdTextField.getText().isEmpty()
+                || nameTextField.getText().isEmpty()
+                || designationComboBox.getSelectionModel().isEmpty()
+                || paymentMethodComboBox.getSelectionModel().isEmpty()
+                || salaryTextField.getText().isEmpty()
+                || bonusesTextField.getText().isEmpty()
+                || overtimeTextField.getText().isEmpty()
+                || sallaryMonthCombobox.getSelectionModel().isEmpty()
+                || sallaryDate.getValue() == null) {
+            showAlert(Alert.AlertType.ERROR, "Incomplete Input", "Please fill up all the fields properly.", null);
+            return false;
+        }
+        return true;
+    }
+
+// Method to show an alert dialog
+    private void showAlert(Alert.AlertType alertType, String title, String message, String details) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+
+        alert.showAndWait();
+    }
+
+    private Payroll createPayrollFromInput() {
+        int empId = Integer.parseInt(userIdTextField.getText());
+        String empName = nameTextField.getText();
+        String empDesign = designationComboBox.getValue();
+        String paymentMethod = paymentMethodComboBox.getValue();
+        float salary = Float.parseFloat(salaryTextField.getText());
+        float bonuses = Float.parseFloat(bonusesTextField.getText());
+        float overtime = Float.parseFloat(overtimeTextField.getText());
+        String month = sallaryMonthCombobox.getValue();
+        LocalDate datePaid = sallaryDate.getValue();
+
+        return new Payroll(empId, empName, empDesign, paymentMethod, salary, bonuses, overtime, month, datePaid);
+
     }
 
     private boolean validateInput() {
         // Get values from input fields
-        
+
         String name = nameTextField.getText();
         String userIdText = userIdTextField.getText();
         float salary = Float.parseFloat(salaryTextField.getText());
@@ -174,12 +227,11 @@ int salary = (int) Math.round(Float.parseFloat(salaryTextField.getText()));
             return false;
         }
 
-        // Validate user ID (should be a valid float)
-        float userId;
+        int userId;
         try {
-            userId = Float.parseFloat(userIdText);
+            userId = Integer.parseInt(userIdText);
         } catch (NumberFormatException e) {
-            showAlert(AlertType.ERROR, "Error", "Invalid user ID. Please enter a valid floating-point value.", "");
+            showAlert(AlertType.ERROR, "Error", "Invalid user ID. Please enter a valid int value.", "");
             return false;
         }
 
@@ -205,21 +257,17 @@ int salary = (int) Math.round(Float.parseFloat(salaryTextField.getText()));
         return true;
     }
 
-    private void showAlert(AlertType ERROR, String title, String message, String string) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
-
     @FXML
     private void loadButtonClicked(ActionEvent event) {
         recordsTableView.getItems().clear();
-        Payroll payroll = new Payroll(0, "", "", "", 0.0f, 0.0f, 0.0f, "", LocalDate.now()); // Adjust constructor arguments as needed
-        records = payroll.readFromBinaryFile();
-        updateTableView();
-        searchRecordsByEmpId();
+        try {
+            Payroll payroll = new Payroll(); // Assuming default constructor is provided
+            records = payroll.readFromBinaryFile();
+            updateTableView();
+            searchRecordsByEmpId();
+        } catch (Exception e) {
+            showAlert(AlertType.ERROR, "Error", "Failed to load records", e.getMessage());
+        }
     }
 
     private void searchRecordsByEmpId() {
@@ -243,12 +291,16 @@ int salary = (int) Math.round(Float.parseFloat(salaryTextField.getText()));
         salaryTextField.clear();
         bonusesTextField.clear();
         overtimeTextField.clear();
-        totalSalaryLabel.setText("Sallary Label");
+        totalSallaryLabel.setText("");
 
         recordsTableView.getItems().clear();
-        Payroll payroll = new Payroll(0, "", "", "", 0.0f, 0.0f, 0.0f, "", LocalDate.now()); // Adjust constructor arguments as needed
-        records = payroll.readFromBinaryFile();
-        updateTableView();
+        try {
+            Payroll payroll = new Payroll(0, "", "", "", 0.0f, 0.0f, 0.0f, "", LocalDate.now()); // Provide appropriate constructor arguments
+            records = payroll.readFromBinaryFile();
+            updateTableView();
+        } catch (Exception e) {
+            showAlert(AlertType.ERROR, "Error", "Failed to refresh records", e.getMessage());
+        }
     }
 
     private void updateTableView() {
@@ -262,13 +314,10 @@ int salary = (int) Math.round(Float.parseFloat(salaryTextField.getText()));
         if (filterCriteria != null) {
             switch (filterCriteria) {
                 case "Latest Date":
-                    records.sort(Comparator.comparing(Payroll::getDatePaid).reversed());
-                    break;
-                case "Designation":
-                    records.sort(Comparator.comparing(Payroll::getEmpDesign));
+                    records.sort(Comparator.comparing(Payroll::getDatePaid, Comparator.nullsLast(Comparator.naturalOrder())).reversed());
                     break;
                 case "Month":
-                    records.sort(Comparator.comparing(Payroll::getMonth));
+                    records.sort(Comparator.comparing(Payroll::getMonth, Comparator.nullsLast(Comparator.naturalOrder())));
                     break;
                 default:
                     break;
