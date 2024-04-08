@@ -4,21 +4,15 @@
  */
 package Mugdho_2220644;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
-import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -28,17 +22,17 @@ import javafx.stage.Stage;
 public class ProcessReimbursementController implements Initializable {
 
     @FXML
-    private TextField amount;
+    private TextField amountTextField;
     @FXML
-    private ComboBox<?> ExpenseDescriptionComboBox;
+    private ComboBox<?> expenseTypeComboBox;
     @FXML
-    private DatePicker expenseDate;
+    private DatePicker expenseDatePicker;
     @FXML
-    private TextField name;
+    private TextField employeeNameTextField;
     @FXML
-    private RadioButton PayableRadioButton;
+    private RadioButton payableRadioButton;
     @FXML
-    private RadioButton NotPayableRadioButton;
+    private RadioButton notPayableRadioButton;
     @FXML
     private ComboBox<?> designationComboBox;
 
@@ -51,22 +45,11 @@ public class ProcessReimbursementController implements Initializable {
     }    
 
     @FXML
-    private void saveRecordsAsBinFileOnClick(ActionEvent event) {
+    private void saveRecordsButtonOnClick(ActionEvent event) {
     }
 
     @FXML
-    private void loadPrevRecordsOnClick(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ReimbursementExecutionRecords.fxml"));
-        Parent parent = fxmlLoader.load();
-        
-        // Retrieve preferred height and width from the loaded parent node
-        double prefHeight = parent.prefHeight(USE_COMPUTED_SIZE);
-        double prefWidth = parent.prefWidth(USE_COMPUTED_SIZE);
-        
-        Stage stage = new Stage();
-        stage.setTitle("Reimbursement Processing records");
-        stage.setScene(new Scene(parent, prefWidth, prefHeight));
-        stage.show();
+    private void loadPrevRecordsOnClick(ActionEvent event) {
     }
     
 }

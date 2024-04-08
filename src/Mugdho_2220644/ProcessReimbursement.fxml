@@ -38,26 +38,26 @@
             <Font name="Garamond Bold" size="22.0" />
          </font>
       </Label>
-      <Button layoutX="25.0" layoutY="433.0" mnemonicParsing="false" onAction="#saveRecordsAsBinFileOnClick" prefHeight="44.0" prefWidth="700.0" style="-fx-background-color: blue; -fx-background-radius: 77;" text="Save Records" textFill="WHITE">
+      <Button layoutX="25.0" layoutY="433.0" mnemonicParsing="false" onAction="#saveRecordsButtonOnClick" prefHeight="44.0" prefWidth="700.0" style="-fx-background-color: blue; -fx-background-radius: 77;" text="Save Records" textFill="WHITE">
          <font>
             <Font name="Lucida Handwriting Italic" size="17.0" />
          </font>
       </Button>
-      <TextField fx:id="amount" layoutX="196.0" layoutY="300.0" prefHeight="25.0" prefWidth="231.0" />
-      <ComboBox fx:id="ExpenseDescriptionComboBox" layoutX="196.0" layoutY="333.0" prefHeight="25.0" prefWidth="231.0" />
-      <DatePicker fx:id="expenseDate" layoutX="196.0" layoutY="190.0" prefHeight="25.0" prefWidth="231.0" />
-      <TextField fx:id="name" layoutX="196.0" layoutY="156.0" prefHeight="25.0" prefWidth="231.0" />
+      <TextField fx:id="amountTextField" layoutX="196.0" layoutY="300.0" prefHeight="25.0" prefWidth="231.0" />
+      <ComboBox fx:id="expenseTypeComboBox" layoutX="196.0" layoutY="333.0" prefHeight="25.0" prefWidth="231.0" />
+      <DatePicker fx:id="expenseDatePicker" layoutX="196.0" layoutY="190.0" prefHeight="25.0" prefWidth="231.0" />
+      <TextField fx:id="employeeNameTextField" layoutX="196.0" layoutY="156.0" prefHeight="25.0" prefWidth="231.0" />
       <Button layoutX="495.0" layoutY="290.0" mnemonicParsing="false" onAction="#loadPrevRecordsOnClick" prefHeight="73.0" prefWidth="231.0" style="-fx-background-color: red;" text="Check  Saved Records" textFill="WHITE">
          <font>
             <Font name="Lucida Handwriting Italic" size="17.0" />
          </font>
       </Button>
-      <RadioButton fx:id="PayableRadioButton" layoutX="195.0" layoutY="267.0" mnemonicParsing="false" text="Payable" textFill="WHITE">
+      <RadioButton fx:id="payableRadioButton" layoutX="195.0" layoutY="267.0" mnemonicParsing="false" text="Payable" textFill="WHITE">
          <font>
             <Font name="Garamond Bold" size="18.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="NotPayableRadioButton" layoutX="300.0" layoutY="267.0" mnemonicParsing="false" text="Not Payable" textFill="WHITE">
+      <RadioButton fx:id="notPayableRadioButton" layoutX="300.0" layoutY="267.0" mnemonicParsing="false" text="Not Payable" textFill="WHITE">
          <font>
             <Font name="Garamond Bold" size="18.0" />
          </font>
