@@ -24,7 +24,7 @@ public class ProcessReimbursementController implements Initializable {
     @FXML
     private TextField amountTextField;
     @FXML
-    private ComboBox<?> expenseTypeComboBox;
+    private ComboBox<String> expenseTypeComboBox;
     @FXML
     private DatePicker expenseDatePicker;
     @FXML
@@ -34,7 +34,7 @@ public class ProcessReimbursementController implements Initializable {
     @FXML
     private RadioButton notPayableRadioButton;
     @FXML
-    private ComboBox<?> designationComboBox;
+    private ComboBox<String> designationComboBox;
 
     /**
      * Initializes the controller class.

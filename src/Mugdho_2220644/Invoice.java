@@ -25,6 +25,13 @@ public class Invoice implements Serializable {
     private String services;
     private float amount;
 
+    public Invoice(int customerId, String address, LocalDate invoiceDate, String services) {
+        this.customerId = customerId;
+        this.address = address;
+        this.invoiceDate = invoiceDate;
+        this.services = services;
+    }
+
     public Invoice(int customerId, String address, LocalDate invoiceDate, String services, float amount) {
         this.customerId = customerId;
         this.address = address;
@@ -126,5 +133,42 @@ public class Invoice implements Serializable {
     }
 
 
+     // Method to write Invoice objects to a binary file
+    public static void writeToFileForInvoiceRequest(ArrayList<Invoice> invoices, String filename) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename,true))) {
+            for (Invoice invoice : invoices) {
+                oos.writeObject(invoice);
+            }
+            System.out.println("Invoices saved successfully.");
+        } catch (IOException e) {
+            System.err.println("Error writing invoices to file: " + e.getMessage());
+        }
+    }
+    
+     // Method to read invoices from a binary file
+    public static ArrayList<Invoice> readFromFileForInvoiceRequest(String filename) {
+        ArrayList<Invoice> invoices = new ArrayList<>();
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
+            while (true) {
+                try {
+                    // Read an object from the file
+                    Object obj = ois.readObject();
+                    if (obj instanceof Invoice) {
+                        // If the object is an instance of Invoice, add it to the list
+                        Invoice invoice = (Invoice) obj;
+                        invoices.add(invoice);
+                    }
+                } catch (EOFException e) {
+                    // End of file reached
+                    break;
+                }
+            }
+            System.out.println("Invoices loaded successfully.");
+        } catch (IOException | ClassNotFoundException e) {
+            System.err.println("Error reading invoices from file: " + e.getMessage());
+        }
+        return invoices;
+    }
+    
 
 }
