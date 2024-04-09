@@ -4,9 +4,17 @@
  */
 package Ema_2110246;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -15,6 +23,9 @@ import javafx.fxml.Initializable;
  */
 public class Field_ReadCustomerComplainController implements Initializable {
 
+    @FXML
+    private Button sendFeedback;
+
     /**
      * Initializes the controller class.
      */
@@ -22,5 +33,19 @@ public class Field_ReadCustomerComplainController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void sendFeedbackOnClick(ActionEvent event) {
+        try {
+            FXMLLoader termsLoader = new FXMLLoader(getClass().getResource("Field_ComplainFeedback.fxml"));
+            Parent termsRoot = termsLoader.load();
+            Stage termsStage = new Stage();
+            termsStage.setTitle("Send feedback");
+            termsStage.setScene(new Scene(termsRoot));
+            termsStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     
 }
