@@ -36,7 +36,7 @@ public class FieldTechnicianDashboardController implements Initializable {
     
     @FXML
     private void requestReimbursementButtonOnClick(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Field_Request_Reimbursement.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("RequestReimbursementPayment.fxml"));
         Parent parent = fxmlLoader.load();
 
         // Retrieve preferred height and width from the loaded parent node
@@ -130,7 +130,7 @@ public class FieldTechnicianDashboardController implements Initializable {
 
     @FXML
     private void attendanceCheckInButtonOnClick(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Field_Attendance.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EmployeeAttendance.fxml"));
         Parent parent = fxmlLoader.load();
 
         // Retrieve preferred height and width from the loaded parent node
@@ -145,7 +145,7 @@ public class FieldTechnicianDashboardController implements Initializable {
 
     @FXML
     private void employeeTermsAndPolicyButtonOnClick(ActionEvent event)  throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Field_ViewTermsAndPolicy.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EmployeeTermsAndPolicy.fxml"));
         Parent parent = fxmlLoader.load();
 
         // Retrieve preferred height and width from the loaded parent node
