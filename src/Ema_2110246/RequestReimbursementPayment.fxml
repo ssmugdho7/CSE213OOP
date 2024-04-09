@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="531.0" prefWidth="740.0" style="-fx-background-color: #ffbb98;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Ema_2110246.RequestReimbursementPaymentController">
+<AnchorPane id="AnchorPane" prefHeight="531.0" prefWidth="740.0" style="-fx-background-color: #ffbb98;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ema_2110246.RequestReimbursementPaymentController">
    <children>
       <Label layoutX="99.0" layoutY="50.0" style="-fx-background-color: #fbf0c3; -fx-background-color: #ffbb98;" text="Request Reimbursement Payment" textFill="#344648">
          <font>
@@ -55,7 +54,7 @@
       <RadioButton fx:id="bankTransferRadioButton" layoutX="507.0" layoutY="185.0" prefHeight="21.0" prefWidth="146.0" text="Bank Transfer" textFill="#344648" />
       <RadioButton fx:id="checkRadioButton" layoutX="507.0" layoutY="223.0" prefHeight="21.0" prefWidth="82.0" text="Check" textFill="#344648" />
       <RadioButton fx:id="mobileBankingRadioButton" ellipsisString="" layoutX="507.0" layoutY="265.0" mnemonicParsing="false" text="Mobile Banking" textFill="#344648" />
-      <Button layoutX="557.0" layoutY="485.0" onAction="#submitButtonOnClick" prefHeight="31.0" prefWidth="162.0" style="-fx-background-radius: 77;" text="Submit Request">
+      <Button layoutX="557.0" layoutY="485.0" onAction="#submitRequestButtonOnClick" prefHeight="31.0" prefWidth="162.0" style="-fx-background-radius: 77;" text="Submit Request">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
