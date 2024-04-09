@@ -130,16 +130,36 @@ public class RequestReimbursementPaymentController implements Initializable {
         
     }
 
-    private void showAlert(String validation_Error, String invalid_expense_amount_format, Alert.AlertType alertType) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    private void showAlert(String title, String message, Alert.AlertType alertType) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+        
     }
 
     private void clearFields() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        employeeNameField.clear();
+        expenseAmountField.clear();
+        bankTransferRadioButton.setSelected(false);
+        checkRadioButton.setSelected(false);
+        mobileBankingRadioButton.setSelected(false);
+        ExpenseDescriptionComboBox.getSelectionModel().clearSelection();
+        reimbursementDate.setValue(null);
+        designationComboBox.getSelectionModel().clearSelection();
+       
     }
 
     private String getSelectedPaymentMethod() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (bankTransferRadioButton.isSelected()) {
+            return "Bank Transfer";
+        } else if (checkRadioButton.isSelected()) {
+            return "Check";
+        } else if (mobileBankingRadioButton.isSelected()) {
+            return "Mobile Banking";
+        }
+        return null;
     }
     
 }
