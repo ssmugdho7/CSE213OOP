@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="528.0" prefWidth="701.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ema_2110246.EmployeeAttendanceController">
+<AnchorPane id="AnchorPane" prefHeight="528.0" prefWidth="701.0" style="-fx-background-color: #c80815;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ema_2110246.EmployeeAttendanceController">
    <children>
       <ComboBox fx:id="EmpDesignatioonComboBox" layoutX="21.0" layoutY="134.0" prefHeight="31.0" prefWidth="211.0" promptText="Employee Designation" />
       <DatePicker fx:id="checkInDateDatepicker" layoutX="118.0" layoutY="54.0" prefHeight="31.0" prefWidth="127.0" />
@@ -39,8 +39,8 @@
             <TableColumn fx:id="remarksCol" minWidth="0.0" prefWidth="180.0" text="Remarks" />
         </columns>
       </TableView>
-      <Button layoutX="552.0" layoutY="419.0" mnemonicParsing="false" onAction="#submitButtonOnClick" prefHeight="31.0" prefWidth="134.0" style="-fx-background-radius: 77;" text="Submit" />
-      <Button layoutX="552.0" layoutY="361.0" mnemonicParsing="false" onAction="#LoadOnClick" prefHeight="31.0" prefWidth="134.0" style="-fx-background-radius: 77;" text="Load" />
-      <Button fx:id="BAck" layoutX="555.0" layoutY="481.0" mnemonicParsing="false" onAction="#BAckOnClk" prefHeight="31.0" prefWidth="127.0" style="-fx-background-radius: 77;" text="Back" />
+      <Button layoutX="541.0" layoutY="432.0" mnemonicParsing="false" onAction="#submitButtonOnClick" prefHeight="33.0" prefWidth="145.0" style="-fx-background-radius: 77; -fx-border-radius: 77; -fx-border-color: black; -fx-background-color: #c80815;" text="Submit" textFill="WHITE" />
+      <Button layoutX="541.0" layoutY="386.0" mnemonicParsing="false" onAction="#LoadOnClick" prefHeight="33.0" prefWidth="145.0" style="-fx-border-radius: 77; -fx-border-color: black; -fx-background-color: #c80815;" text="Load" textFill="WHITE" />
+      <Button fx:id="BAck" layoutX="544.0" layoutY="481.0" mnemonicParsing="false" onAction="#BAckOnClk" prefHeight="33.0" prefWidth="138.0" style="-fx-border-radius: 77; -fx-border-color: black; -fx-background-color: #c80815;" text="Back" textFill="WHITE" />
    </children>
 </AnchorPane>
