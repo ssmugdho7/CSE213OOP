@@ -72,7 +72,7 @@ public class AuditReport implements Serializable {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
             for (AuditReport rep : reports) {
                 oos.writeObject(rep);
-            System.out.println("Invoices generated successfully.");
+            System.out.println("Audit report generated successfully.");
             }
             return true;
         } catch (IOException e) {
@@ -96,7 +96,7 @@ public class AuditReport implements Serializable {
                     break; // End of file reached
                 }
             }
-            System.out.println("Invoices loaded successfully.");
+            System.out.println("Audit report loaded successfully.");
         } catch (IOException | ClassNotFoundException e) {
             System.err.println("Error reading invoices from file: " + e.getMessage());
         }
