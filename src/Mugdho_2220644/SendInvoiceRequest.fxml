@@ -17,7 +17,7 @@
          </font>
       </Label>
       <Button layoutX="459.0" layoutY="334.0" mnemonicParsing="false" onAction="#sendButtonOnClick" text="Send" />
-      <TextField fx:id="userIdTextField" layoutX="38.0" layoutY="88.0" promptText="USer ID" />
+      <TextField fx:id="customerIdTextField" layoutX="38.0" layoutY="88.0" promptText="USer ID" />
       <TextField fx:id="addressTextField" layoutX="38.0" layoutY="135.0" promptText="Address" />
       <DatePicker fx:id="invoiceDatePicker" layoutX="38.0" layoutY="236.0" prefHeight="31.0" prefWidth="187.0" />
       <ComboBox fx:id="servicesComboBox" layoutX="38.0" layoutY="191.0" prefHeight="31.0" prefWidth="187.0" promptText="Services" />

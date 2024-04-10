@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
@@ -25,7 +26,6 @@ public class SendInvoiceRequestController implements Initializable {
 
     @FXML
     private ComboBox<String> servicesComboBox;
-    @FXML
     private TextField userIdTextField;
     @FXML
     private TextField addressTextField;
@@ -33,6 +33,8 @@ public class SendInvoiceRequestController implements Initializable {
     private DatePicker invoiceDatePicker;
     @FXML
     private TextArea detailedInfoTextArea;
+    @FXML
+    private TextField customerIdTextField;
 
     /**
      * Initializes the controller class.
@@ -45,43 +47,57 @@ public class SendInvoiceRequestController implements Initializable {
     
     }    
 
+    @FXML
+    private void sendButtonOnClick(ActionEvent event) {
+     try {
+            int customerId = Integer.parseInt(customerIdTextField.getText());
+            String address = addressTextField.getText();
+            LocalDate invoiceDate = invoiceDatePicker.getValue();
+            String services = servicesComboBox.getValue();
+//            float amount = Float.parseFloat(amountTextField.getText());
 
+            InvoiceRequest newInvoice = new InvoiceRequest(customerId, address, invoiceDate, services);
+            boolean addStatus = InvoiceRequest.addNewInstance(newInvoice, "invoiceRequest.bin");
+
+            if (addStatus) {
+                showAlert(Alert.AlertType.INFORMATION, "Success", "New Invoice Added Successfully!");
+            } else {
+                showAlert(Alert.AlertType.ERROR, "Error", "Oops, something went wrong.");
+            }
+        } catch (NumberFormatException e) {
+          showAlert(Alert.AlertType.ERROR, "Invalid Input", "Please enter valid numeric values for Customer ID and Amount.");
+        }
+    }
+ 
+    private void showAlert(Alert.AlertType alertType, String title, String content) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }  
+
+   
     @FXML
     private void LoadToTextAreaOnClick(ActionEvent event) {
     // Fetching inputs from the FXML
-        int customerID = Integer.parseInt(userIdTextField.getText());
+        int customerId = Integer.parseInt(customerIdTextField.getText());
         String address = addressTextField.getText();
         LocalDate invoiceDate = invoiceDatePicker.getValue();
         String services = servicesComboBox.getValue();
 
         // Creating an instance of Invoice
-        Invoice invoice = new Invoice(customerID, address, invoiceDate, services);
+        InvoiceRequest invoice = new InvoiceRequest(customerId, address, invoiceDate, services);
 
         // Setting the text of the TextArea using the toString method of the Invoice instance
-        detailedInfoTextArea.setText(invoice.toString());
+       detailedInfoTextArea.setText(invoice.toString());
     
     
     }
-
-    @FXML
-    private void sendButtonOnClick(ActionEvent event) {
-    // Fetching inputs from the FXML
-        int customerID = Integer.parseInt(userIdTextField.getText());
-        String address = addressTextField.getText();
-        LocalDate invoiceDate = invoiceDatePicker.getValue();
-        String services = servicesComboBox.getValue();
-
-        // Creating an instance of Invoice
-        Invoice invoice = new Invoice(customerID, address, invoiceDate, services);
-
-        // Adding the invoice instance to an ArrayList
-        ArrayList<Invoice> invoices = new ArrayList<>();
-        invoices.add(invoice);
-
-        // Writing the ArrayList to the binary file
-        Invoice.writeToFileForInvoiceRequest(invoices, "invoiceRequest.bin");
     
     
-    }
+    
+    
+    
+    
     
 }
