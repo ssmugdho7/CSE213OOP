@@ -40,9 +40,9 @@ public class EmployeeAttendanceController implements Initializable {
     @FXML
     private TextField overtimeHoursTextFiled;
     @FXML
-    private Button LoadButton;
-    @FXML
     private TableView<EmployeeAttendance > TableView;
+    @FXML
+    private Button LoadInformationButton;
     
 
     /**
@@ -52,36 +52,31 @@ public class EmployeeAttendanceController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         designationTableColumn.setCellValueFactory(new PropertyValueFactory<>("designation"));
         remarksTableColumn.setCellValueFactory(new PropertyValueFactory<>("remarks"));
-        overtimeHourstableColumn.setCellValueFactory(new PropertyValueFactory<>("overtimeHours"));
-        dateTableColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        overtimeHourstableColumn.setCellValueFactory(new PropertyValueFactory<>("overtime Hour"));
+        dateTableColumn.setCellValueFactory(new PropertyValueFactory<>("check in date"));
+        
         
         DateTimeFormatter customDateFormat = DateTimeFormatter.ofPattern("dd MMM yyyy");
         checkInDateDatePicker.setValue(LocalDate.now());
         checkInDateDatePicker.setConverter(new LocalDateStringConverter(customDateFormat, null));
         
         EmployeeDesignatioonComboBox.getItems().addAll("Marketing Manager", "Field Technician", "Customer Care RePresentative", "Network Engineer",  "Technical Support");
-        
- 
-
+       
+       
 
        
         
     }   
     
     
-    @FXML
-    
     private void loadButtonOnClick(ActionEvent event) {
-        String designation = EmployeeDesignatioonComboBox.getValue();
-        String remarks = remarksTextArea.getText ();
-        String overtimeHours = overtimeHoursTextFiled.getText();
-        int overtimeHoursValue = Integer.parseInt(overtimeHours);
-        LocalDate checkInDate = checkInDateDatePicker.getValue();
-        TableView.getItems().add(new EmployeeAttendance(designation,checkInDate ,overtimeHoursValue , remarks));
-        //EmployeeAttendance newEmployeeAttendance = new EmployeeAttendance(designation,checkInDate ,overtimeHoursValue , remarks);
         
+}
         
-    }
+       
+    
+    
+    
     
                 
         
@@ -132,6 +127,7 @@ public class EmployeeAttendanceController implements Initializable {
         } else {
             showErrorAlert("Error", "Oops, something went wrong");
         }
+      
         
     }
 
@@ -152,6 +148,35 @@ public class EmployeeAttendanceController implements Initializable {
         alert.setTitle(title);
         alert.setContentText(content);
         alert.showAndWait();
+    }
+
+    @FXML
+    private void loadInformationOnClick(ActionEvent event) {
+        String designation = EmployeeDesignatioonComboBox.getValue();
+        String remarks = remarksTextArea.getText ();
+        String overtimeHours = overtimeHoursTextFiled.getText();
+        int overtimeHoursValue = Integer.parseInt(overtimeHours);
+        LocalDate checkInDate = checkInDateDatePicker.getValue();
+        //TableView.getItems().add(new EmployeeAttendance(designation,checkInDate ,overtimeHoursValue , remarks));
+        //EmployeeAttendance newEmployeeAttendance = new EmployeeAttendance(designation,checkInDate ,overtimeHoursValue , remarks);
+        // Create a new instance of EmployeeAttendance
+    EmployeeAttendance newEmployeeAttendance= new EmployeeAttendance(designation, checkInDate, overtimeHoursValue, remarks);
+
+    // Add the new attendance to the TableView
+    TableView.getItems().add(newEmployeeAttendance);
+
+    // Clear input fields after adding data
+    clearInputFields();
+
+    // Refresh the TableView to display the new data
+    TableView.refresh();
+}
+
+private void clearInputFields() {
+    EmployeeDesignatioonComboBox.getSelectionModel().clearSelection();
+    remarksTextArea.clear();
+    overtimeHoursTextFiled.clear();
+    checkInDateDatePicker.setValue(LocalDate.now()); // Reset date to current date
     }
     
 }

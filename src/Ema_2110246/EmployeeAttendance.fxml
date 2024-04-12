@@ -40,7 +40,7 @@
         </columns>
       </TableView>
       <Button layoutX="541.0" layoutY="432.0" mnemonicParsing="false" onAction="#submitButtonOnClick" prefHeight="33.0" prefWidth="145.0" style="-fx-background-radius: 77; -fx-border-radius: 77; -fx-border-color: black; -fx-background-color: #c80815;" text="Submit" textFill="WHITE" />
-      <Button fx:id="LoadButton" layoutX="541.0" layoutY="386.0" mnemonicParsing="false" onAction="#loadButtonOnClick" prefHeight="33.0" prefWidth="145.0" style="-fx-border-radius: 77; -fx-border-color: black; -fx-background-color: #c80815;" text="Load" textFill="WHITE" />
+      <Button fx:id="LoadInformationButton" layoutX="541.0" layoutY="386.0" mnemonicParsing="false" onAction="#loadInformationOnClick" prefHeight="33.0" prefWidth="145.0" style="-fx-border-radius: 77; -fx-border-color: black; -fx-background-color: #c80815;" text="Load Information" textFill="WHITE" />
       <TextField fx:id="overtimeHoursTextFiled" layoutX="305.0" layoutY="55.0" promptText="overtime Hours">
          <font>
             <Font name="System Bold" size="15.0" />
