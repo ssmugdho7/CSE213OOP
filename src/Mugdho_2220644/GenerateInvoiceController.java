@@ -106,6 +106,23 @@ public class GenerateInvoiceController implements Initializable,Serializable {
         alert.showAndWait();
     }  
 
+    
+     public Invoice createInvoiceFromInput() {
+    // Assuming you have TextField objects for each field in the Invoice class
+  
+
+    // Fetch data from text fields
+     int customerId = Integer.parseInt(customerIDTextField.getText());
+    String address = addressTextArea.getText();
+    LocalDate invoiceDateValue = invoiceDate.getValue();
+    String services = servicesTextArea.getText();
+    float amount = Float.parseFloat(amountTextField.getText());
+
+
+    // Create and return Invoice object
+    return new Invoice(customerId, address, invoiceDateValue, services, amount);
+}
+    
 
 }
 
