@@ -30,10 +30,6 @@ public class ProcessReimbursementController implements Initializable {
     @FXML
     private TextField employeeNameTextField;
     @FXML
-    private RadioButton payableRadioButton;
-    @FXML
-    private RadioButton notPayableRadioButton;
-    @FXML
     private ComboBox<String> designationComboBox;
 
     /**
