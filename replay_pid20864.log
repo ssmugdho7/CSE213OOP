@@ -1,0 +1,6 @@
+JvmtiExport can_access_local_variables 0
+JvmtiExport can_hotswap_or_post_breakpoint 0
+JvmtiExport can_post_on_exceptions 0
+# 103 ciObject found
+ciMethod java/util/concurrent/locks/LockSupport park (Ljava/lang/Object;)V 2137 1 5515 0 -1
+ciMethodData java/util/concurrent/locks/LockSupport park (Ljava/lang/Object;)V 2 5515 orig 264 104 147 46 83 0 0 0 0 56 194 155 22 0 0 0 0 168 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0

@@ -11,6 +11,7 @@ import java.io.Serializable;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,6 +19,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
@@ -45,7 +47,7 @@ public class GenerateInvoiceController implements Initializable,Serializable {
     @FXML
     private TextField amountTextField;
 
-    ArrayList<Invoice> invoices = new ArrayList<>() ; 
+//    ArrayList<Invoice> invoices = new ArrayList<>() ; 
     /**
      * Initializes the controller class.
      */
@@ -71,6 +73,8 @@ public class GenerateInvoiceController implements Initializable,Serializable {
 
     @FXML   
         private void generateInvoiceOnClick(ActionEvent event) {
+      
+         try{    
             int customerId = Integer.parseInt(customerIDTextField.getText());
             String address = addressTextArea.getText();
             LocalDate invoiceDateValue = invoiceDate.getValue();
@@ -79,15 +83,30 @@ public class GenerateInvoiceController implements Initializable,Serializable {
 
         // Creating an instance of Invoice
         Invoice invoice = new Invoice(customerId, address, invoiceDateValue, services, amount);
+        boolean addStatus = Invoice.addToInstanceToGenerateInvoice(invoice, "invoice.bin"); 
+   
+        
+        if (addStatus) {
+                showAlert(Alert.AlertType.INFORMATION, "Success", "New Invoice Added Successfully!");
+            } else {
+                showAlert(Alert.AlertType.ERROR, "Error", "Oops, something went wrong.");
+            }
+     } 
+         
+         catch (NumberFormatException e) {
+          showAlert(Alert.AlertType.ERROR, "Invalid Input", "Please enter valid numeric values for Customer ID and Amount.");
+        }
+  }
 
-       
 
-        // Add the new invoice
-        invoices.add(invoice);
+    private void showAlert(Alert.AlertType alertType, String title, String content) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }  
 
-        // Call the method to write all invoices
-        Invoice.writeToFile(invoices, "invoice.bin");
-    }
+
 }
 
 

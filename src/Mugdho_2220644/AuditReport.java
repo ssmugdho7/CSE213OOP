@@ -3,6 +3,7 @@ package Mugdho_2220644;
 import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AuditReport implements Serializable {
 
@@ -65,41 +66,63 @@ public class AuditReport implements Serializable {
         this.auditDate = auditDate;
     }
 
-    // Method to write AuditReport objects to a file
-    public static void writeToFile(ArrayList<AuditReport> reports, String filename) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename, true))) {
-            for (AuditReport report : reports) {
-                oos.writeObject(report);
+    
+     // Method to write Invoice objects to a binary file
+    public static boolean writeToFileForAuditReport(List<AuditReport> reports, String filename) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
+            for (AuditReport rep : reports) {
+                oos.writeObject(rep);
+            System.out.println("Audit report generated successfully.");
             }
-            System.out.println("Audit reports saved successfully.");
+            return true;
         } catch (IOException e) {
-            System.err.println("Error writing audit reports to file: " + e.getMessage());
+            System.err.println("Error writing invoices to file: " + e.getMessage());
+           return false;
         }
     }
 
-public static ArrayList<AuditReport> readFromFile(String filename) {
-    ArrayList<AuditReport> reports = new ArrayList<>();
-    try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
-        while (true) {
-            try {
-                // Read an object from the file
-                Object obj = ois.readObject();
-                if (obj instanceof AuditReport) {
-                    // If the object is an instance of AuditReport, add it to the list
-                    AuditReport report = (AuditReport) obj;
-                    reports.add(report);
+    // Method to read invoices from a binary file
+    public static List<AuditReport> readFromFileForAuditReport(String filename) {
+        List<AuditReport> reports = new ArrayList<>();
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
+            while (true) {
+                try {
+                    Object obj = ois.readObject();
+                    if (obj instanceof Invoice) {
+                        AuditReport rep = (AuditReport) obj;
+                        reports.add(rep);
+                    }
+                } catch (EOFException e) {
+                    break; // End of file reached
                 }
-            } catch (EOFException e) {
-                // End of file reached
-                break;
             }
+            System.out.println("Audit report loaded successfully.");
+        } catch (IOException | ClassNotFoundException e) {
+            System.err.println("Error reading invoices from file: " + e.getMessage());
         }
-        System.out.println("Audit reports loaded successfully.");
-    } catch (IOException | ClassNotFoundException e) {
-        System.err.println("Error reading audit reports from file: " + e.getMessage());
+        return reports;
     }
-    return reports;
-}
 
 
+
+    // Method to add a new instance to the list and write to file
+    public static boolean addToInstanceForAuditReport(AuditReport report, String filename) {
+        // Read existing invoices from file
+        List<AuditReport> reports = readFromFileForAuditReport(filename);
+        reports.add(report);
+       // Write updated list of invoices back to the file
+        return writeToFileForAuditReport(reports, filename);
+    }
+
+
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

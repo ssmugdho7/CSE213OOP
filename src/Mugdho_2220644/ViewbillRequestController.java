@@ -4,6 +4,7 @@ import java.io.*;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,21 +18,23 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class ViewbillRequestController implements Initializable {
 
     @FXML
-    private TableView<Invoice> invoiceRequestsTableview;
+    private TableView<InvoiceRequest> invoiceRequestsTableview;
     @FXML
-    private TableColumn<Invoice, Integer> idCol;
+    private TableColumn<InvoiceRequest, Integer> idCol;
     @FXML
-    private TableColumn<Invoice, String> addCol;
+    private TableColumn<InvoiceRequest, String> addCol;
     @FXML
-    private TableColumn<Invoice, LocalDate> dateCol;
+    private TableColumn<InvoiceRequest, LocalDate> dateCol;
     @FXML
-    private TableColumn<Invoice, String> serviceCall;
+    private TableColumn<InvoiceRequest, String> serviceCall;
     @FXML
     private Button returnButton;
     private TextField searchByIDTextField;
 
     // ArrayList to hold invoice requests
-    private ArrayList<Invoice> invoiceRequests = new ArrayList<>();
+     List<InvoiceRequest> invoiceRequests = new ArrayList<>();
+    @FXML
+    private Button filterButton;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -42,7 +45,7 @@ public class ViewbillRequestController implements Initializable {
         serviceCall.setCellValueFactory(new PropertyValueFactory<>("services"));
 
         // Load invoices from file
-        invoiceRequests = Invoice.readFromFile("invoiceRequest.bin");
+//        invoiceRequests = InvoiceRequest.readFromFile("invoiceRequest.bin");
         invoiceRequestsTableview.getItems().addAll(invoiceRequests);
     }
 
@@ -50,7 +53,7 @@ public class ViewbillRequestController implements Initializable {
     @FXML
     private void loadButtonAfterSearchTextfeildByIDOnClick(ActionEvent event) {
         // Load all invoices from file again
-        invoiceRequests = Invoice.readFromFileForInvoiceRequest("invoiceRequest.bin");
+        invoiceRequests = InvoiceRequest.readFromFile("invoiceRequest.bin");
         invoiceRequestsTableview.getItems().clear();
         invoiceRequestsTableview.getItems().addAll(invoiceRequests);
     }
@@ -60,18 +63,30 @@ public class ViewbillRequestController implements Initializable {
         // Implement return button functionality here
     }
 
+   
+
     @FXML
-    private void SearchyIDTExtFeild(ActionEvent event) {
-                int searchID = Integer.parseInt(searchByIDTextField.getText());
+    private void filterButtonOnclick(ActionEvent event) {
+             int searchID = Integer.parseInt(searchByIDTextField.getText());
         
         // Clear the TableView
         invoiceRequestsTableview.getItems().clear();
+        Iterable<InvoiceRequest> invoices = null;
         
         // Search for invoices with the given ID and add them to the TableView
-        for (Invoice invoice : invoiceRequests) {
+        for (InvoiceRequest invoice : invoiceRequests) {
             if (invoice.getCustomerId() == searchID) {
+//                 InvoiceRequest x = invoice; 
                 invoiceRequestsTableview.getItems().add(invoice);
             }
         }
+    
+    
+    }
+
+    @FXML
+    private void SearchyIDTExtFeild(ActionEvent event) {
     }
 }
+
+

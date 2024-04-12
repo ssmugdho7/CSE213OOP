@@ -191,7 +191,7 @@ public class CustomerDashboardController implements Initializable {
     @FXML
     private void logOutButtonOnClick(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/mainPKG/Login.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
 

@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="491.0" style="-fx-background-color: aqua;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Mugdho_2220644.ViewbillRequestController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="491.0" style="-fx-background-color: aqua;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mugdho_2220644.ViewbillRequestController">
    <children>
       <TableView fx:id="invoiceRequestsTableview" layoutX="39.0" layoutY="116.0" prefHeight="254.0" prefWidth="400.0">
         <columns>
@@ -31,5 +30,6 @@
          </font>
       </Button>
       <Button fx:id="returnButton" layoutX="374.0" layoutY="36.0" mnemonicParsing="false" onAction="#returnButtonInClk" text="Return" />
+      <Button fx:id="filterButton" layoutX="188.0" layoutY="79.0" mnemonicParsing="false" onAction="#filterButtonOnclick" text="filter" />
    </children>
 </AnchorPane>
