@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CostEstimation implements Serializable {
+
     private int subscriber;
     private float revenue;
     private float fixedCosts;
