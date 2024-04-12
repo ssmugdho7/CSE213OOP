@@ -4,11 +4,8 @@ package Ema_2110246;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -29,8 +26,7 @@ public class EmployeeAttendanceController implements Initializable {
     private ComboBox<String> EmployeeDesignatioonComboBox;
     @FXML
     private DatePicker checkInDateDatePicker;
-    @FXML
-    private TableView<EmployeeAttendance> showTableView;
+    //private TableView<EmployeeAttendance> showTableView;
     @FXML
     private TableColumn<EmployeeAttendance, String> designationTableColumn;
     @FXML
@@ -45,6 +41,8 @@ public class EmployeeAttendanceController implements Initializable {
     private TextField overtimeHoursTextFiled;
     @FXML
     private Button LoadButton;
+    @FXML
+    private TableView<EmployeeAttendance> TableView;
     
 
     /**
@@ -79,7 +77,10 @@ public class EmployeeAttendanceController implements Initializable {
         String overtimeHours = overtimeHoursTextFiled.getText();
         int overtimeHoursValue = Integer.parseInt(overtimeHours);
         LocalDate checkInDate = checkInDateDatePicker.getValue();
-        showTableView.getItems().add(new EmployeeAttendance(designation,checkInDate ,overtimeHoursValue , remarks));
+        TableView.getItems().add(new EmployeeAttendance(designation,checkInDate ,overtimeHoursValue , remarks));
+        //String displayText = items.generateDisplayText();
+        remarksTextArea.clear();
+        remarksTextArea.appendText(remarks);
                 
         
     }

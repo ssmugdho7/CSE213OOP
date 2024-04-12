@@ -31,7 +31,7 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <TableView fx:id="showTableView" layoutX="22.0" layoutY="180.0" prefHeight="332.0" prefWidth="509.0">
+      <TableView fx:id="TableView" layoutX="22.0" layoutY="180.0" prefHeight="332.0" prefWidth="509.0">
         <columns>
           <TableColumn fx:id="designationTableColumn" prefWidth="105.0" text="Designation" />
           <TableColumn fx:id="dateTableColumn" prefWidth="71.0" text="Date" />
