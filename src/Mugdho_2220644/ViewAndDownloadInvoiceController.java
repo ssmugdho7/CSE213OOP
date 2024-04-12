@@ -20,6 +20,7 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.element.Text;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
@@ -62,6 +64,8 @@ public class ViewAndDownloadInvoiceController implements Initializable {
     List<Invoice> invoices = new ArrayList<>();
     @FXML
     private Label invoicelabel;
+    @FXML
+    private TextField searchByIDTExtfeild;
     /**
      * Initializes the controller class.
      */
@@ -80,42 +84,64 @@ public class ViewAndDownloadInvoiceController implements Initializable {
 
     @FXML
     private void downloadButtonbuttonOnClick(ActionEvent event) {
-    
-       try{
-           
-            FileChooser fc = new FileChooser();
-            fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF files", "*.pdf"));
-            fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image files", "*.jpg", "*.bmp", "*.png"));
-            File f = fc.showSaveDialog(null);
-            if(f!=null){              
-                PdfWriter pw = new PdfWriter(new FileOutputStream(f));
-                //PdfWriter pw = new PdfWriter(new FileOutputStream("testPDF.pdf"));
-                PdfDocument pdf =  new PdfDocument(pw);
-                pdf.addNewPage();
-                Document doc = new Document(pdf);
-                doc.setLeftMargin(70);
-               
-                
-             invoice =  new Invoice(customerId, address, invoiceDate, services, amount);
-                
-                doc.close();
-                
-               
-            }
-            else{
-                Alert a = new Alert(Alert.AlertType.INFORMATION);
-                a.setContentText("Saving as PDF: cancelled!");
-                a.showAndWait();               
+         Invoice selectedInvoice = invoiceTableView.getSelectionModel().getSelectedItem();
+        if (selectedInvoice != null) {
+            downloadInvoicePDF(selectedInvoice);
+        } else {
+            showAlert("No Invoice Selected", "Please select an invoice to download.");
+        }
+    }
+
+    private void downloadInvoicePDF(Invoice invoice) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save PDF");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF files (*.pdf)", "*.pdf"));
+        File file = fileChooser.showSaveDialog(null);
+        if (file != null) {
+            // Check if the file already exists
+            if (file.exists()) {
+                // Prompt user to confirm overwrite
+                Alert overwriteAlert = new Alert(Alert.AlertType.CONFIRMATION);
+                overwriteAlert.setTitle("Confirm Overwrite");
+                overwriteAlert.setHeaderText("File already exists. Do you want to overwrite it?");
+                overwriteAlert.setContentText("Click OK to overwrite the file or Cancel to choose a different name.");
+
+                Optional<ButtonType> result = overwriteAlert.showAndWait();
+                if (result.isPresent() && result.get() == ButtonType.OK) {
+                    generateInvoicePDF(invoice, file);
+                }
+            } else {
+                generateInvoicePDF(invoice, file);
             }
         }
-        catch(Exception e){
-            Alert a = new Alert(Alert.AlertType.INFORMATION);
-            a.setContentText("Oops! Exception: " + e.toString()+ " occured.");
-            a.showAndWait(); 
-            //System.out.println("Something went wrong...");
-            //System.out.println(e);
-        }                           
     }
+
+    private void generateInvoicePDF(Invoice invoice, File file) {
+        try {
+            FileOutputStream fos = new FileOutputStream(file);
+            PdfWriter writer = new PdfWriter(fos);
+            PdfDocument pdf = new PdfDocument(writer);
+            Document document = new Document(pdf);
+
+            // Add invoice details to the PDF
+            document.add(new Paragraph("Invoice Details"));
+            document.add(new Paragraph("Customer ID: " + invoice.getCustomerId()));
+            document.add(new Paragraph("Address: " + invoice.getAddress()));
+            document.add(new Paragraph("Invoice Date: " + invoice.getInvoiceDate()));
+            document.add(new Paragraph("Services: " + invoice.getServices()));
+            document.add(new Paragraph("Amount: $" + invoice.getAmount()));
+
+            document.close();
+
+            showAlert("Success", "Invoice PDF saved successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Error", "Failed to save PDF: " + e.getMessage());
+        }
+    
+    }
+    
+    
 
   
         
@@ -136,5 +162,34 @@ public class ViewAndDownloadInvoiceController implements Initializable {
 //     invoicelabel.setText(invoices.toString());
     
     }
+
+    @FXML
+    private void searchByIDTExtfeildOnClk(ActionEvent event) {
+        String searchText = searchByIDTExtfeild.getText().trim();
+        if (!searchText.isEmpty()) {
+            List<Invoice> filteredInvoices = new ArrayList<>();
+            for (Invoice invoice : invoices) {
+                if (String.valueOf(invoice.getCustomerId()).equals(searchText)) {
+                    filteredInvoices.add(invoice);
+                }
+            }
+            invoiceTableView.getItems().clear();
+            invoiceTableView.getItems().addAll(filteredInvoices);
+        } else {
+            showAlert("Search Error", "Please enter an invoice ID to search.");
+        }
+    }
+    
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+
     
 }
+
+
+
