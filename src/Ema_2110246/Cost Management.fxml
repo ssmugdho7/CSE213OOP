@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="507.0" prefWidth="816.0" style="-fx-background-color: #647295;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Ema_2110246.CostManagementController">
+<AnchorPane id="AnchorPane" prefHeight="507.0" prefWidth="816.0" style="-fx-background-color: #647295;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ema_2110246.CostManagementController">
    <children>
       <Label layoutX="204.0" layoutY="25.0" prefHeight="47.0" prefWidth="436.0" text="Cost Management Payment " textFill="WHITE">
          <font>
@@ -20,9 +19,12 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <TextArea layoutX="62.0" layoutY="245.0" prefHeight="170.0" prefWidth="720.0" />
-      <TextField layoutX="187.0" layoutY="130.0" />
-      <TextField layoutX="569.0" layoutY="128.0" prefHeight="31.0" prefWidth="215.0" />
+      <TextArea fx:id="suggestionTextArea" layoutX="62.0" layoutY="245.0" prefHeight="170.0" prefWidth="720.0" promptText=" Provide Suggestion">
+         <font>
+            <Font size="17.0" />
+         </font></TextArea>
+      <TextField fx:id="totalExpensesTextField" layoutX="187.0" layoutY="130.0" />
+      <TextField fx:id="monthlyRevenueTextField" layoutX="569.0" layoutY="128.0" prefHeight="31.0" prefWidth="215.0" />
       <Label layoutX="50.0" layoutY="132.0" prefHeight="26.0" prefWidth="127.0" text="Total Expenses:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
@@ -33,6 +35,6 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <Button layoutX="725.0" layoutY="462.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="78.0" style="-fx-background-color: black; -fx-background-radius: 77;" text="Save" textFill="WHITE" />
+      <Button fx:id="saveButton" layoutX="725.0" layoutY="462.0" mnemonicParsing="false" onAction="#saveButtonOnCilick" prefHeight="31.0" prefWidth="78.0" style="-fx-background-color: black; -fx-background-radius: 77;" text="Save" textFill="WHITE" />
    </children>
 </AnchorPane>
