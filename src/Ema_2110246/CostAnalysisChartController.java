@@ -30,6 +30,15 @@ public class CostAnalysisChartController implements Initializable {
 
     @FXML
     private void loadButtonOnClick(ActionEvent event) {
-    }
+        costRatioChart.getData().clear();
+        barchart.getData().clear();
+        
+        
+
+    
+    
+}
+        
+    
     
 }

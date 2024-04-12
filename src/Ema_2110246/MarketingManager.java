@@ -99,7 +99,7 @@ class MarketingManager implements Serializable {
        } 
        
 
-    public static ArrayList<EmployeeAttendance> loadEmployeeAttendances(String fileName) {
+    public static ArrayList<EmployeeAttendance> loadButtonOnClick(String fileName) {
         ArrayList<EmployeeAttendance> existingEmployeeAttendances = new ArrayList<>();
 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName))) {

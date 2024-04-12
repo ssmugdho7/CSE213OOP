@@ -42,7 +42,7 @@ public class EmployeeAttendanceController implements Initializable {
     @FXML
     private Button LoadButton;
     @FXML
-    private TableView<EmployeeAttendance> TableView;
+    private TableView<EmployeeAttendance > TableView;
     
 
     /**
@@ -69,8 +69,8 @@ public class EmployeeAttendanceController implements Initializable {
     }   
     
     
-    
     @FXML
+    
     private void loadButtonOnClick(ActionEvent event) {
         String designation = EmployeeDesignatioonComboBox.getValue();
         String remarks = remarksTextArea.getText ();
@@ -78,12 +78,14 @@ public class EmployeeAttendanceController implements Initializable {
         int overtimeHoursValue = Integer.parseInt(overtimeHours);
         LocalDate checkInDate = checkInDateDatePicker.getValue();
         TableView.getItems().add(new EmployeeAttendance(designation,checkInDate ,overtimeHoursValue , remarks));
-        //String displayText = items.generateDisplayText();
-        remarksTextArea.clear();
-        remarksTextArea.appendText(remarks);
-                
+        //EmployeeAttendance newEmployeeAttendance = new EmployeeAttendance(designation,checkInDate ,overtimeHoursValue , remarks);
+        
         
     }
+    
+                
+        
+    
 
     @FXML
     private void submitButtonOnClick(ActionEvent event) {
@@ -135,17 +137,7 @@ public class EmployeeAttendanceController implements Initializable {
 
 
 
-    /*@FXML
-    private void loadButtonOnClick(ActionEvent event) {
-        String designation = EmployeeDesignatioonComboBox.getValue();
-        String remarks = remarksTextArea.getText ();
-        String overtimeHours = overtimeHoursTextFiled.getText();
-        int overtimeHoursValue = Integer.parseInt(overtimeHours);
-        LocalDate checkInDate = checkInDateDatePicker.getValue();
-        showTableView.getItems().add(new EmployeeAttendance(designation,checkInDate ,overtimeHoursValue , remarks));
-                
-        
-    }*/
+    
     
      
     private void showErrorAlert(String title, String content) {
@@ -162,5 +154,7 @@ public class EmployeeAttendanceController implements Initializable {
         alert.showAndWait();
     }
     
-    
 }
+    
+    
+
