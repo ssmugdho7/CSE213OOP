@@ -1,68 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="679.0" prefWidth="889.0" style="-fx-background-color: #DDA0DD;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Button layoutX="7.0" layoutY="160.0" mnemonicParsing="false" onAction="#ViewPayrollDataOnClick" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="View Payroll Data" textFill="WHITE">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Button>
-      <ImageView fitHeight="119.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/download.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="135.0" layoutY="45.0" text="Managing Director" textFill="#0e3638">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="24.0" />
-         </font>
-      </Label>
-      <Button layoutX="7.0" layoutY="213.0" mnemonicParsing="false" onAction="#ViewAuditReportOnClick" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="View Audit Report" textFill="WHITE">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="7.0" layoutY="265.0" mnemonicParsing="false" onAction="#ViewReimbursementProcessOnClick" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="View Reimbursement Process" textFill="WHITE">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="7.0" layoutY="316.0" mnemonicParsing="false" onAction="#WriteTermsPolicyOnClick" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="Write Terms &amp; Policy" textFill="WHITE">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="7.0" layoutY="369.0" mnemonicParsing="false" onAction="#ViewExtimatedCostButtonOnClick" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="View Extimated Cost" textFill="WHITE">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="7.0" layoutY="422.0" mnemonicParsing="false" onAction="#ViewRiskFactorsButtonOnClick" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="View Risk Factors" textFill="WHITE">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="7.0" layoutY="472.0" mnemonicParsing="false" onAction="#ViewAttendenceOvertimeButtonOnClick" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="View Attendence &amp; Overtime" textFill="WHITE">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="7.0" layoutY="525.0" mnemonicParsing="false" onAction="#suggestionsforchangesButtonOnClick" prefHeight="34.0" prefWidth="324.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="suggestions for changes" textFill="WHITE">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="50.0" layoutY="611.0" mnemonicParsing="false" onAction="#LogOutButtonOnClick" prefHeight="44.0" prefWidth="238.0" style="-fx-background-color: red; -fx-background-radius: 20;" text="Log Out" textFill="WHITE">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="20.0" />
-         </font>
-      </Button>
-   </children>
-</AnchorPane>
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="702.0" prefWidth="1242.0" style="-fx-background-color: #DDA0DD;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jami_2211508.ManagingDirectorDashboardController">
+   <left>
+      <VBox prefHeight="525.0" prefWidth="307.0" style="-fx-background-color: #BA55D3;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="116.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/download.png" />
+               </image>
+            </ImageView>
+            <Label text="Managing Director" textFill="WHITE">
+               <font>
+                  <Font name="Harlow Solid Italic" size="29.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="ViewPayrollData" mnemonicParsing="false" onMouseClicked="#ViewPayrollDataOnClick" prefHeight="34.0" prefWidth="298.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="View Payroll Data" textFill="#fffafa">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="ViewAuditReport" layoutX="20.0" layoutY="145.0" mnemonicParsing="false" onMouseClicked="#ViewAuditReportOnClick" prefHeight="34.0" prefWidth="297.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="View Audit Report" textFill="#fffafa">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="ViewReimbursementProcess" layoutX="10.0" layoutY="179.0" mnemonicParsing="false" onMouseClicked="#ViewReimbursementProcessOnClick" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="View Reimbursement Process" textFill="#fffafa">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="WriteTermsPolicy" layoutX="10.0" layoutY="213.0" mnemonicParsing="false" onMouseClicked="#WriteTermsPolicyOnClick" prefHeight="34.0" prefWidth="295.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="Write Terms &amp; Policy" textFill="#fffafa">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="ViewExtimatedCostButton" layoutX="10.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#ViewExtimatedCostButtonOnClick" prefHeight="34.0" prefWidth="299.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="View Extimated Cost" textFill="#fffafa">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="ViewRiskFactorsButton" layoutX="10.0" layoutY="281.0" mnemonicParsing="false" onMouseClicked="#ViewRiskFactorsButtonOnClick" prefHeight="34.0" prefWidth="292.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="View Risk Factors" textFill="#fffafa">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="ViewAttendenceOvertimeButton" layoutX="10.0" layoutY="315.0" mnemonicParsing="false" onMouseClicked="#ViewAttendenceOvertimeButtonOnClick" prefHeight="34.0" prefWidth="309.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="View Attendence &amp; Overtime" textFill="#fffafa">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="suggestionsforchangesButton" layoutX="10.0" layoutY="349.0" mnemonicParsing="false" onMouseClicked="#suggestionsforchangesButtonOnClick" prefHeight="34.0" prefWidth="307.0" style="-fx-background-color: #4B0082; -fx-background-radius: 20;" text="suggestions for changes" textFill="#fffafa">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="logOutButton" layoutX="10.0" layoutY="383.0" mnemonicParsing="false" onAction="#logOutButtonOnClick" prefHeight="45.0" prefWidth="191.0" style="-fx-background-color: red; -fx-background-radius: 20;" text="Log Out" textFill="#fffafa">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="60.0" top="40.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <top>
+      <MenuBar fx:id="managingDirectorDashboardMenuBar" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

@@ -57,7 +57,7 @@ public class LoginController implements Initializable {
     @FXML
     private void loginButtonOnClick(ActionEvent event) throws IOException {
         
-          String userType = userTypeComboBox.getValue();
+        String userType = userTypeComboBox.getValue();
         if (userType == null) {
             showErrorAlert("Error", "Please select a user type.");
             return;
@@ -159,7 +159,7 @@ public class LoginController implements Initializable {
     
     
     
-     private void showErrorAlert(String title, String message) {
+    private void showErrorAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(null);

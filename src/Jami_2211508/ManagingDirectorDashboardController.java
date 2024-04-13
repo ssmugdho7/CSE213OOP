@@ -4,23 +4,50 @@
  */
 package Jami_2211508;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuBar;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
- * @author Lenovo
+ * @author Asus
  */
 public class ManagingDirectorDashboardController implements Initializable {
 
     @FXML
+    private Button ViewPayrollData;
+    @FXML
+    private Button ViewAuditReport;
+    @FXML
+    private Button ViewReimbursementProcess;
+    @FXML
+    private Button WriteTermsPolicy;
+    @FXML
+    private Button ViewExtimatedCostButton;
+    @FXML
+    private Button ViewRiskFactorsButton;
+    @FXML
+    private Button ViewAttendenceOvertimeButton;
+    @FXML
+    private Button suggestionsforchangesButton;
+    @FXML
     private BorderPane borderPane;
+    @FXML
+    private MenuBar managingDirectorDashboardMenuBar;
     @FXML
     private Button logOutButton;
 
@@ -30,46 +57,69 @@ public class ManagingDirectorDashboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-
-    @FXML
-    private void readPayrollDataButtonOnClick(ActionEvent event) {
+    }
+    private void loadUI(String ui) {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource(ui+".fxml"));
+            borderPane.setCenter(root);
+        } catch (IOException ex) {
+            Logger.getLogger(ManagingDirectorDashboardController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     @FXML
-    private void readAuditReportButtonOnClick(ActionEvent event) {
+    private void ViewPayrollDataOnClick(MouseEvent event) {
+        loadUI("MD View Payroll Data");
     }
 
     @FXML
-    private void readProcessedReimbursementButtonOnClick(ActionEvent event) {
+    private void ViewAuditReportOnClick(MouseEvent event) {
+        loadUI("MD View Audit Report");
     }
 
     @FXML
-    private void viewSuggestionOfCostManagementButtonOnClick(ActionEvent event) {
+    private void ViewReimbursementProcessOnClick(MouseEvent event) {
+        loadUI("MD View Reimbursement Process");
     }
 
     @FXML
-    private void paymentCostChartAnalysisButtonOnClick(ActionEvent event) {
+    private void WriteTermsPolicyOnClick(MouseEvent event) {
+        loadUI("MD Write Terms Policy");
     }
 
     @FXML
-    private void readRiskFactorsofCompanyButtonOnClick(ActionEvent event) {
+    private void ViewExtimatedCostButtonOnClick(MouseEvent event) {
+        loadUI("MD View Extimated Cost");
     }
 
     @FXML
-    private void gobackButtonOnClick(ActionEvent event) {
+    private void ViewRiskFactorsButtonOnClick(MouseEvent event) {
+        loadUI("MD View Risk Factors");
     }
 
     @FXML
-    private void writeTermsAndPolicyForEmployeesButtonOnClick(ActionEvent event) {
+    private void ViewAttendenceOvertimeButtonOnClick(MouseEvent event) {
+        loadUI("MD View Attendence Overtime");
     }
 
     @FXML
-    private void writeTermsAndPolicyForCustomerButtonOnClick(ActionEvent event) {
+    private void suggestionsforchangesButtonOnClick(MouseEvent event) {
+        loadUI("MD suggestions for changes");
     }
 
     @FXML
-    private void logOutButtonOnClick(ActionEvent event) {
+    private void logOutButtonOnClick(ActionEvent event) {try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/mainPKG/Login.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+
+        Stage currentStage = (Stage) logOutButton.getScene().getWindow();
+        currentStage.setScene(scene);
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
     }
     
 }
