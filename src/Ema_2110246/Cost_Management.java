@@ -17,12 +17,13 @@ public class  Cost_Management implements Serializable {
 
     
     private String suggestion;
-    private float totalExpenses,monthlyRevenue;
+    private String budgetPlan;
+    private String saveMoneyby;
 
-    public Cost_Management(String suggestion, float totalExpenses, float monthlyRevenue) {
+    public Cost_Management(String suggestion, String budgetPlan, String saveMoneyby){
         this.suggestion = suggestion;
-        this.totalExpenses = totalExpenses;
-        this.monthlyRevenue = monthlyRevenue;
+        this.budgetPlan = budgetPlan;
+        this.saveMoneyby = saveMoneyby;
     }
 
     public String getSuggestion() {
@@ -33,26 +34,28 @@ public class  Cost_Management implements Serializable {
         this.suggestion = suggestion;
     }
 
-    public float getTotalExpenses() {
-        return totalExpenses;
+    public String getBudgetPlan() {
+        return budgetPlan;
     }
 
-    public void setTotalExpenses(float totalExpenses) {
-        this.totalExpenses = totalExpenses;
+    public void setBudgetPlan(String budgetPlan) {
+        this.budgetPlan = budgetPlan;
     }
 
-    public float getMonthlyRevenue() {
-        return monthlyRevenue;
+    public String getSaveMoneyby() {
+        return saveMoneyby;
     }
 
-    public void setMonthlyRevenue(float monthlyRevenue) {
-        this.monthlyRevenue = monthlyRevenue;
+    public void setSaveMoneyby(String saveMoneyby) {
+        this.saveMoneyby = saveMoneyby;
     }
 
     @Override
     public String toString() {
-        return "Cost_Management{" + "suggestion=" + suggestion + ", totalExpenses=" + totalExpenses + ", monthlyRevenue=" + monthlyRevenue + '}';
+        return "Cost_Management{" + "suggestion=" + suggestion + ", budgetPlan=" + budgetPlan + ", saveMoneyby=" + saveMoneyby + '}';
     }
+
+   
     
     
    
