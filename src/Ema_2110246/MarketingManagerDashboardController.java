@@ -95,7 +95,7 @@ public class MarketingManagerDashboardController implements Initializable {
 
     @FXML
     private void WriteupdatedRatesAndcontrolPipularpackageChartchart(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("updated rates and control popular packages chart.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("UpdatedRatesAndControlPopularPackagesChart.fxml"));
         Parent parent = fxmlLoader.load();
 
         // Retrieve preferred height and width from the loaded parent node
