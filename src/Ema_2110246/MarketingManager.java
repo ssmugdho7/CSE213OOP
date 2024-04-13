@@ -12,12 +12,12 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
+
 import javafx.collections.ObservableList;
 
 
 class MarketingManager implements Serializable {
-    //req reimbursement
+    //request reimbursement
     public static boolean writeReimbursements(ObservableList<Reimbursement> reimbursements, String fileName) {
         try (FileOutputStream fos = new FileOutputStream(fileName);
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
@@ -55,68 +55,7 @@ class MarketingManager implements Serializable {
 
    //-----------------
     
-    
-    //-------------File read & write for Employee
-    public static List<Object> readObjectsFromFile(String fileName) {
-           List<Object> objects = new ArrayList<>();
-           try (FileInputStream fis = new FileInputStream(fileName);
-                ObjectInputStream ois = new ObjectInputStream(fis)) {
-               while (true) {
-                   try {
-                       Object obj = ois.readObject();
-                       if (obj != null) {
-                           objects.add(obj);
-                       }
-                   } catch (EOFException e) {
-                       break; 
-                   }
-               }
-           } catch (IOException | ClassNotFoundException ex) {
-               ex.printStackTrace();
-           }
-           return objects;
-           }
-    public static boolean writeObjectsToFile(List<Object> objects, String fileName) {
-           try (FileOutputStream fos = new FileOutputStream(fileName);
-                ObjectOutputStream oos = new ObjectOutputStream(fos)) {
-               for (Object obj : objects) {
-                   oos.writeObject(obj);
-               }
-               return true;
-           } catch (IOException ex) {
-               ex.printStackTrace();
-               return false;
-           }
-       }
-    
-    
-   
-
-    public static boolean addNewEmployeeAttendance(EmployeeAttendance information, String fileName) {
-           List<Object> information_row = readObjectsFromFile(fileName);
-           information_row.add(information);
-           return writeObjectsToFile(information_row, fileName);
-       } 
        
 
-    public static ArrayList<EmployeeAttendance> loadButtonOnClick(String fileName) {
-        ArrayList<EmployeeAttendance> existingEmployeeAttendances = new ArrayList<>();
-
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName))) {
-            while (true) {
-                try {
-                    EmployeeAttendance employeeAttendance = (EmployeeAttendance) ois.readObject();
-                    existingEmployeeAttendances.add(employeeAttendance);
-                } catch (EOFException eof) {
-                    // End of file reached, break the loop
-                    break;
-                }
-            }
-        } catch (IOException | ClassNotFoundException ex) {
-            ex.printStackTrace();
-        }
-
-        return existingEmployeeAttendances;
-    }
-
+   
 }
