@@ -50,6 +50,9 @@ public class ViewRequestReimursementReqController implements Initializable {
 
     @FXML
     private void saveTAbleviewContentAsPDFOnCLick(ActionEvent event) {
+//    reim = Invoice.readFromFileToGenerateInvoice("invoice.bin");
+//     invoiceTableView.getItems().clear();
+//    invoiceTableView.getItems().addAll(invoices);
     }
     
 }
