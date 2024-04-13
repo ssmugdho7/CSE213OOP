@@ -39,7 +39,7 @@ public class Field_RequestTechnicalSupportController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        reasonComboBox.getItems().addAll("Network Connectivity", "Equipment Malfunction", "Software Issues", "Other");
+        reasonComboBox.getItems().addAll("Slow Internet Connection","Device Not Working", "Equipment Issue", "Other");
         DateTimeFormatter customDateFormat = DateTimeFormatter.ofPattern("dd MMM yyyy");
         dateDatePicker.setValue(LocalDate.now());
         dateDatePicker.setConverter(new LocalDateStringConverter(customDateFormat, null));
@@ -65,14 +65,14 @@ public class Field_RequestTechnicalSupportController implements Initializable {
    
         
         if (addStatus) {
-                showAlert(Alert.AlertType.INFORMATION, "Success", "New Attendance Added Successfully!");
+                showAlert(Alert.AlertType.INFORMATION, "Success", "RequestTechnicalSupport Added Successfully!");
             } else {
                 showAlert(Alert.AlertType.ERROR, "Error", "Oops, something went wrong.");
             }
      } 
          
          catch (NumberFormatException e) {
-          showAlert(Alert.AlertType.ERROR, "Invalid Input", "Please enter valid numeric values for totalExpenses and monthlyRevenue.");
+          showAlert(Alert.AlertType.ERROR, "Invalid Input", "Please enter valid  values for reason.");
         }
     
     }
