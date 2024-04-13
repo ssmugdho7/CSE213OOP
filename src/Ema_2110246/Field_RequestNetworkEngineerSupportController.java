@@ -47,7 +47,7 @@ public class Field_RequestNetworkEngineerSupportController implements Initializa
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         reasonComboBox.getItems().addAll("Network Connectivity", "Software Updates","Performance Issues","Connection Dropouts", "Other");
-        deviceComboBox.getItems().addAll("Router", "Access Point","Switch","Cable Modem","Other");
+        deviceComboBox.getItems().addAll("Router", "Access Point","Switch","Modem","Other");
         DateTimeFormatter customDateFormat = DateTimeFormatter.ofPattern("dd MMM yyyy");
         dateDatePicker.setValue(LocalDate.now());
         dateDatePicker.setConverter(new LocalDateStringConverter(customDateFormat, null));
