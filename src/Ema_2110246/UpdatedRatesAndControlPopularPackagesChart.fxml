@@ -42,5 +42,10 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
+      <Button fx:id="backButton" layoutX="666.0" layoutY="12.0" mnemonicParsing="false" onAction="#backButtonOnClick" prefHeight="31.0" prefWidth="39.0" style="-fx-background-color: #dd8Ea4; -fx-border-color: white;" text="&lt;" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
