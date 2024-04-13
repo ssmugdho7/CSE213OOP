@@ -5,6 +5,9 @@
 package Mugdho_2220644;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,37 +25,39 @@ import javafx.scene.control.TableView;
 public class ViewRequestReimursementReqController implements Initializable {
 
     @FXML
-    private TableView<?> RequestReimbursementDataTableView;
+    private TableView<Reimbursement> RequestReimbursementDataTableView;
     @FXML
-    private TableColumn<?, ?> nameColumn;
+    private TableColumn<Reimbursement, String> nameColumn;
     @FXML
-    private TableColumn<?, ?> amountColumn;
+    private TableColumn<Reimbursement, Float> amountColumn;
     @FXML
-    private TableColumn<?, ?> paymentMethodColumn;
+    private TableColumn<Reimbursement, String> paymentMethodColumn;
     @FXML
-    private TableColumn<?, ?> expenseTypeColumn;
+    private TableColumn<Reimbursement, String> expenseTypeColumn;
     @FXML
-    private TableColumn<?, ?> reqDateColumn;
+    private TableColumn<Reimbursement, LocalDate> reqDateColumn;
     @FXML
-    private TableColumn<?, ?> designationColumn;
+    private TableColumn<Reimbursement, String> designationColumn;
     @FXML
-    private ComboBox<?> paymentMethodComboBox;
+    private ComboBox<String> paymentMethodComboBox;
     @FXML
     private Button loadReqOnClick;
-
+    
+    List<Reimbursement>reimbursements = new ArrayList();
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-
-    @FXML
-    private void saveTAbleviewContentAsPDFOnCLick(ActionEvent event) {
-//    reim = Invoice.readFromFileToGenerateInvoice("invoice.bin");
-//     invoiceTableView.getItems().clear();
-//    invoiceTableView.getItems().addAll(invoices);
     }
+//
+//@FXML
+//    private void saveTAbleviewContentAsPDFOnCLick(ActionEvent event) {
+//   reimbursements = Reimbursement.readFromFile("reimbursementRequest.bin");
+//    invoiceTableView.getItems().clear();
+//  invoiceTableView.getItems().addAll(reimbursements);
+//    }
     
 }
+//invoices = Invoice.readFromFileToGenerateInvoice("invoice.bin");
