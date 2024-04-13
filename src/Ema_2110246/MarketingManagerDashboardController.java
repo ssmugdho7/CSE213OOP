@@ -54,6 +54,8 @@ public class MarketingManagerDashboardController implements Initializable {
         stage.setTitle("Request Reimbursement Payment ");
         stage.setScene(new Scene(parent, prefWidth, prefHeight));
         stage.show();
+       
+        
         
         
     }
