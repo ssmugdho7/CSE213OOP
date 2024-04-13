@@ -4,6 +4,8 @@
  */
 package Mugdho_2220644;
 
+import Ema_2110246.MarketingManager;
+import Ema_2110246.Reimbursement;
 import java.io.BufferedReader;
 import java.io.EOFException;
 import java.io.File;
@@ -12,6 +14,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -50,6 +54,7 @@ public class AccountantDashboardController implements Initializable {
     private Button emptermsbutton;
     @FXML
     private Label customerCountShow;
+       private List<Reimbursement> reimbursements = new ArrayList<>();
 
     /**
      * Initializes the controller class.
@@ -60,12 +65,13 @@ public class AccountantDashboardController implements Initializable {
                 "January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"
         );
+reimbursements = MarketingManager.loadReimbursements("Reimbursement.bin");
 
+        // Set the text of the ReimbursementreqOutputLabel
+        ReimbursementreqOutputLabel.setText("Reimbursement Requests: " + reimbursements.size());
         try {
             // Open the binary f1le for reading
             File file = new File("CustomerLoginInfo.bin");
-
-
 
             // Check if the file exists
             if (!file.exists()) {
@@ -84,21 +90,19 @@ public class AccountantDashboardController implements Initializable {
         }
     }
 
-private int countObjects(File file) throws IOException {
-    int count = 0;
-    try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
-        while (ois.readObject() != null) {
-            count++;
+    private int countObjects(File file) throws IOException {
+        int count = 0;
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
+            while (ois.readObject() != null) {
+                count++;
+            }
+        } catch (EOFException e) {
+            // Reached end of file
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace(); // Handle class not found exception
         }
-    } catch (EOFException e) {
-        // Reached end of file
-    } catch (ClassNotFoundException e) {
-        e.printStackTrace(); // Handle class not found exception
+        return count;
     }
-    return count;
-}
-
-    
 
     @FXML
     private void viewReimbursementButtonOnClick(ActionEvent event) throws IOException {

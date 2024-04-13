@@ -4,6 +4,15 @@
  */
 package Mugdho_2220644;
 
+
+import Ema_2110246.Reimbursement;
+import Ema_2110246.MarketingManager;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Paragraph;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -12,10 +21,14 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser;
 
 /**
  * FXML Controller class
@@ -43,21 +56,57 @@ public class ViewRequestReimursementReqController implements Initializable {
     @FXML
     private Button loadReqOnClick;
     
-    List<Reimbursement>reimbursements = new ArrayList();
+private List<Reimbursement> reimbursements = new ArrayList<>();
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("employeeName"));
+    amountColumn.setCellValueFactory(new PropertyValueFactory<>("expenseAmount"));
+    paymentMethodColumn.setCellValueFactory(new PropertyValueFactory<>("paymentMethod"));
+    expenseTypeColumn.setCellValueFactory(new PropertyValueFactory<>("expenseDistribution"));
+    reqDateColumn.setCellValueFactory(new PropertyValueFactory<>("reimbursementDate"));
+    designationColumn.setCellValueFactory(new PropertyValueFactory<>("designation"));
+    
+       reimbursements = MarketingManager.loadReimbursements("Reimbursement.bin");
+       RequestReimbursementDataTableView.getItems().setAll(reimbursements);
     }
-//
-//@FXML
-//    private void saveTAbleviewContentAsPDFOnCLick(ActionEvent event) {
-//   reimbursements = Reimbursement.readFromFile("reimbursementRequest.bin");
-//    invoiceTableView.getItems().clear();
-//  invoiceTableView.getItems().addAll(reimbursements);
-//    }
+
+
+    @FXML
+    private void saveTAbleviewContentAsPDFOnCLick(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+    fileChooser.setTitle("Save PDF File");
+    fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
+    File file = fileChooser.showSaveDialog(null);
+
+    if (file != null) {
+        try (PdfWriter writer = new PdfWriter(file.getAbsolutePath())) {
+            PdfDocument pdf = new PdfDocument(writer);
+            Document document = new Document(pdf);
+
+            // Add content to the PDF document
+            document.add(new Paragraph("Reimbursements:"));
+            for (Reimbursement reimbursement : reimbursements) {
+                document.add(new Paragraph(reimbursement.toString()));
+            }
+
+            // Close the document
+            document.close();
+
+            // Show success message
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "PDF generated successfully.", ButtonType.OK);
+            alert.showAndWait();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            // Show error message
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Error generating PDF.", ButtonType.OK);
+            alert.showAndWait();
+        }
+    }
+    
+    }
     
 }
-//invoices = Invoice.readFromFileToGenerateInvoice("invoice.bin");
+

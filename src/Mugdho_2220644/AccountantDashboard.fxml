@@ -107,7 +107,7 @@
                         </LinearGradient>
                      </textFill>
                   </Label>
-                  <Label fx:id="ReimbursementreqOutputLabel" layoutX="68.0" layoutY="106.0" prefHeight="80.0" prefWidth="227.0" style="-fx-background-color: #1b9d46; -fx-background-radius: 77;" text="Reimbursement Requests:" textFill="WHITE">
+                  <Label fx:id="ReimbursementreqOutputLabel" layoutX="60.0" layoutY="106.0" prefHeight="80.0" prefWidth="244.0" style="-fx-background-color: #1b9d46; -fx-background-radius: 77;" text="Reimbursement Requests:" textFill="WHITE">
                      <font>
                         <Font name="Script MT Bold" size="18.0" />
                      </font>
@@ -127,7 +127,7 @@
                         <Image url="@../images/DjEbu7yfmutJ.gif" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="50.0" fitWidth="200.0" layoutX="18.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="40.0" fitWidth="39.0" layoutX="18.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/icons8-us-dollar-circled.gif" />
                      </image>

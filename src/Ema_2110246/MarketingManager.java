@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import javafx.collections.ObservableList;
 
 
-class MarketingManager implements Serializable {
+public class MarketingManager implements Serializable {
     //request reimbursement
     public static boolean writeReimbursements(ObservableList<Reimbursement> reimbursements, String fileName) {
         try (FileOutputStream fos = new FileOutputStream(fileName);
