@@ -46,21 +46,13 @@ public class SignUpController implements Initializable {
     /**
      * Initializes the controller class.
      */
-   
-    
-    
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       userTypeComboBox.getItems().addAll("Accountant", "Customer",
+        userTypeComboBox.getItems().addAll("Accountant", "Customer",
                 "Field Technician", "Marketing Manager", "Customer Care Representative",
-                 "Managing Director", "Efficient Support Representative", "Network Engineer");
+                "Managing Director", "Efficient Support Representative", "Network Engineer");
     }
 
-    
-    
-    
-    
     @FXML
     private void goBackButtonOnClick(ActionEvent event) {
         try {
@@ -85,41 +77,75 @@ public class SignUpController implements Initializable {
     @FXML
     private void createAccountButtonOnClick(ActionEvent event) {
 
-  String fullName=newNameTextField.getText();
+        if (!validateFields()) {
+            showAlert("Error", "Incomplete Information", "Please fill in all fields before signing up.");
+            return;
+        }
+
+        if (!validatePasswords()) {
+            showAlert("Error", "Passwords Mismatch", "Passwords do not match. Please re-enter.");
+            return;
+        }
+
+        if (!validateAge()) {
+            showAlert("Error", "Invalid Age", "Minimum age required is 8 years old.");
+            return;
+        }
+
+        String fullName = newNameTextField.getText();
         String userName = newUserNameTextField.getText();
-        String phoneNumber = newUserPhoneNumberTextField.getText();       
+        String phoneNumber = newUserPhoneNumberTextField.getText();
         String password = newPasswordTextField.getText();
-        String confirmPassword = confirmPasswordTextField.getText();
-        LocalDate dob = newUserDob.getValue();       
-        User newUser = new User(fullName,userName, phoneNumber, password, dob);
+        LocalDate dob = newUserDob.getValue();
+        User newUser = new User(fullName, userName, phoneNumber, password, dob);
+
+        // Check for unique user ID, assuming you have a method for it
+        if (!isUserIDUnique(userName)) {
+            showAlert("Error", "Username Taken", "This username already exists. Please choose another one.");
+            return;
+        }
+
         Boolean success = SignUpFile.SignUpFileWrite(newUser, userTypeComboBox.getValue());
-        if(success){
-            System.out.println(success);
-            Alert a = new Alert(Alert.AlertType.CONFIRMATION);
-            a.setHeaderText("Confirmed");
-            a.setContentText("Your SignUp is Complete");
-            a.showAndWait();
+        if (success) {
+            showAlert("Success", "Account Created", "Your sign up is complete.");
+        } else {
+            showAlert("Error", "Sign Up Failed", "An error occurred during sign up. Please try again.");
         }
-       else{
-            System.out.println(success);
-            Alert a = new Alert(Alert.AlertType.ERROR);
-            a.setHeaderText("ERROR");
-            a.setContentText("Your SignUp is Incomplete.TRY AGAIN");
-            a.showAndWait();
-        }
+
+        clearFields();
+    }
+
+    private boolean validateFields() {
+        return !newNameTextField.getText().isEmpty()
+                && !newUserNameTextField.getText().isEmpty()
+                && !newUserPhoneNumberTextField.getText().isEmpty()
+                && !newPasswordTextField.getText().isEmpty()
+                && !confirmPasswordTextField.getText().isEmpty()
+                && newUserDob.getValue() != null;
+    }
+
+    private boolean validatePasswords() {
+        return newPasswordTextField.getText().equals(confirmPasswordTextField.getText());
+    }
+
+    private boolean validateAge() {
+        LocalDate dob = newUserDob.getValue();
+        return dob != null && dob.plusYears(8).isBefore(LocalDate.now());
+    }
+
+    private boolean isUserIDUnique(String userName) {
+    
+        //need to implement this method 
+        return true;
+    }
+
+    private void clearFields() {
         newNameTextField.clear();
         newUserNameTextField.clear();
-        newUserPhoneNumberTextField.clear();       
+        newUserPhoneNumberTextField.clear();
         newPasswordTextField.clear();
         confirmPasswordTextField.clear();
         newUserDob.setValue(null);
     }
 
-
-//    @FXML
-//    private void goBackButtonOnClick(ActionEvent event) {
-//    }
-    
 }
-
-   

@@ -50,6 +50,38 @@ public class ViewAuditReportController implements Initializable {
 
     @FXML
     private void loadAuditOnClick(ActionEvent event) {
+        List<AuditReport> reports = AuditReport.readFromFileForAuditReport("auditReport.bin"); // For debugging purposes
+        if (!reports.isEmpty()) {
+            displayTexxtArea.clear();
+            for (AuditReport report : reports) {
+                displayTexxtArea.appendText(report.toString() + "\n\n");
+            }
+        } else {
+            showAlert(Alert.AlertType.INFORMATION, "No Reports", "No audit reports found.");
+        }
+        //displayTexxtArea.setText(reports.toString());
+        
+    }
+      private void showAlert(Alert.AlertType alertType, String title, String content) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+
+
+
+
+
+
+
+}
+        
+        
+        
+        
+
+        
  
        //displayTexxtArea.clear();
       // List<AuditReport> reports = AuditReport.readFromFileForAuditReport("AuditReport.bin");
@@ -58,12 +90,11 @@ public class ViewAuditReportController implements Initializable {
       // Display audit reports in the text area
       //if (!reports.isEmpty()) {
          // for (AuditReport report : reports) {
-             // displayTexxtArea.appendText(report.toString() + "\n\n");
-          }
+             // displayTexxtArea.appendText(report.toString() + "\n\n")}
       //} else {
          // showAlert(Alert.AlertType.INFORMATION, "No Reports", "No audit reports found.");
       //}
-}
+
 
       //displayTexxtArea.setText(report.toString());
 
