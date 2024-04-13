@@ -56,8 +56,8 @@ public class EmployeeAttendanceController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         designationTableColumn.setCellValueFactory(new PropertyValueFactory<>("designation"));
         remarksTableColumn.setCellValueFactory(new PropertyValueFactory<>("remarks"));
-        overtimeHourstableColumn.setCellValueFactory(new PropertyValueFactory<>("overtimeHour"));
-        dateTableColumn.setCellValueFactory(new PropertyValueFactory<>("checkIndate"));
+        overtimeHourstableColumn.setCellValueFactory(new PropertyValueFactory<>("overtimeHours"));
+        dateTableColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         
 
         

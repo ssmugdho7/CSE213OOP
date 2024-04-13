@@ -15,7 +15,7 @@ import java.util.List;
 
 
 
-class EmployeeAttendance implements Serializable {
+public class EmployeeAttendance implements Serializable {
 
 
 
