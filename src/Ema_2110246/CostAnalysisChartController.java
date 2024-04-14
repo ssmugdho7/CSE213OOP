@@ -20,6 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
+
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
@@ -29,7 +30,7 @@ public class CostAnalysisChartController implements Initializable {
     @FXML
     private PieChart costRatioChart;
     @FXML
-    private BarChart<String, Integer> barchart;
+    private BarChart<String, Float> barchart;
     @FXML
     private Button backButton;
 
@@ -49,33 +50,59 @@ public class CostAnalysisChartController implements Initializable {
         
         
          List<CostEstimation> costs = CostEstimation.readFromFileToEstimateCost("costEstimation.bin");
-int totalSubscribers = costs.size();
+         
 
-double totalFixedCosts = 0;
-double totalVariableCosts = 0;
-double totalAdditionalCosts = 0;
+
+float Totalsubscriber = costs.size();
+
+float FixedCosts = 0;
+float VariableCosts = 0;
+float AdditionalCosts = 0;
+float revenue = 0;
 
 for (CostEstimation cost : costs) {
-    totalFixedCosts =totalFixedCosts+ cost.getFixedCosts();
-    totalVariableCosts = totalVariableCosts+cost.getVariableCosts();
-    totalAdditionalCosts = totalAdditionalCosts+cost.getAdditionalCost();
+    
+    FixedCosts =FixedCosts+ cost.getFixedCosts();
+    VariableCosts = VariableCosts+cost.getVariableCosts();
+    AdditionalCosts = AdditionalCosts+cost.getAdditionalCost();
+    revenue = revenue+ cost.getRevenue();
+    Totalsubscriber = Totalsubscriber + cost.getSubscriber();
 }
-
+//float averageRevenueperSubscriber = revenue / Totalsubscriber;
 ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-    new PieChart.Data("Fixed Costs", totalFixedCosts),
-    new PieChart.Data("Variable Costs", totalVariableCosts),
-    new PieChart.Data("Additional Costs", totalAdditionalCosts)
+   new PieChart.Data("Subscribers", Totalsubscriber),
+    new PieChart.Data("Fixed Costs", FixedCosts),
+    new PieChart.Data("Variable Costs", VariableCosts),
+    new PieChart.Data("Additional Costs", AdditionalCosts),
+    new PieChart.Data("Average Revenue per Subscriber", revenue)
 );
 
 costRatioChart.setData(pieChartData);
 
-XYChart.Series<String, Integer> series = new XYChart.Series<>();
-for (CostEstimation ce : costs) {
-    double totalCost = ce.getFixedCosts() + ce.getVariableCosts() + ce.getAdditionalCost();
-    series.getData().add(new XYChart.Data<>("Subscriber " + ce.getSubscriber(), (int) totalCost));
+XYChart.Series<String, Float> series = new XYChart.Series<>();
+/*or (CostEstimation cost : costs) {
+    //double totalCost = cost.getFixedCosts() + cost.getVariableCosts() + cost.getAdditionalCost();
+    double totalCostWithRevenue = cost.getFixedCosts() + cost.getVariableCosts() + cost.getAdditionalCost() + cost.getRevenue();
+    series.getData().add(new XYChart.Data<>("Subscriber " + cost.getSubscriber(), (int) totalCostWithRevenue));
+    //series.getData().add(new XYChart.Data<>("Subscriber " + cost.getSubscriber(), (int) totalCost));
 }
 
+barchart.getData().add(series);*/
+// Create an XYChart.Series to hold the data for the bar chart
+//XYChart.Series<String, Integer> series = new XYChart.Series<>();
+
+// Add data points to the series
+series.getData().add(new XYChart.Data<>("Subscribers", Totalsubscriber));
+
+series.getData().add(new XYChart.Data<>("Fixed Costs", FixedCosts));
+series.getData().add(new XYChart.Data<>("Variable Costs", VariableCosts));
+series.getData().add(new XYChart.Data<>("Additional Costs", AdditionalCosts));
+series.getData().add(new XYChart.Data<>(" Average Revenue per Subscriber", revenue));
+
+// Add the series to the bar chart
 barchart.getData().add(series);
+
+
 
         
         
