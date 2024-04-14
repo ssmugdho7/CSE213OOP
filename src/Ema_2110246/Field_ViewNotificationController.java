@@ -64,8 +64,11 @@ public class Field_ViewNotificationController implements Initializable {
         locationTableColumn.setCellValueFactory(new PropertyValueFactory<>("location"));
         problemDetailsTableColumn.setCellValueFactory(new PropertyValueFactory<>("problemDetails"));
   
-       //ks = MarketingManager.loadReimbursements("dutyToFieldTechnician.bin");
-      // viewNotificationFromAssignDutyTableView.getItems().setAll(ks);
+       //dutyFieldTechnicians = MarketingManager.loadReimbursements("dutyToFieldTechnician.bin");
+       //dutyFieldTechnicians =customer.readFromFile("dutyToFieldTechnician.bin");
+      // viewNotificationFromAssignDutyTableView.getItems().setAll(k);
+      //invoiceRequests = InvoiceRequest.readFromFile("invoiceRequest.bin");
+        //invoiceTableView.getItems().addAll(invoices);
     }    
 
     @FXML
@@ -86,7 +89,7 @@ public class Field_ViewNotificationController implements Initializable {
             Document document = new Document(pdf);
 
             // Add content to the PDF document
-            document.add(new Paragraph("Notifications:"));
+            document.add(new Paragraph("dutyFieldTechnicians:"));
             for (Notification notification :ks) {
                 document.add(new Paragraph(notification.toString()));
             }
