@@ -46,6 +46,8 @@ public class GenerateInvoiceController implements Initializable,Serializable {
     private DatePicker invoiceDate;
     @FXML
     private TextField amountTextField;
+    @FXML
+    private Button backButton;
 
 //    ArrayList<Invoice> invoices = new ArrayList<>() ; 
     /**
@@ -122,6 +124,20 @@ public class GenerateInvoiceController implements Initializable,Serializable {
     // Create and return Invoice object
     return new Invoice(customerId, address, invoiceDateValue, services, amount);
 }
+
+    @FXML
+    private void backButtonOnClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AccountantDashboard.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+
+            Stage currentStage = (Stage) backButton.getScene().getWindow();
+            currentStage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     
 
 }

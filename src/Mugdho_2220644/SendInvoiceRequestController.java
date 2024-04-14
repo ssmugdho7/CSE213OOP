@@ -4,18 +4,24 @@
  */
 package Mugdho_2220644;
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -35,6 +41,8 @@ public class SendInvoiceRequestController implements Initializable {
     private TextArea detailedInfoTextArea;
     @FXML
     private TextField customerIdTextField;
+    @FXML
+    private Button backButton;
 
     /**
      * Initializes the controller class.
@@ -92,6 +100,20 @@ public class SendInvoiceRequestController implements Initializable {
        detailedInfoTextArea.setText(invoice.toString());
     
     
+    }
+
+    @FXML
+    private void backButtonOnClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CustomerDashboard.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+
+            Stage currentStage = (Stage) backButton.getScene().getWindow();
+            currentStage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
     

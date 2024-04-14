@@ -114,4 +114,9 @@
    <Line endX="795.0" endY="-6.0" layoutX="115.0" layoutY="121.0" startX="-100.0" />
    <DatePicker fx:id="sallaryDate" layoutX="605.0" layoutY="145.0" prefHeight="31.0" prefWidth="312.0" promptText="Sallary Date" />
    <ComboBox fx:id="sallaryMonthCombobox" layoutX="605.0" layoutY="185.0" prefHeight="31.0" prefWidth="312.0" promptText="Sallary Month" />
+   <Button fx:id="backButton" layoutX="895.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonOnClick" style="-fx-background-color: white;" text="&lt;">
+      <font>
+         <Font name="System Bold" size="15.0" />
+      </font>
+   </Button>
 </AnchorPane>

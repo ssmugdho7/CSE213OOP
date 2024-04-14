@@ -47,5 +47,10 @@
             <Image url="@../images/download.png" />
          </image>
       </ImageView>
+      <Button fx:id="backButton" layoutX="539.0" layoutY="11.0" mnemonicParsing="false" onAction="#backButtonOnClick" style="-fx-background-color: white;" text="&lt;">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

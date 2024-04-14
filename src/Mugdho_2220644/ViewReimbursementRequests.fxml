@@ -35,5 +35,10 @@
             <Font name="Bodoni MT" size="15.0" />
          </font>
       </Button>
+      <Button fx:id="backButton" layoutX="636.0" layoutY="8.0" mnemonicParsing="false" onAction="#backButtonOnClick" style="-fx-background-color: white;" text="&lt;">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -23,5 +23,10 @@
       <ComboBox fx:id="servicesComboBox" layoutX="38.0" layoutY="191.0" prefHeight="31.0" prefWidth="187.0" promptText="Services" />
       <TextArea fx:id="detailedInfoTextArea" layoutX="259.0" layoutY="86.0" prefHeight="180.0" prefWidth="200.0" />
       <Button layoutX="54.0" layoutY="334.0" mnemonicParsing="false" onAction="#LoadToTextAreaOnClick" text="Load toText Area" />
+      <Button fx:id="backButton" layoutX="548.0" layoutY="17.0" mnemonicParsing="false" onAction="#backButtonOnClick" style="-fx-background-color: white;" text="&lt;">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

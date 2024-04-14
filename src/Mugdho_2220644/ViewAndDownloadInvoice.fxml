@@ -23,7 +23,7 @@
             <Font size="25.0" />
          </font>
       </Button>
-      <ImageView fitHeight="105.0" fitWidth="154.0" layoutX="560.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="105.0" fitWidth="154.0" layoutX="529.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/th.jpeg" />
          </image>
@@ -44,5 +44,10 @@
       </Label>
       <TextField fx:id="searchByIDTExtfeild" layoutX="208.0" layoutY="120.0" onAction="#searchByIDTExtfeildOnClk" prefHeight="31.0" prefWidth="177.0" />
       <Text layoutX="45.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search by Customer ID:" />
+      <Button fx:id="backButton" layoutX="675.0" layoutY="10.0" mnemonicParsing="false" onAction="#backButtonOnClick" style="-fx-background-color: white;" text="&lt;">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

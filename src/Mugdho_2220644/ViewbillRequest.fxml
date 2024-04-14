@@ -31,5 +31,10 @@
       </Button>
       <Button fx:id="returnButton" layoutX="374.0" layoutY="36.0" mnemonicParsing="false" onAction="#returnButtonInClk" text="Return" />
       <Button fx:id="filterButton" layoutX="188.0" layoutY="79.0" mnemonicParsing="false" onAction="#filterButtonOnclick" text="filter" />
+      <Button fx:id="backButton" layoutX="453.0" layoutY="8.0" mnemonicParsing="false" onAction="#backButtonOnClick" style="-fx-background-color: white;" text="&lt;">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

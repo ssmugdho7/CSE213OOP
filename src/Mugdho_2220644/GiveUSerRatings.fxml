@@ -27,6 +27,11 @@
       <TextField fx:id="userID" />
       <Label text="Feedback" textFill="WHITE" />
         <TextArea fx:id="ratingFeedback" prefHeight="100" prefWidth="200" promptText="Leave your feedback here..." />
+      <Button fx:id="backButton" mnemonicParsing="false" onAction="#backButtonOnClick" style="-fx-background-color: white;" text="&lt;">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
         <Button onAction="#submoitRatingsOnClick" style="-fx-font-size: 14px;" text="Submit">
          <font>
             <Font name="Cambria Bold" size="20.0" />

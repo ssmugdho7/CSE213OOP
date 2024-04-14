@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="496.0" prefWidth="633.0" style="-fx-background-color: #58c635;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mugdho_2220644.GenerateInvoiceController">
+<AnchorPane id="AnchorPane" prefHeight="496.0" prefWidth="667.0" style="-fx-background-color: #58c635;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mugdho_2220644.GenerateInvoiceController">
     <children>
         <Label layoutX="197.0" layoutY="14.0" prefHeight="27.0" prefWidth="253.0" text="Generate Invoice Slip" textFill="#060705">
          <font>
@@ -44,7 +44,12 @@
          </font>
       </Label>
       <TextField fx:id="amountTextField" layoutX="173.0" layoutY="337.0" prefHeight="31.0" prefWidth="400.0" />
-      <Button fx:id="invoicereqButton" layoutX="476.0" layoutY="14.0" mnemonicParsing="false" onAction="#invReqsOnClick" prefHeight="31.0" prefWidth="143.0" text="Invoice Requests" />
+      <Button fx:id="invoicereqButton" layoutX="475.0" layoutY="30.0" mnemonicParsing="false" onAction="#invReqsOnClick" prefHeight="31.0" prefWidth="143.0" text="Invoice Requests" />
       <TextArea fx:id="servicesTextArea" layoutX="175.0" layoutY="230.0" prefHeight="71.0" prefWidth="400.0" />
+      <Button fx:id="backButton" layoutX="627.0" layoutY="12.0" mnemonicParsing="false" onAction="#backButtonOnClick" style="-fx-background-color: white;" text="&lt;">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>
