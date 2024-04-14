@@ -5,6 +5,7 @@
 package Ema_2110246;
 
 import Mugdho_2220644.CostEstimation;
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -12,10 +13,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 
 public class CostAnalysisChartController implements Initializable {
@@ -24,6 +30,8 @@ public class CostAnalysisChartController implements Initializable {
     private PieChart costRatioChart;
     @FXML
     private BarChart<String, Integer> barchart;
+    @FXML
+    private Button backButton;
 
     /**
      * Initializes the controller class.
@@ -75,6 +83,20 @@ barchart.getData().add(series);
     
     
 }
+
+    @FXML
+    private void backButtonOnClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MarketingManagerDashboard.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+
+            Stage currentStage = (Stage) backButton.getScene().getWindow();
+            currentStage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
         
     
     

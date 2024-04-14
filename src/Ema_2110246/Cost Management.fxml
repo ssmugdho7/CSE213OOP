@@ -9,7 +9,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="408.0" prefWidth="686.0" style="-fx-background-color: #647295;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ema_2110246.CostManagementController">
    <children>
-      <Label layoutX="177.0" layoutY="14.0" prefHeight="47.0" prefWidth="436.0" text="Cost Management  Suggestions" textFill="WHITE">
+      <Label layoutX="174.0" layoutY="6.0" prefHeight="47.0" prefWidth="436.0" text="Cost Management  Suggestions" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="23.0" />
          </font>
@@ -31,5 +31,10 @@
       <Button fx:id="saveButton" layoutX="601.0" layoutY="371.0" mnemonicParsing="false" onAction="#saveButtonOnCilick" prefHeight="31.0" prefWidth="78.0" style="-fx-background-color: black; -fx-background-radius: 77;" text="Save" textFill="WHITE" />
       <ComboBox fx:id="budgetPlanComboBox" layoutX="174.0" layoutY="91.0" prefHeight="31.0" prefWidth="173.0" />
       <ComboBox fx:id="saveMoneybyComboBox" layoutX="494.0" layoutY="90.0" prefHeight="31.0" prefWidth="173.0" />
+      <Button fx:id="backButton" layoutX="640.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonOnClick" style="-fx-background-color: white;" text="&lt;">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

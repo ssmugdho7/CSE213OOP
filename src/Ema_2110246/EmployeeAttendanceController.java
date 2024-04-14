@@ -2,6 +2,7 @@
 package Ema_2110246;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -11,7 +12,10 @@ import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -21,6 +25,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import javafx.util.converter.LocalDateStringConverter;
 
 
@@ -47,6 +52,8 @@ public class EmployeeAttendanceController implements Initializable {
     private Button LoadInformationButton;
     
     List<EmployeeAttendance> attendances = new ArrayList<>();
+    @FXML
+    private Button backButton;
     
 
     /**
@@ -150,6 +157,20 @@ public class EmployeeAttendanceController implements Initializable {
 
  
 }
+
+    @FXML
+    private void backButtonOnClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MarketingManagerDashboard.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+
+            Stage currentStage = (Stage) backButton.getScene().getWindow();
+            currentStage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     
 
 }
