@@ -4,6 +4,7 @@
  */
 package Ema_2110246;
 
+import Mugdho_2220644.CostEstimation;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -47,7 +49,37 @@ public class UpdatedRatesAndControlPopularPackagesChartController implements Ini
 
     @FXML
     private void submitButtonOnClick(ActionEvent event) {
+        
+        try{    
+            String  packageName =  packageNameTextField.getText();
+            float popularity = Float.parseFloat(popularityTextField.getText());
+            float speed = Float.parseFloat(speedTextFiled.getText());
+            float rate = Float.parseFloat(rateTextField.getText());
+
+        // Creating an instance of Invoice
+       // RiskFactors factor = new RiskFactors(riskCategory, riskFactorDescription,  recommendations, assessmentDate);
+        PackagesRate packag = new PackagesRate(packageName,  popularity,  speed,  rate);
+        boolean addStatus = PackagesRate.addToInstanceToPackagesRate (packag,"PackagesRate.bin"); 
+   
+        
+        if (addStatus) {
+                showAlert(Alert.AlertType.INFORMATION, "Success", "PackagesRate  Added Successfully!");
+            } else {
+                showAlert(Alert.AlertType.ERROR, "Error", "Oops, something went wrong.");
+            }
+     } 
+         
+         catch (NumberFormatException e) {
+          showAlert(Alert.AlertType.ERROR, "Invalid Input", "Please enter valid n values for packageName,  popularity,  speed andrate.");
+        }
     }
+    
+    private void showAlert(Alert.AlertType alertType, String title, String content) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }   
 
     @FXML
     private void backButtonOnClick(ActionEvent event) {
@@ -64,3 +96,5 @@ public class UpdatedRatesAndControlPopularPackagesChartController implements Ini
     }
     
 }
+//package= new data
+//packages= old data
