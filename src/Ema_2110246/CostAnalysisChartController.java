@@ -30,7 +30,7 @@ public class CostAnalysisChartController implements Initializable {
     @FXML
     private PieChart costRatioChart;
     @FXML
-    private BarChart<String, Float> barchart;
+    private BarChart<String, Number> barchart;
     @FXML
     private Button backButton;
 
@@ -53,7 +53,7 @@ public class CostAnalysisChartController implements Initializable {
          
 
 
-float Totalsubscriber = costs.size();
+int subscriber = costs.size();
 
 float FixedCosts = 0;
 float VariableCosts = 0;
@@ -66,11 +66,11 @@ for (CostEstimation cost : costs) {
     VariableCosts = VariableCosts+cost.getVariableCosts();
     AdditionalCosts = AdditionalCosts+cost.getAdditionalCost();
     revenue = revenue+ cost.getRevenue();
-    Totalsubscriber = Totalsubscriber + cost.getSubscriber();
+    subscriber = subscriber + cost.getSubscriber();
 }
 //float averageRevenueperSubscriber = revenue / Totalsubscriber;
 ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-   new PieChart.Data("Subscribers", Totalsubscriber),
+   new PieChart.Data("Subscribers", subscriber),
     new PieChart.Data("Fixed Costs", FixedCosts),
     new PieChart.Data("Variable Costs", VariableCosts),
     new PieChart.Data("Additional Costs", AdditionalCosts),
@@ -79,7 +79,7 @@ ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
 
 costRatioChart.setData(pieChartData);
 
-XYChart.Series<String, Float> series = new XYChart.Series<>();
+XYChart.Series<String, Number> series = new XYChart.Series<>();
 /*or (CostEstimation cost : costs) {
     //double totalCost = cost.getFixedCosts() + cost.getVariableCosts() + cost.getAdditionalCost();
     double totalCostWithRevenue = cost.getFixedCosts() + cost.getVariableCosts() + cost.getAdditionalCost() + cost.getRevenue();
@@ -92,7 +92,7 @@ barchart.getData().add(series);*/
 //XYChart.Series<String, Integer> series = new XYChart.Series<>();
 
 // Add data points to the series
-series.getData().add(new XYChart.Data<>("Subscribers", Totalsubscriber));
+series.getData().add(new XYChart.Data<>("Subscribers", subscriber));
 
 series.getData().add(new XYChart.Data<>("Fixed Costs", FixedCosts));
 series.getData().add(new XYChart.Data<>("Variable Costs", VariableCosts));
