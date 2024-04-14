@@ -22,7 +22,7 @@
           <Menu mnemonicParsing="false" style="-fx-background-color: white;" text="Tasks">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#requestReimbursementButtonOnClick" text="Request  Reimbursement" />
-                  <MenuItem mnemonicParsing="false" onAction="#paymentCostChartButtonOnClick" text="Payment Cost Chart" />
+                  <MenuItem mnemonicParsing="false" onAction="#viewCostRatioChartButtonOnClick" text="View Cost Raio Chart" />
                   <MenuItem mnemonicParsing="false" onAction="#paymentCostManagementButtonOnClick" text="Payment Cost Management" />
             </items>
           </Menu>

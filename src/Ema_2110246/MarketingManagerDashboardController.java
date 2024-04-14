@@ -61,7 +61,6 @@ public class MarketingManagerDashboardController implements Initializable {
     }
         
 
-    @FXML
     private void paymentCostChartButtonOnClick(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Cost Analysis chart.fxml"));
         Parent parent = fxmlLoader.load();
@@ -79,7 +78,7 @@ public class MarketingManagerDashboardController implements Initializable {
 
     @FXML
     private void paymentCostManagementButtonOnClick(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Cost Management.fxml"));
+        /*FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Cost Management.fxml"));
         Parent parent = fxmlLoader.load();
 
         // Retrieve preferred height and width from the loaded parent node
@@ -89,7 +88,7 @@ public class MarketingManagerDashboardController implements Initializable {
         Stage stage = new Stage();
         stage.setTitle(" Payment Cost Management ");
         stage.setScene(new Scene(parent, prefWidth, prefHeight));
-        stage.show();
+        stage.show();*/
         
     }
 
@@ -193,6 +192,21 @@ public class MarketingManagerDashboardController implements Initializable {
 
         Stage stage = new Stage();
         stage.setTitle("Audit report view");
+        stage.setScene(new Scene(parent, prefWidth, prefHeight));
+        stage.show();
+    }
+
+    @FXML
+    private void viewCostRatioChartButtonOnClick(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Cost Analysis chart.fxml"));
+        Parent parent = fxmlLoader.load();
+
+        // Retrieve preferred height and width from the loaded parent node
+        double prefHeight = parent.prefHeight(USE_COMPUTED_SIZE);
+        double prefWidth = parent.prefWidth(USE_COMPUTED_SIZE);
+
+        Stage stage = new Stage();
+        stage.setTitle("Payment Cost Chart ");
         stage.setScene(new Scene(parent, prefWidth, prefHeight));
         stage.show();
     }
