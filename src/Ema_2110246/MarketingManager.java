@@ -4,17 +4,7 @@
  */
 package Ema_2110246;
 
-import java.io.EOFException;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
-import javafx.collections.ObservableList;
 
 
 public class MarketingManager implements Serializable {
@@ -55,7 +45,7 @@ public class MarketingManager implements Serializable {
     }
 
    //-----------------*/
-    // Method to write Invoice objects to a binary file
+   /* // Method to write Invoice objects to a binary file
     public static boolean writeToFileToPackagesRate(List<PackagesRate>packag, String filename) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
             for (PackagesRate xyz : packag) {
@@ -71,7 +61,7 @@ public class MarketingManager implements Serializable {
 
     
     
-    /*// Method to read  from a binary file
+    // Method to read  from a binary file
     public static List<PackagesRate> readFromFileToPackagesRate(String filename) {
         List<PackagesRate>packag= new ArrayList<>(); 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
