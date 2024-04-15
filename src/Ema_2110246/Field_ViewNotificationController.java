@@ -12,6 +12,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -52,6 +54,7 @@ public class Field_ViewNotificationController implements Initializable {
     private Button saveTableViewAsPDF;
     @FXML
     private Button backButton;
+    private List<Notification> nofis = new ArrayList<>();
 
     /**
      * Initializes the controller class.
@@ -69,6 +72,8 @@ public class Field_ViewNotificationController implements Initializable {
       // viewNotificationFromAssignDutyTableView.getItems().setAll(k);
       //invoiceRequests = InvoiceRequest.readFromFile("invoiceRequest.bin");
         //invoiceTableView.getItems().addAll(invoices);
+       // nofis = dutyFieldTechnicians.readFromFileToPackagesRate("dutyToFieldTechnician.bin");
+        viewNotificationFromAssignDutyTableView.getItems().addAll(nofis);
     }    
 
     @FXML
