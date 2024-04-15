@@ -4,7 +4,7 @@
  */
 package Mugdho_2220644;
 
-import Ema_2110246.MarketingManager;
+
 import Ema_2110246.Reimbursement;
 import java.io.BufferedReader;
 import java.io.EOFException;
@@ -63,8 +63,7 @@ public class AccountantDashboardController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         monthComboBox.getItems().addAll(
                 "January", "February", "March", "April", "May", "June",
-                "July", "August", "September", "October", "November", "December"
-        );
+                "July", "August", "September", "October", "November", "December");
 reimbursements =Reimbursement.loadReimbursements("Reimbursement.bin");
 
         // Set the text of the ReimbursementreqOutputLabel
