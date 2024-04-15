@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
 package Ema_2110246;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -179,9 +178,8 @@ public class MarketingManagerDashboardController implements Initializable {
        
     }
 
-    @FXML
     private void viewAuditOnClk(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MD View Audit Report.fxml"));
+        /*FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ViewAuditReport.fxml"));
         Parent parent = fxmlLoader.load();
 
         // Retrieve preferred height and width from the loaded parent node
@@ -191,7 +189,7 @@ public class MarketingManagerDashboardController implements Initializable {
         Stage stage = new Stage();
         stage.setTitle("Audit report view");
         stage.setScene(new Scene(parent, prefWidth, prefHeight));
-        stage.show();
+        stage.show();*/
     }
 
     @FXML
@@ -235,6 +233,21 @@ public class MarketingManagerDashboardController implements Initializable {
 
         Stage stage = new Stage();
         stage.setTitle(" Updated rates and control popular packages chart");
+        stage.setScene(new Scene(parent, prefWidth, prefHeight));
+        stage.show();
+    }
+
+    @FXML
+    private void viewAuditOnClick(ActionEvent event) throws IOException {
+       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AuditView.fxml"));
+        Parent parent = fxmlLoader.load();
+
+        // Retrieve preferred height and width from the loaded parent node
+        double prefHeight = parent.prefHeight(USE_COMPUTED_SIZE);
+        double prefWidth = parent.prefWidth(USE_COMPUTED_SIZE);
+
+        Stage stage = new Stage();
+        stage.setTitle(" Audit report view ");
         stage.setScene(new Scene(parent, prefWidth, prefHeight));
         stage.show();
     }

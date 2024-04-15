@@ -30,7 +30,7 @@
             <items>
               <MenuItem mnemonicParsing="false" onAction="#WriteupdatedRatesAndcontrolPopularpackageButtonOnClick" text="Write updated rates and control popular packages " />
                   <MenuItem mnemonicParsing="false" onAction="#identifyRiskFactorsButtonOnClick" text="Identify Risk Factors" />
-                  <MenuItem mnemonicParsing="false" onAction="#viewAuditOnClk" text="View Audit Report" />
+                  <MenuItem mnemonicParsing="false" onAction="#viewAuditOnClick" text="View Audit Report" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" style="-fx-background-color: white;" text="Navigator">
