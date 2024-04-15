@@ -4,8 +4,12 @@
  */
 package Mugdho_2220644;
 
+import Ema_2110246.PackagesRate;
+import Ema_2110246.Reimbursement;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.application.HostServices;
 import javafx.event.ActionEvent;
@@ -20,6 +24,7 @@ import javafx.scene.control.Hyperlink;
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -36,11 +41,11 @@ public class CustomerDashboardController implements Initializable {
     @FXML
     private Button logOutButton;
     @FXML
-    private TableView<?> internetRates;
+    private TableView<PackagesRate> internetRates;
     @FXML
-    private TableColumn<?, ?> sppedCol;
+    private TableColumn<PackagesRate, Float> sppedCol;
     @FXML
-    private TableColumn<?, ?> netRateCol;
+    private TableColumn<PackagesRate, Package> netRateCol;
     @FXML
     private PieChart popularpackagesPieChart;
     @FXML
@@ -55,12 +60,20 @@ public class CustomerDashboardController implements Initializable {
     private Hyperlink link3hyperlonk;
 
     private HostServices hostServices;
+    private List<PackagesRate> packs = new ArrayList<>();
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+       sppedCol.setCellValueFactory(new PropertyValueFactory<>("speed"));
+        netRateCol.setCellValueFactory(new PropertyValueFactory<>("rate"));
+        
+  
+       
+     packs = PackagesRate.readFromFileToPackagesRate("PackagesRate.bin");
+        internetRates.getItems().addAll(packs);
 
     }
 
