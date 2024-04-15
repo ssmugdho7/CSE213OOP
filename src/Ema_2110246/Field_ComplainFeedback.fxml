@@ -13,16 +13,16 @@
             <Font name="System Bold Italic" size="26.0" />
          </font>
       </Label>
-      <TextArea fx:id="feedbackTextArea" layoutX="8.0" layoutY="70.0" prefHeight="149.0" prefWidth="665.0" promptText="Provide your feedback..." style="-fx-border-color: black;">
+      <TextArea layoutX="8.0" layoutY="70.0" prefHeight="149.0" prefWidth="665.0" promptText="Provide your feedback..." style="-fx-border-color: black;">
          <font>
             <Font size="18.0" />
          </font></TextArea>
-      <Button fx:id="submitButton" layoutX="212.0" layoutY="234.0" mnemonicParsing="false" onAction="#submitButtonOnClick" prefHeight="33.0" prefWidth="223.0" style="-fx-background-color: #9df9ef; -fx-border-color: black; -fx-border-radius: 80;" text="Submit">
+      <Button layoutX="212.0" layoutY="234.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="223.0" style="-fx-background-color: #9df9ef; -fx-border-color: black; -fx-border-radius: 80;" text="Submit">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="backButton" layoutX="216.0" layoutY="274.0" mnemonicParsing="false" onAction="#backButtonOnClick" prefHeight="33.0" prefWidth="215.0" style="-fx-background-color: #9df9ef; -fx-border-color: black; -fx-border-radius: 80;" text="Back">
+      <Button layoutX="216.0" layoutY="274.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="215.0" style="-fx-background-color: #9df9ef; -fx-border-color: black; -fx-border-radius: 80;" text="Back">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

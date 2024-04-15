@@ -61,10 +61,5 @@
             <Label fx:id="netProfitLabel" />
         </VBox>
       <Button fx:id="submitToMDButton" layoutX="393.0" layoutY="385.0" mnemonicParsing="false" onAction="#submitButtonToMDOnClick" prefHeight="31.0" prefWidth="152.0" text="Submit" />
-      <Button fx:id="backButton" layoutX="555.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonOnClick" style="-fx-background-color: white;" text="&lt;">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Button>
     </children>
 </AnchorPane>

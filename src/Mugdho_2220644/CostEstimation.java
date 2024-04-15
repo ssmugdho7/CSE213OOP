@@ -83,21 +83,21 @@ public class CostEstimation implements Serializable {
 
 
 
-   // Method to write  objects to a binary file
+   // Method to write Invoice objects to a binary file
     public static boolean writeToFileToEstimateCost(List<CostEstimation> costs, String filename) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
             for (CostEstimation est : costs) {
                 oos.writeObject(est);
-            System.out.println("CostEstimation generated successfully.");
+            System.out.println("Invoices generated successfully.");
             }
             return true;
         } catch (IOException e) {
-            System.err.println("Error writing CostEstimation to file: " + e.getMessage());
+            System.err.println("Error writing invoices to file: " + e.getMessage());
            return false;
         }
     }
 
-    // Method to read  from a binary file
+    // Method to read invoices from a binary file
     public static List<CostEstimation> readFromFileToEstimateCost(String filename) {
         List<CostEstimation> costs = new ArrayList<>(); 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
@@ -112,9 +112,9 @@ public class CostEstimation implements Serializable {
                     break; // End of file reached
                 }
             }
-            System.out.println("CostEstimation loaded successfully.");
+            System.out.println("Invoices loaded successfully.");
         } catch (IOException | ClassNotFoundException e) {
-            System.err.println("Error reading CostEstimation from file: " + e.getMessage());
+            System.err.println("Error reading invoices from file: " + e.getMessage());
         }
         return costs;
     }

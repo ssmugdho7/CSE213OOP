@@ -51,10 +51,5 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="backButton" layoutX="655.0" layoutY="12.0" mnemonicParsing="false" onAction="#backButtonOnClick" style="-fx-background-color: white;" text="&lt;">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>

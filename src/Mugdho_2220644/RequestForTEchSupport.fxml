@@ -9,9 +9,8 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="560.0" style="-fx-background-color: blue;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Mugdho_2220644.RequestForrTechSupportController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="560.0" style="-fx-background-color: blue;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Mugdho_2220644.RequestForrTechSupportController">
     <VBox alignment="CENTER" prefHeight="389.0" prefWidth="468.0" spacing="10">
         <Label style="-fx-font-size: 18px;" text="Technical Support Request" textFill="WHITE" />
         <ListView fx:id="issueListViewRecords" prefHeight="78.0" prefWidth="468.0">
@@ -43,9 +42,4 @@
         </TabPane>
     </VBox>
    <Button layoutX="482.0" layoutY="355.0" mnemonicParsing="false" style="-fx-background-color: red;" text="Submit" textFill="WHITE" />
-   <Button fx:id="backButton" layoutX="515.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonOnClick" style="-fx-background-color: white;" text="&lt;">
-      <font>
-         <Font name="System Bold" size="15.0" />
-      </font>
-   </Button>
 </AnchorPane>

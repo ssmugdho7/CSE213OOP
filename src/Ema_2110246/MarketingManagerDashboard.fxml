@@ -22,15 +22,15 @@
           <Menu mnemonicParsing="false" style="-fx-background-color: white;" text="Tasks">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#requestReimbursementButtonOnClick" text="Request  Reimbursement" />
-                  <MenuItem mnemonicParsing="false" onAction="#viewCostRatioChartButtonOnClick" text="View Cost Ratio Chart" />
-                  <MenuItem mnemonicParsing="false" onAction="#costManagementSuggestionsButtonOnClick" text="Cost Management Suggestions" />
+                  <MenuItem mnemonicParsing="false" onAction="#paymentCostChartButtonOnClick" text="Payment Cost Chart" />
+                  <MenuItem mnemonicParsing="false" onAction="#paymentCostManagementButtonOnClick" text="Payment Cost Management" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" style="-fx-background-color: white;" text="External Tasks">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#WriteupdatedRatesAndcontrolPopularpackageButtonOnClick" text="Write updated rates and control popular packages " />
+              <MenuItem mnemonicParsing="false" onAction="#WriteupdatedRatesAndcontrolPipularpackageChartchart" text="Write updated rates and control popular packages chart" />
                   <MenuItem mnemonicParsing="false" onAction="#identifyRiskFactorsButtonOnClick" text="Identify Risk Factors" />
-                  <MenuItem mnemonicParsing="false" onAction="#viewAuditOnClick" text="View Audit Report" />
+                  <MenuItem mnemonicParsing="false" onAction="#viewAuditOnClk" text="View Audit Report" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" style="-fx-background-color: white;" text="Navigator">

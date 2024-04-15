@@ -4,11 +4,20 @@
  */
 package Ema_2110246;
 
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javafx.collections.ObservableList;
 
 
-public class MarketingManager implements Serializable {
-   /* //request reimbursement
+class MarketingManager implements Serializable {
+    //req reimbursement
     public static boolean writeReimbursements(ObservableList<Reimbursement> reimbursements, String fileName) {
         try (FileOutputStream fos = new FileOutputStream(fileName);
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
@@ -44,61 +53,70 @@ public class MarketingManager implements Serializable {
         return existingReimbursements;
     }
 
-   //-----------------*/
-   /* // Method to write Invoice objects to a binary file
-    public static boolean writeToFileToPackagesRate(List<PackagesRate>packag, String filename) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
-            for (PackagesRate xyz : packag) {
-                oos.writeObject(xyz);
-            System.out.println("PackagesRate generated successfully.");
-            }
-            return true;
-        } catch (IOException e) {
-            System.err.println("Error writing PackagesRate to file: " + e.getMessage());
-           return false;
-        }
-    }
-
+   //-----------------
     
     
-    // Method to read  from a binary file
-    public static List<PackagesRate> readFromFileToPackagesRate(String filename) {
-        List<PackagesRate>packag= new ArrayList<>(); 
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
-            while (true) {
-                try {
-                    Object obj = ois.readObject();
-                    if (obj instanceof  PackagesRate) {
-                        PackagesRate xyz = ( PackagesRate) obj;
-                        packag.add(xyz);
-                    }
-                } catch (EOFException e) {
-                    break; // End of file reached
-                }
-            }
-            System.out.println("  PackagesRate loaded successfully.");
-        } catch (IOException | ClassNotFoundException e) {
-            System.err.println("Error reading PackagesRate from file: " + e.getMessage());
-        }
-        return packag;
-    }
-
-
-
-    // Method to add a new instance to the list and write to file
-
-
-    public static boolean addToInstanceToPackagesRate(PackagesRate packag, String filename) {
-        // Read existing invoices from file
-        List<PackagesRate>packags=readFromFileToPackagesRate(filename);
-      packags.add(packag);
-       // Write updated list of invoices back to the file
-        return writeToFileToPackagesRate(packags, filename);
-    }*/
-
-//inoivces = old invoice 
+    //-------------File read & write for Employee
+    public static List<Object> readObjectsFromFile(String fileName) {
+           List<Object> objects = new ArrayList<>();
+           try (FileInputStream fis = new FileInputStream(fileName);
+                ObjectInputStream ois = new ObjectInputStream(fis)) {
+               while (true) {
+                   try {
+                       Object obj = ois.readObject();
+                       if (obj != null) {
+                           objects.add(obj);
+                       }
+                   } catch (EOFException e) {
+                       break; 
+                   }
+               }
+           } catch (IOException | ClassNotFoundException ex) {
+               ex.printStackTrace();
+           }
+           return objects;
+           }
+    public static boolean writeObjectsToFile(List<Object> objects, String fileName) {
+           try (FileOutputStream fos = new FileOutputStream(fileName);
+                ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+               for (Object obj : objects) {
+                   oos.writeObject(obj);
+               }
+               return true;
+           } catch (IOException ex) {
+               ex.printStackTrace();
+               return false;
+           }
+       }
     
+    
+   
+
+    public static boolean addNewEmployeeAttendance(EmployeeAttendance information, String fileName) {
+           List<Object> information_row = readObjectsFromFile(fileName);
+           information_row.add(information);
+           return writeObjectsToFile(information_row, fileName);
+       } 
        
 
-   
+    public static ArrayList<EmployeeAttendance> loadButtonOnClick(String fileName) {
+        ArrayList<EmployeeAttendance> existingEmployeeAttendances = new ArrayList<>();
+
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName))) {
+            while (true) {
+                try {
+                    EmployeeAttendance employeeAttendance = (EmployeeAttendance) ois.readObject();
+                    existingEmployeeAttendances.add(employeeAttendance);
+                } catch (EOFException eof) {
+                    // End of file reached, break the loop
+                    break;
+                }
+            }
+        } catch (IOException | ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+
+        return existingEmployeeAttendances;
+    }
+
 }

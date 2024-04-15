@@ -25,8 +25,6 @@ public class Field_ReadCustomerComplainController implements Initializable {
 
     @FXML
     private Button sendFeedback;
-    @FXML
-    private Button backButton;
 
     /**
      * Initializes the controller class.
@@ -45,20 +43,6 @@ public class Field_ReadCustomerComplainController implements Initializable {
             termsStage.setTitle("Send feedback");
             termsStage.setScene(new Scene(termsRoot));
             termsStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    private void backButtonOnClick(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("FieldTechnicianDashboard.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-
-            Stage currentStage = (Stage) backButton.getScene().getWindow();
-            currentStage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
         }

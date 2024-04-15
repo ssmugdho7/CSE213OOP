@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="912.0" prefWidth="1137.0" style="-fx-background-color: #72A0C1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tasin_2211161.QualityCustomerInteractionsController">
+   <children>
+      <Text layoutX="173.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quality Customer Interaction">
+         <font>
+            <Font name="Impact" size="27.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="80.0" fitWidth="111.0" layoutX="41.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../BackUp%20Project%20Folder/Link3_Technologies_Ltd_Logo.svg.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="41.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Inquiry:" wrappingWidth="170.13671875">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="checkInquiryField" layoutX="211.0" layoutY="213.0" prefHeight="116.0" prefWidth="567.0" />
+      <Text layoutX="41.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Message History:" wrappingWidth="170.13671875">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="messageHistoryField" layoutX="211.0" layoutY="377.0" prefHeight="116.0" prefWidth="567.0" />
+      <Button layoutX="56.0" layoutY="594.0" mnemonicParsing="false" onAction="#initiateContactOnAction" prefHeight="56.0" prefWidth="192.0" style="-fx-background-color: #3DDC84; -fx-background-radius: 200;" text="Initiate Contact">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button layoutX="435.0" layoutY="594.0" mnemonicParsing="false" onAction="#addressConcernsOnAction" prefHeight="56.0" prefWidth="268.0" style="-fx-background-color: #3DDC84; -fx-background-radius: 200;" text="Address Concerns">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button layoutX="880.0" layoutY="594.0" mnemonicParsing="false" onAction="#resolveIssueOnAction" prefHeight="56.0" prefWidth="192.0" style="-fx-background-color: #3DDC84; -fx-background-radius: 200;" text="Resolve Issue">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button layoutX="63.0" layoutY="830.0" mnemonicParsing="false" onAction="#goToHomeOnAction" prefHeight="50.0" prefWidth="170.0" style="-fx-background-color: #DB2D43; -fx-background-radius: 200;" text="Go to Home">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

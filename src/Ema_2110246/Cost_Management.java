@@ -17,13 +17,12 @@ public class  Cost_Management implements Serializable {
 
     
     private String suggestion;
-    private String budgetPlan;
-    private String saveMoneyby;
+    private float totalExpenses,monthlyRevenue;
 
-    public Cost_Management(String suggestion, String budgetPlan, String saveMoneyby){
+    public Cost_Management(String suggestion, float totalExpenses, float monthlyRevenue) {
         this.suggestion = suggestion;
-        this.budgetPlan = budgetPlan;
-        this.saveMoneyby = saveMoneyby;
+        this.totalExpenses = totalExpenses;
+        this.monthlyRevenue = monthlyRevenue;
     }
 
     public String getSuggestion() {
@@ -34,34 +33,32 @@ public class  Cost_Management implements Serializable {
         this.suggestion = suggestion;
     }
 
-    public String getBudgetPlan() {
-        return budgetPlan;
+    public float getTotalExpenses() {
+        return totalExpenses;
     }
 
-    public void setBudgetPlan(String budgetPlan) {
-        this.budgetPlan = budgetPlan;
+    public void setTotalExpenses(float totalExpenses) {
+        this.totalExpenses = totalExpenses;
     }
 
-    public String getSaveMoneyby() {
-        return saveMoneyby;
+    public float getMonthlyRevenue() {
+        return monthlyRevenue;
     }
 
-    public void setSaveMoneyby(String saveMoneyby) {
-        this.saveMoneyby = saveMoneyby;
+    public void setMonthlyRevenue(float monthlyRevenue) {
+        this.monthlyRevenue = monthlyRevenue;
     }
 
     @Override
     public String toString() {
-        return "Cost_Management{" + "suggestion=" + suggestion + ", budgetPlan=" + budgetPlan + ", saveMoneyby=" + saveMoneyby + '}';
+        return "Cost_Management{" + "suggestion=" + suggestion + ", totalExpenses=" + totalExpenses + ", monthlyRevenue=" + monthlyRevenue + '}';
     }
-
-   
     
     
    
     
     
-    
+    // Method to write Invoice objects to a binary file
     public static boolean writeToFileToCost_Management(List<Cost_Management> process, String filename) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
             for (Cost_Management xyz : process) {
@@ -75,7 +72,7 @@ public class  Cost_Management implements Serializable {
         }
     }
 
-    
+    // Method to read invoices from a binary file
     public static List<Cost_Management> readFromFileToCost_Management(String filename) {
         List<Cost_Management> process = new ArrayList<>(); 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
@@ -110,7 +107,8 @@ public class  Cost_Management implements Serializable {
         return writeToFileToCost_Management(processes, filename);
     }
 
-
+//inoivces = old invoice 
+//invoice = new invoice
     
     
 }

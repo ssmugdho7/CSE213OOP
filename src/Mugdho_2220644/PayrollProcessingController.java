@@ -1,6 +1,5 @@
 package Mugdho_2220644;
 
-import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -10,10 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -25,7 +21,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.stage.Stage;
 import javafx.util.converter.FloatStringConverter;
 import mainPKG.Employee;
 
@@ -87,8 +82,6 @@ public class PayrollProcessingController implements Initializable {
     private ComboBox<String> fildercOMBOBOX;
     @FXML
     private Label totalSallaryLabel;
-    @FXML
-    private Button backButton;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -349,20 +342,6 @@ public class PayrollProcessingController implements Initializable {
         Payroll payroll = event.getRowValue();
         payroll.setOvertimeAmount(event.getNewValue());
         payroll.writeToBinaryFile(records);
-    }
-
-    @FXML
-    private void backButtonOnClick(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AccountantDashboard.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-
-            Stage currentStage = (Stage) backButton.getScene().getWindow();
-            currentStage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
 }

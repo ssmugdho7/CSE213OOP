@@ -4,23 +4,17 @@
  */
 package Mugdho_2220644;
 
-import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -39,8 +33,6 @@ public class ProcessReimbursementController implements Initializable {
     private TextField employeeNameTextField;
     @FXML
     private ComboBox<String> designationComboBox;
-    @FXML
-    private Button backButton;
 
     /**
      * Initializes the controller class.
@@ -101,18 +93,4 @@ String expenseType = expenseTypeComboBox.getValue();
     @FXML
     private void loadPrevRecordsOnClick(ActionEvent event) {
   }
-
-    @FXML
-    private void backButtonOnClick(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AccountantDashboard.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-
-            Stage currentStage = (Stage) backButton.getScene().getWindow();
-            currentStage.setScene(scene);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
