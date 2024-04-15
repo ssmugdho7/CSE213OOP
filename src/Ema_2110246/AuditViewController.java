@@ -7,6 +7,7 @@ package Ema_2110246;
 import Mugdho_2220644.AuditReport;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -17,7 +18,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
@@ -27,31 +31,45 @@ import javafx.stage.Stage;
  */
 public class AuditViewController implements Initializable {
 
-    @FXML
     private TextArea displayTexxtArea;
     @FXML
     private Button backButton;
  //private ArrayList<AuditReport> reports;
+    
+    @FXML
+    private TableView<AuditReport> auditTableView;
+    @FXML
+    private TableColumn<AuditReport, LocalDate> dateTableCol;
+    @FXML
+    private TableColumn<AuditReport, String> titleTableCol;
+    @FXML
+    private TableColumn<AuditReport, String> findingsTableCol;
+    @FXML
+    private TableColumn<AuditReport, String> recommendationsTableCol;
+    @FXML
+    private TableColumn<AuditReport, String> commentsTableCol;
     private List<AuditReport>  reports  = new ArrayList<>();
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        reports =  AuditReport.readFromFileForAuditReport("auditReport.bin");
+        //reports =  AuditReport.readFromFileForAuditReport("auditReport.bin");
         //reports = AuditReport.readFromFileForAuditReport("auditReport.bin");
        //String display = displayTexxtArea.getText ();
        
-       if (reports != null && !reports.isEmpty()) {
-            StringBuilder displayTextBuilder = new StringBuilder();
-            for (AuditReport report : reports) {
-                displayTextBuilder.append(report.toString()).append("\n");
-            }
-            displayTexxtArea.setText(displayTextBuilder.toString());
-        } else {
-            displayTexxtArea.setText("No audit reports found.");
-        }
+       dateTableCol.setCellValueFactory(new PropertyValueFactory<>("auditDate"));
+        titleTableCol.setCellValueFactory(new PropertyValueFactory<>("title"));
+        findingsTableCol.setCellValueFactory(new PropertyValueFactory<>("findings"));
+        recommendationsTableCol.setCellValueFactory(new PropertyValueFactory<>("recommendations"));
+        commentsTableCol.setCellValueFactory(new PropertyValueFactory<>("comments"));
+        
+        auditTableView.getItems().addAll(reports);
+        reports = AuditReport.readFromFileForAuditReport("auditReport.bin.bin");
+        //auditTableView.getItems().clear();
+        //auditTableView.getItems().addAll(reports);
     }
+    
     
        
        
@@ -68,6 +86,13 @@ public class AuditViewController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void viewButtonOnClick(ActionEvent event) {
+        //reports = AuditReport.readFromFileForAuditReport("auditReport.bin");
+        //auditTableView.getItems().clear();
+        //auditTableView.getItems().addAll(reports);
     }
     
 }
