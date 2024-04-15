@@ -115,7 +115,7 @@ public class LoginController implements Initializable {
             if (userType.equals("Technical Support Representative")) {
 //                SceneChange newScene = new SceneChange();
 //                newScene.Scenechanger(currentStage, "Efficient_Support_Representative_MainDashboard.fxml");
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Tasin_2211161/TechnicalSupportRepresentativeDashBoard.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Tasin_2211161/TechnicalSupportRepresentativeDashboard.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             currentStage.setScene(scene);
@@ -126,7 +126,7 @@ public class LoginController implements Initializable {
             if (userType.equals("Network Engineer")) {
 //                SceneChange newScene = new SceneChange();
 //                newScene.Scenechanger(currentStage, "Network_Engineer_MainDashboard.fxml");
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Tasin_2211161/NetworkEngineerDashBoard.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Tasin_2211161/NetworkEngineerDashboard.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             currentStage.setScene(scene);

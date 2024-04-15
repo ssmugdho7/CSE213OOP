@@ -54,7 +54,7 @@ public class SignUpController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
        userTypeComboBox.getItems().addAll("Accountant", "Customer",
                 "Field Technician", "Marketing Manager", "Customer Care Representative",
-                 "Managing Director", "Efficient Support Representative", "Network Engineer");
+                 "Managing Director", "Technical Support Representative", "Network Engineer");
     }
 
     

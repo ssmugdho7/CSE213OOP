@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="691.0" prefWidth="1145.0" style="-fx-background-color: #B0E0E6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jami_2211508.CustomerCareRepresentativeDashboardController">
+   <left>
+      <VBox prefHeight="659.0" prefWidth="343.0" style="-fx-background-color: #008080;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="121.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/download.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="26.0" prefWidth="359.0" text="CustomerCare Representative" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Harlow Solid Italic" size="29.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="CustomerComplain" mnemonicParsing="false" onMouseClicked="#CustomerComplainButtonOnClick" prefHeight="34.0" prefWidth="377.0" style="-fx-background-color: #EE82EE; -fx-background-radius: 20;" text="Customer's complaint">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin></Button>
+            <Button fx:id="RequestReimnursement" layoutX="20.0" layoutY="178.0" mnemonicParsing="false" onMouseClicked="#RequestReimnursementButtonOnClick" prefHeight="34.0" prefWidth="377.0" style="-fx-background-color: #EE82EE; -fx-background-radius: 20;" text="Request Reimbursement">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="AssignDutytoFieldTechnician" layoutX="10.0" layoutY="212.0" mnemonicParsing="false" onMouseClicked="#AssignDutytoFieldTechnicianButtonOnClick" prefHeight="34.0" prefWidth="377.0" style="-fx-background-color: #EE82EE; -fx-background-radius: 20;" text="Assign Duty to Field Technician">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="AssignDutytoNetworkEngineer" layoutX="10.0" layoutY="246.0" mnemonicParsing="false" onMouseClicked="#AssignDutytoNetworkEngineerButtonOnClick" prefHeight="34.0" prefWidth="377.0" style="-fx-background-color: #EE82EE; -fx-background-radius: 20;" text="Assign Duty to Network Engineer">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="AssignDutytoTechnicalSupport" layoutX="10.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#AssignDutytoTechnicalSupportButtonOnClick" prefHeight="34.0" prefWidth="377.0" style="-fx-background-color: #EE82EE; -fx-background-radius: 20;" text="Assign Duty to Technical Support">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="AttendencAndOvertime" layoutX="10.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#AttendencAndOvertimeButtonOnClick" prefHeight="34.0" prefWidth="377.0" style="-fx-background-color: #EE82EE; -fx-background-radius: 20;" text="Attendence and Overtime">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="TermsPolicy" layoutX="10.0" layoutY="348.0" mnemonicParsing="false" onMouseClicked="#TermsPolicyButtonOnClick" prefHeight="34.0" prefWidth="377.0" style="-fx-background-color: #EE82EE; -fx-background-radius: 20;" text="Terms &amp; Policy">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="CustomerRatings" layoutX="10.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#CustomerRatingsButtonOnClick" prefHeight="34.0" prefWidth="377.0" style="-fx-background-color: #EE82EE; -fx-background-radius: 20;" text="Customer Ratings">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="15.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="logOutButton" layoutX="10.0" layoutY="416.0" mnemonicParsing="false" onAction="#logOutButtonOnClick" prefHeight="44.0" prefWidth="209.0" style="-fx-background-color: red; -fx-background-radius: 20;" text="Log Out">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="60.0" right="10.0" top="40.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
