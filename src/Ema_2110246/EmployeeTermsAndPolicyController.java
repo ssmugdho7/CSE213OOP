@@ -4,6 +4,7 @@
  */
 package Ema_2110246;
 
+import Jami_2211508.md;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -33,13 +34,13 @@ public class EmployeeTermsAndPolicyController implements Initializable {
     private TextArea seeTextArea;
     @FXML
     private Button backButton;
-//private List<md> nofi = new ArrayList<>();
+private List<md> nofi = new ArrayList<>();
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        /* nofi= md.readFromFileForSuggestions("Terms & Policys.bin");
+         nofi= md.readFromFileForSuggestions("Terms & Policys.bin");
          if (nofi != null && !nofi.isEmpty()) {
             StringBuilder stringBuilder = new StringBuilder();
             for (md item : nofi) {
@@ -52,7 +53,7 @@ public class EmployeeTermsAndPolicyController implements Initializable {
         
         //seeTextArea.setText(nofi.toString());
       
-       */ 
+        
     }    
 
     @FXML
