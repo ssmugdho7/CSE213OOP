@@ -67,7 +67,7 @@ public class AuditReport implements Serializable {
     }
 
     
-     // Method to write Invoice objects to a binary file
+     // Method to write objects to a binary file
     public static boolean writeToFileForAuditReport(List<AuditReport> reports, String filename) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
             for (AuditReport rep : reports) {
@@ -81,7 +81,7 @@ public class AuditReport implements Serializable {
         }
     }
 
-    // Method to read invoices from a binary file
+    // Method to read  from a binary file
     public static List<AuditReport> readFromFileForAuditReport(String filename) {
         List<AuditReport> reports = new ArrayList<>();
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
