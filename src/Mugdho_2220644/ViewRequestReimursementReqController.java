@@ -75,7 +75,7 @@ private List<Reimbursement> reimbursements = new ArrayList<>();
     reqDateColumn.setCellValueFactory(new PropertyValueFactory<>("reimbursementDate"));
     designationColumn.setCellValueFactory(new PropertyValueFactory<>("designation"));
     
-       reimbursements = MarketingManager.loadReimbursements("Reimbursement.bin");
+       reimbursements = Reimbursement.loadReimbursements("Reimbursement.bin");
        RequestReimbursementDataTableView.getItems().setAll(reimbursements);
     }
 

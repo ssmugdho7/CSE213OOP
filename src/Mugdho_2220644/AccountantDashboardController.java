@@ -65,7 +65,7 @@ public class AccountantDashboardController implements Initializable {
                 "January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"
         );
-reimbursements = MarketingManager.loadReimbursements("Reimbursement.bin");
+reimbursements =Reimbursement.loadReimbursements("Reimbursement.bin");
 
         // Set the text of the ReimbursementreqOutputLabel
         ReimbursementreqOutputLabel.setText("Reimbursement Requests: " + reimbursements.size());
