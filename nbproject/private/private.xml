@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/Users/Lenovo/OneDrive/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/CustomerComplainWrite.fxml</file>
             <file>file:/C:/Users/Lenovo/OneDrive/Documents/GitHub/CSE213OOP/src/Tasin_2211161/NetworkEngineerDashboardController.java</file>
             <file>file:/C:/Users/Lenovo/OneDrive/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/GenerateInvoiceController.java</file>
@@ -37,6 +38,58 @@
             <file>file:/C:/Users/Lenovo/OneDrive/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/ProcessReimbursementRequestController.java</file>
             <file>file:/C:/Users/Lenovo/OneDrive/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/AccountantDashboardController.java</file>
             <file>file:/C:/Users/Lenovo/OneDrive/Documents/GitHub/CSE213OOP/src/mainPKG/SignUpController.java</file>
+=======
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/RiskFactorsReportController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/AccountantDashboardController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/InvoiceRequest.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/CostAnalysisChartController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/PackagesRate.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/GiveUserRatingController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/ViewbillRequestController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/ProcessReimbursementController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/GenerateInvoiceController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/RequestForrTechSupportController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/FieldTechnicianDashboardController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/CostEstimation.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/ViewRequestReimursementReqController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/Field_RequestTechnicalSupport.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/Invoice.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/ViewAuditReportController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/Accountant.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/PayrollProcessingController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/Customer.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/Field_RequestNetworkEngineerSupportController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/Reimbursement.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/RiskFactors.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/Field_RequestTechnicalSupportController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/TechnicalSupportFeedbackViewController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/RequestReimbursementPaymentController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/ReimbursementExecutionRecordsController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/AuditReport.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/EmployeeAttendance.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/Field_ReadCustomerComplainController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/ViewAndDownloadInvoiceController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/Payroll.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/Field_ComplainFeedbackController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/RequestForServiceController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/UpdatedRatesAndControlPopularPackagesChartController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/Cost_Management.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/EstimateCostAnalysisController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/CustomerComplainWriteController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/MarketingManager.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/MarketingManagerDashboardController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/CustomerDashboardController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/EmployeeTermsAndPolicyController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/FieldTechnician.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/SubmitAuditReportController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/Field_UpdatedNetworkInfoController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/SendInvoiceRequestController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/EmployeeAttendanceController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/CostManagementController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/Field_ViewNotificationController.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Ema_2110246/Field_RequestNetworkEngineerSupport.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/CSE213OOP/src/Mugdho_2220644/ProcessReimbursement.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
