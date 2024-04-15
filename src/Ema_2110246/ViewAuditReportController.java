@@ -35,8 +35,8 @@ public class ViewAuditReportController implements Initializable {
     
     @FXML
     private Button loadAudit;
-    private List<AuditReport> reports  = new ArrayList<>();
-   //private ArrayList<AuditReport> reports;
+    //private List<AuditReport> reports  = new ArrayList<>();
+   private ArrayList<AuditReport> reports;
     /**
      * Initializes the controller class.
      */
@@ -48,8 +48,10 @@ public class ViewAuditReportController implements Initializable {
        // for (AuditReport report : reports) {
            // checkauditComboBix.getItems().add(report.getTitle());
        //}
-       reports  = AuditReport.readFromFileForAuditReport("AuditReport.bin");
-       //displayTexxtArea.setText(reports.toString());
+       //reports = AuditReport.readFromFileForAuditReport("auditReport.bin");
+       String display = displayTexxtArea.getText ();
+       //displayTexxtArea.setText(reports);
+       displayTexxtArea.setText(reports.toString());
     }   // packs = PackargesRate.readFromFileToPackagesRate("PackagesRate.bin");
 
     @FXML
@@ -71,8 +73,8 @@ public class ViewAuditReportController implements Initializable {
         alert.setTitle(title);
         alert.setContentText(content);
         alert.showAndWait();*/
-       String display = displayTexxtArea.getText ();
-       displayTexxtArea.setText(reports.toString());
+       //String display = displayTexxtArea.getText ();
+       //displayTexxtArea.setText(reports.toString());
        
        
     }

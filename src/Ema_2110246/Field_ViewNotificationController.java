@@ -15,6 +15,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,7 +31,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javax.management.Notification;
 
 /**
  * FXML Controller class
@@ -39,51 +40,50 @@ import javax.management.Notification;
 public class Field_ViewNotificationController implements Initializable {
 
     @FXML
-    private TableView<Notification> viewNotificationFromAssignDutyTableView;
+    private TableView<customer> viewNotificationFromAssignDutyTableView;
     @FXML
-    private TableColumn<Notification, Integer> customerIdTableColumn;
+    private TableColumn<customer, Integer> customerIdTableColumn;
     @FXML
-    private TableColumn<Notification, LocalDate> datetoWorkTableColumn;
+    private TableColumn<customer, LocalDate> datetoWorkTableColumn;
     @FXML
-    private TableColumn<Notification, String> locationTableColumn;
+    private TableColumn<customer, String> locationTableColumn;
     @FXML
-    private TableColumn<Notification, String> problemDetailsTableColumn;
+    private TableColumn<customer, String> problemDetailsTableColumn;
     @FXML
     private Button loadButton;
     @FXML
     private Button saveTableViewAsPDF;
     @FXML
     private Button backButton;
-    private List<Notification> nofis = new ArrayList<>();
-
+    //private List<customer> nofis = new ArrayList<>();
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        customerIdTableColumn.setCellValueFactory(new PropertyValueFactory<>("customerId"));
-        datetoWorkTableColumn.setCellValueFactory(new PropertyValueFactory<>("datetoWork"));
+        
+       /* customerIdTableColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        datetoWorkTableColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         locationTableColumn.setCellValueFactory(new PropertyValueFactory<>("location"));
-        problemDetailsTableColumn.setCellValueFactory(new PropertyValueFactory<>("problemDetails"));
+        problemDetailsTableColumn.setCellValueFactory(new PropertyValueFactory<>("problem"));
   
-       //dutyFieldTechnicians = MarketingManager.loadReimbursements("dutyToFieldTechnician.bin");
-       //dutyFieldTechnicians =customer.readFromFile("dutyToFieldTechnician.bin");
-      // viewNotificationFromAssignDutyTableView.getItems().setAll(k);
-      //invoiceRequests = InvoiceRequest.readFromFile("invoiceRequest.bin");
-        //invoiceTableView.getItems().addAll(invoices);
-       // nofis = dutyFieldTechnicians.readFromFileToPackagesRate("dutyToFieldTechnician.bin");
-        viewNotificationFromAssignDutyTableView.getItems().addAll(nofis);
+        nofis = customer.readFromFileForDutyToFieldTechnician("dutyToFieldTechnician.bin");
+        
+       //("dutyToFieldTechnician.bin");
+        viewNotificationFromAssignDutyTableView.getItems().addAll(nofis);*/
     }    
 
     @FXML
     private void loadButtonOnClick(ActionEvent event) {
+            
+
         
     }
 
     @FXML
     private void saveTableViewAsPDFOnCLick(ActionEvent event) {
-        /*FileChooser fileChooser = new FileChooser();
+     /*   FileChooser fileChooser = new FileChooser();
     fileChooser.setTitle("Save PDF File");
     fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
     File file = fileChooser.showSaveDialog(null);
@@ -95,8 +95,8 @@ public class Field_ViewNotificationController implements Initializable {
 
             // Add content to the PDF document
             document.add(new Paragraph("dutyFieldTechnicians:"));
-            for (Notification notification :ks) {
-                document.add(new Paragraph(notification.toString()));
+            for (customer k :nofis ) {
+                document.add(new Paragraph(k .toString()));
             }
 
             // Close the document

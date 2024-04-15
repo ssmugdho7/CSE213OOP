@@ -6,6 +6,8 @@ package Ema_2110246;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,13 +33,26 @@ public class EmployeeTermsAndPolicyController implements Initializable {
     private TextArea seeTextArea;
     @FXML
     private Button backButton;
-
+//private List<md> nofi = new ArrayList<>();
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        /* nofi= md.readFromFileForSuggestions("Terms & Policys.bin");
+         if (nofi != null && !nofi.isEmpty()) {
+            StringBuilder stringBuilder = new StringBuilder();
+            for (md item : nofi) {
+                stringBuilder.append(item.toString()).append("\n");
+            }
+            seeTextArea.setText(stringBuilder.toString());
+        } else {
+            seeTextArea.setText("No data found.");
+        }
+        
+        //seeTextArea.setText(nofi.toString());
+      
+       */ 
     }    
 
     @FXML

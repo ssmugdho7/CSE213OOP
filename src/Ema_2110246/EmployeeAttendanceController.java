@@ -146,7 +146,7 @@ public class EmployeeAttendanceController implements Initializable {
   //attendances = attendance.readFromFileToEmployeeAttendance("EmployeeAttendanc.bin");
    // TableView.getItems().clear();
    // TableView.getItems().addAll(attendance);
-        //remarksTextArea.setText(attendance.toString());*/
+        remarksTextArea.setText(attendances.toString());
     
 
 
