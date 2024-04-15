@@ -13,10 +13,11 @@
             <Font name="Arial Bold Italic" size="19.0" />
          </font>
       </Label>
-      <TextArea fx:id="seeTextArea" layoutX="14.0" layoutY="68.0" prefHeight="327.0" prefWidth="696.0" style="-fx-background-color: #1d3124;" />
-      <Button fx:id="backButton" layoutX="596.0" layoutY="416.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="124.0" style="-fx-background-color: #1d3124; -fx-background-radius: 77;" text="Back" textFill="#bacec1">
+      <TextArea fx:id="seeTextArea" layoutX="14.0" layoutY="68.0" prefHeight="377.0" prefWidth="696.0" style="-fx-background-color: #1d3124;" />
+      <Button fx:id="backButton" layoutX="679.0" layoutY="18.0" mnemonicParsing="false" onAction="#backButtonOnClick" style="-fx-background-color: white;" text="&lt;">
          <font>
             <Font name="System Bold" size="15.0" />
-         </font></Button>
+         </font>
+      </Button>
    </children>
 </AnchorPane>

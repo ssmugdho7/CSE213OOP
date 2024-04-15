@@ -4,48 +4,71 @@
  */
 package Ema_2110246;
 
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class MarketingManager implements Serializable {
-   /* //request reimbursement
-    public static boolean writeReimbursements(ObservableList<Reimbursement> reimbursements, String fileName) {
-        try (FileOutputStream fos = new FileOutputStream(fileName);
-             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+public class PackagesRate implements Serializable{
+    
+    private String packageName;
+    private float popularity;
+    private float speed;
+    private float rate;
 
-            for (Reimbursement reimbursement : reimbursements) {
-                oos.writeObject(reimbursement);
-            }
+    public PackagesRate(String packageName, float popularity, float speed, float rate) {
+        this.packageName = packageName;
+        this.popularity = popularity;
+        this.speed = speed;
+        this.rate = rate;
+    }
 
-            return true;
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return false;
-        }
+    public String getPackageName() {
+        return packageName;
+    }
+
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
+    }
+
+    public float getPopularity() {
+        return popularity;
+    }
+
+    public void setPopularity(float popularity) {
+        this.popularity = popularity;
+    }
+
+    public float getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(float speed) {
+        this.speed = speed;
+    }
+
+    public float getRate() {
+        return rate;
+    }
+
+    public void setRate(float rate) {
+        this.rate = rate;
+    }
+
+    @Override
+    public String toString() {
+        return "PackagesRate{" + "packageName=" + packageName + ", popularity=" + popularity + ", speed=" + speed + ", rate=" + rate + '}';
     }
     
-    public static ArrayList<Reimbursement> loadReimbursements(String fileName) {
-        ArrayList<Reimbursement> existingReimbursements = new ArrayList<>();
-
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName))) {
-            while (true) {
-                try {
-                    Reimbursement reimbursement = (Reimbursement) ois.readObject();
-                    existingReimbursements.add(reimbursement);
-                } catch (EOFException eof) {
-                    // End of file reached, break the loop
-                    break;
-                }
-            }
-        } catch (IOException | ClassNotFoundException ex) {
-            ex.printStackTrace();
-        }
-
-        return existingReimbursements;
-    }
-
-   //-----------------*/
-   /* // Method to write Invoice objects to a binary file
+    
+    
+    // Method to write  objects to a binary file
     public static boolean writeToFileToPackagesRate(List<PackagesRate>packag, String filename) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
             for (PackagesRate xyz : packag) {
@@ -94,11 +117,17 @@ public class MarketingManager implements Serializable {
       packags.add(packag);
        // Write updated list of invoices back to the file
         return writeToFileToPackagesRate(packags, filename);
-    }*/
+    }
 
 //inoivces = old invoice 
-    
-       
-
+//invoice = new invoice
    
+    //support= new support 
+    // supports= old support
+    //suppt= new support 
+    // suppts= old supp
+    // factor = new factor
+    // factors = old factor
+    //package= new data
+//packages= old data
 }

@@ -4,10 +4,12 @@
  */
 package Ema_2110246;
 
+import java.io.Serializable;
+
 /**
  *
- * @author Lenovo
+ * 
  */
-public class Dummy1 {
+public class FieldTechnician implements Serializable{
     
 }

@@ -5,15 +5,20 @@
 package Ema_2110246;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -25,18 +30,21 @@ public class CostManagementController implements Initializable {
     @FXML
     private TextArea suggestionTextArea;
     @FXML
-    private TextField totalExpensesTextField;
-    @FXML
-    private TextField monthlyRevenueTextField;
-    @FXML
     private Button saveButton;
+    @FXML
+    private ComboBox<String>budgetPlanComboBox;
+    @FXML
+    private ComboBox<String>saveMoneybyComboBox;
+    @FXML
+    private Button backButton;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        budgetPlanComboBox.getItems().addAll("Invest more in what is effective", "Spend less on what does not work", "Find cheaper tools");
+        saveMoneybyComboBox.getItems().addAll("Simplify processes", "Negotiate discounts", "Improve advertising");
     }    
 
     @FXML
@@ -44,14 +52,13 @@ public class CostManagementController implements Initializable {
         
   try{
         String suggestion = suggestionTextArea.getText();
+        String budgetPlan = budgetPlanComboBox.getValue();
+        String saveMoneyby = saveMoneybyComboBox.getValue();
         
-        Float totalExpenses = Float.parseFloat(totalExpensesTextField.getText());
         
-        Float monthlyRevenue = Float.parseFloat(monthlyRevenueTextField.getText());
-   
-        
-   Cost_Management process =  new Cost_Management( suggestion,totalExpenses,monthlyRevenue);
-  //pushing to model Class done   
+   Cost_Management process = new Cost_Management(suggestion,budgetPlan,saveMoneyby);
+     
+      
    
   
    boolean addStatus = Cost_Management.addToInstanceToCost_Management(process, "Cost_Management.bin"); //file writing
@@ -78,8 +85,21 @@ public class CostManagementController implements Initializable {
 
     
     }
-    //process = new data 
-    //processes = old data
+    
+
+    @FXML
+    private void backButtonOnClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MarketingManagerDashboard.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+
+            Stage currentStage = (Stage) backButton.getScene().getWindow();
+            currentStage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     
         

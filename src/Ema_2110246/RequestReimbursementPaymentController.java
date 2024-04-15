@@ -1,6 +1,7 @@
 
 package Ema_2110246;
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -9,13 +10,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -40,6 +46,8 @@ public class RequestReimbursementPaymentController implements Initializable {
     private RadioButton mobileBankingRadioButton;
     @FXML
     private TextField employeeNameField;
+    @FXML
+    private Button backButton;
 
     /**
      * Initializes the controller class.
@@ -114,12 +122,12 @@ public class RequestReimbursementPaymentController implements Initializable {
         Reimbursement reimbursement = new Reimbursement(employeeName, expenseAmount, reimbursementDateValue,
                 designation, paymentMethod, expenseDistribution);
 
-        ArrayList<Reimbursement> existingReimbursements = MarketingManager.loadReimbursements("Reimbursement.bin");
+        ArrayList<Reimbursement> existingReimbursements = Reimbursement.loadReimbursements("Reimbursement.bin");
         existingReimbursements.add(reimbursement);
 
         ObservableList<Reimbursement> observableReimbursements = FXCollections.observableArrayList(existingReimbursements);
 
-        boolean success = MarketingManager.writeReimbursements(observableReimbursements, "Reimbursement.bin");
+        boolean success = Reimbursement.writeReimbursements(observableReimbursements, "Reimbursement.bin");
 
         if (success) {
             showAlert("Success", "Reimbursement submitted successfully.", Alert.AlertType.INFORMATION);
@@ -160,6 +168,20 @@ public class RequestReimbursementPaymentController implements Initializable {
             return "Mobile Banking";
         }
         return null;
+    }
+
+    @FXML
+    private void backButtonOnClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MarketingManagerDashboard.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+
+            Stage currentStage = (Stage) backButton.getScene().getWindow();
+            currentStage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
 }

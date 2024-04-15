@@ -1,14 +1,21 @@
 
 package Ema_2110246;
 
+
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -18,6 +25,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import javafx.util.converter.LocalDateStringConverter;
 
 
@@ -26,7 +34,6 @@ public class EmployeeAttendanceController implements Initializable {
     private ComboBox<String> EmployeeDesignatioonComboBox;
     @FXML
     private DatePicker checkInDateDatePicker;
-    //private TableView<EmployeeAttendance> showTableView;
     @FXML
     private TableColumn<EmployeeAttendance, String> designationTableColumn;
     @FXML
@@ -40,9 +47,13 @@ public class EmployeeAttendanceController implements Initializable {
     @FXML
     private TextField overtimeHoursTextFiled;
     @FXML
-    private TableView<EmployeeAttendance > TableView;
+    private TableView<EmployeeAttendance>TableView;
     @FXML
     private Button LoadInformationButton;
+    
+    List<EmployeeAttendance> attendances = new ArrayList<>();
+    @FXML
+    private Button backButton;
     
 
     /**
@@ -52,8 +63,10 @@ public class EmployeeAttendanceController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         designationTableColumn.setCellValueFactory(new PropertyValueFactory<>("designation"));
         remarksTableColumn.setCellValueFactory(new PropertyValueFactory<>("remarks"));
-        overtimeHourstableColumn.setCellValueFactory(new PropertyValueFactory<>("overtime Hour"));
-        dateTableColumn.setCellValueFactory(new PropertyValueFactory<>("check in date"));
+        overtimeHourstableColumn.setCellValueFactory(new PropertyValueFactory<>("overtimeHours"));
+        dateTableColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        
+
         
         
         DateTimeFormatter customDateFormat = DateTimeFormatter.ofPattern("dd MMM yyyy");
@@ -62,21 +75,12 @@ public class EmployeeAttendanceController implements Initializable {
         
         EmployeeDesignatioonComboBox.getItems().addAll("Marketing Manager", "Field Technician", "Customer Care RePresentative", "Network Engineer",  "Technical Support");
        
-       
+        TableView.getItems().addAll(attendances);
 
        
         
     }   
-    
-    
-    private void loadButtonOnClick(ActionEvent event) {
-        
-}
-        
-       
-    
-    
-    
+          
     
                 
         
@@ -84,102 +88,89 @@ public class EmployeeAttendanceController implements Initializable {
 
     @FXML
     private void submitButtonOnClick(ActionEvent event) {
+        try{
         String designation = EmployeeDesignatioonComboBox.getValue();
         String remarks = remarksTextArea.getText ();
-        String overtimeHours = overtimeHoursTextFiled.getText();
-        LocalDate checkInDate = checkInDateDatePicker.getValue();
-
-        if (designation == null || remarks == null || overtimeHours.isEmpty() || checkInDate == null) {
-            showErrorAlert("Error", "Please enter all required data.");
-            return;
-        }
-
-        int overtimeHoursValue;
-        try {
-            overtimeHoursValue = Integer.parseInt (overtimeHours);
-        } catch (NumberFormatException e) {
-            showErrorAlert("Error", "Invalid hours format. Please enter a valid number.");
-            return;
-        }
-
-        if (overtimeHoursValue <= 0) {
-            showErrorAlert("Error", "Hours must be a positive value.");
-            return;
-        }
+        float overtimeHours = Float.parseFloat(overtimeHoursTextFiled.getText());
+        LocalDate date = checkInDateDatePicker.getValue();
         
         
-        List<Object> employeeAttendanceList = MarketingManager.readObjectsFromFile("EmployeeAttendance.bin");
-        for (Object obj : employeeAttendanceList) {
-            if (obj instanceof EmployeeAttendance) {
-                EmployeeAttendance existingRecord = (EmployeeAttendance) obj;
-                if (existingRecord.getDate().equals(checkInDate)) {
-                    showErrorAlert("Error", "Record already submitted for today.");
-                    return;
-                }
-            }
-        }
-            ////////////
-        EmployeeAttendance newEmployeeAttendance = new EmployeeAttendance(designation,checkInDate ,overtimeHoursValue , remarks);
-        //boolean addStatus = MarketingManager.addnewEmployeeAttendance
-        boolean addStatus = MarketingManager.addNewEmployeeAttendance(newEmployeeAttendance, "EmployeeAttendance.bin");
+   
+   
+  EmployeeAttendance attendance= new EmployeeAttendance(designation,date,overtimeHours, remarks);
+   
+   
+  
+   boolean addStatus = EmployeeAttendance.addToInstanceToEmployeeAttendance(attendance," EmployeeAttendance.bin"); //file writing
+   
+        
         if (addStatus) {
-            showInfoAlert("Success", "Send Successfully!");
-        } else {
-            showErrorAlert("Error", "Oops, something went wrong");
+                showAlert(Alert.AlertType.INFORMATION, "Success", "New Attendance Added Successfully!");
+            } else {
+                showAlert(Alert.AlertType.ERROR, "Error", "Oops, something went wrong.");
+            }
+     } 
+         
+         catch (NumberFormatException e) {
+          showAlert(Alert.AlertType.ERROR, "Invalid Input", "Please enter valid numeric values for totalExpenses and monthlyRevenue.");
         }
-      
+    
         
     }
+    
+     private void showAlert(Alert.AlertType alertType, String title, String content) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.showAndWait();
+
+    
+    }
+    
+
 
 
 
     
-    
-     
-    private void showErrorAlert(String title, String content) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(title);
-        alert.setContentText(content);
-        alert.showAndWait();
-    }
-
-    private void showInfoAlert(String title, String content) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setContentText(content);
-        alert.showAndWait();
-    }
 
     @FXML
     private void loadInformationOnClick(ActionEvent event) {
-        String designation = EmployeeDesignatioonComboBox.getValue();
+       String designation = EmployeeDesignatioonComboBox.getValue();
         String remarks = remarksTextArea.getText ();
-        String overtimeHours = overtimeHoursTextFiled.getText();
-        int overtimeHoursValue = Integer.parseInt(overtimeHours);
-        LocalDate checkInDate = checkInDateDatePicker.getValue();
-        //TableView.getItems().add(new EmployeeAttendance(designation,checkInDate ,overtimeHoursValue , remarks));
-        //EmployeeAttendance newEmployeeAttendance = new EmployeeAttendance(designation,checkInDate ,overtimeHoursValue , remarks);
+        float overtimeHours = Float.parseFloat(overtimeHoursTextFiled.getText());
+        LocalDate date = checkInDateDatePicker.getValue();
+        
         // Create a new instance of EmployeeAttendance
-    EmployeeAttendance newEmployeeAttendance= new EmployeeAttendance(designation, checkInDate, overtimeHoursValue, remarks);
+        TableView.getItems().add(new EmployeeAttendance(designation,date,overtimeHours, remarks));
+        
+  //attendances = attendance.readFromFileToEmployeeAttendance("EmployeeAttendanc.bin");
+   // TableView.getItems().clear();
+   // TableView.getItems().addAll(attendance);
+        remarksTextArea.setText(attendances.toString());
+    
 
-    // Add the new attendance to the TableView
-    TableView.getItems().add(newEmployeeAttendance);
 
-    // Clear input fields after adding data
-    clearInputFields();
-
-    // Refresh the TableView to display the new data
-    TableView.refresh();
+ 
 }
 
-private void clearInputFields() {
-    EmployeeDesignatioonComboBox.getSelectionModel().clearSelection();
-    remarksTextArea.clear();
-    overtimeHoursTextFiled.clear();
-    checkInDateDatePicker.setValue(LocalDate.now()); // Reset date to current date
+    @FXML
+    private void backButtonOnClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MarketingManagerDashboard.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+
+            Stage currentStage = (Stage) backButton.getScene().getWindow();
+            currentStage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
+
 }
-    
+
+
+  
     
 
