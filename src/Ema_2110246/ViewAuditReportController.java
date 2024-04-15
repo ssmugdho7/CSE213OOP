@@ -27,6 +27,7 @@ import javafx.scene.control.TextArea;
 import javafx.stage.FileChooser;
 
 
+
 public class ViewAuditReportController implements Initializable {
 
     @FXML
@@ -34,7 +35,8 @@ public class ViewAuditReportController implements Initializable {
     
     @FXML
     private Button loadAudit;
-  // private ArrayList<AuditReport> reports;
+    private List<AuditReport> reports  = new ArrayList<>();
+   //private ArrayList<AuditReport> reports;
     /**
      * Initializes the controller class.
      */
@@ -46,11 +48,13 @@ public class ViewAuditReportController implements Initializable {
        // for (AuditReport report : reports) {
            // checkauditComboBix.getItems().add(report.getTitle());
        //}
-    }    
+       reports  = AuditReport.readFromFileForAuditReport("AuditReport.bin");
+       //displayTexxtArea.setText(reports.toString());
+    }   // packs = PackargesRate.readFromFileToPackagesRate("PackagesRate.bin");
 
     @FXML
     private void loadAuditOnClick(ActionEvent event) {
-        List<AuditReport> reports = AuditReport.readFromFileForAuditReport("auditReport.bin"); // For debugging purposes
+       /* List<AuditReport> reports = AuditReport.readFromFileForAuditReport("auditReport.bin"); // For debugging purposes
         if (!reports.isEmpty()) {
             displayTexxtArea.clear();
             for (AuditReport report : reports) {
@@ -66,7 +70,9 @@ public class ViewAuditReportController implements Initializable {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
         alert.setContentText(content);
-        alert.showAndWait();
+        alert.showAndWait();*/
+       String display = displayTexxtArea.getText ();
+       displayTexxtArea.setText(reports.toString());
     }
 
 
