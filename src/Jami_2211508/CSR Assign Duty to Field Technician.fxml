@@ -10,15 +10,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="572.0" prefWidth="795.0" style="-fx-background-color: #B0E0E6;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Jami_2211508.AssignDutyToFieldTechnicianController">
+<AnchorPane id="AnchorPane" prefHeight="572.0" prefWidth="795.0" style="-fx-background-color: #B0E0E6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jami_2211508.CSRAssignDutyToFieldTechnicianController">
    <children>
-      <Label layoutX="14.0" layoutY="8.0" text="Assign Duty to Field Technician" underline="true">
+      <Label layoutX="208.0" text="Assign Duty to Field Technician" underline="true">
          <font>
             <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
-      <DatePicker fx:id="SelectDateDatePicker" layoutX="138.0" layoutY="98.0" prefHeight="35.0" prefWidth="247.0" promptText="dd/mm/yy" />
+      <DatePicker fx:id="SelectDateDatePicker" layoutX="138.0" layoutY="98.0" prefHeight="35.0" prefWidth="247.0" promptText="mm/dd/yy" />
       <TextField fx:id="locationTextField" layoutX="138.0" layoutY="144.0" prefHeight="39.0" prefWidth="247.0" promptText="location">
          <font>
             <Font size="18.0" />
@@ -32,7 +31,7 @@
             <TableColumn fx:id="problemDetailsTableColomn" prefWidth="350.0" text="Problem Details" />
         </columns>
       </TableView>
-      <TextArea fx:id="problemDetailsTextArea" layoutX="421.0" layoutY="86.0" prefHeight="93.0" prefWidth="360.0" promptText="Problem details..." />
+      <TextArea fx:id="problemDetailsTextArea" layoutX="421.0" layoutY="86.0" prefHeight="93.0" prefWidth="360.0" promptText="Problem details..." wrapText="true" />
       <Label layoutX="13.0" layoutY="106.0" text="Date to work :">
          <font>
             <Font name="Arial Rounded MT Bold" size="18.0" />
@@ -48,17 +47,12 @@
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="300.0" layoutY="189.0" mnemonicParsing="false" onAction="#loadToTableButtonOnClick" prefHeight="39.0" prefWidth="196.0" style="-fx-background-color: #2E8B57; -fx-background-radius: 20;" text="Load to Table">
+      <Button layoutX="287.0" layoutY="189.0" mnemonicParsing="false" onAction="#loadToTableButtonOnClick" prefHeight="39.0" prefWidth="196.0" style="-fx-background-color: #2E8B57; -fx-background-radius: 20;" text="Load to Table">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="14.0" layoutY="521.0" mnemonicParsing="false" onAction="#submitButtonOnClick" prefHeight="39.0" prefWidth="284.0" style="-fx-background-color: #2E8B57; -fx-background-radius: 20;" text="Submit to Field Technician">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="585.0" layoutY="521.0" mnemonicParsing="false" onAction="#backButtonOnClick" prefHeight="39.0" prefWidth="196.0" style="-fx-background-color: red; -fx-background-radius: 20;" text="Back to home">
+      <Button layoutX="495.0" layoutY="519.0" mnemonicParsing="false" onAction="#submitButtonOnClick" prefHeight="39.0" prefWidth="284.0" style="-fx-background-color: #2E8B57; -fx-background-radius: 20;" text="Submit to Field Technician">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -69,5 +63,10 @@
          </font>
       </Label>
       <TextField fx:id="customerIDTextField" layoutX="138.0" layoutY="54.0" prefHeight="35.0" prefWidth="247.0" promptText="customer ID" />
+      <Button layoutX="15.0" layoutY="519.0" mnemonicParsing="false" onAction="#clearButtonOnClick" prefHeight="39.0" prefWidth="226.0" style="-fx-background-color: orange; -fx-background-radius: 20;" text="Clear the selected row">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

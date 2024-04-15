@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package mainPKG;
+package Jami_2211508;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -11,9 +11,9 @@ import javafx.fxml.Initializable;
 /**
  * FXML Controller class
  *
- * @author Lenovo
+ * @author Asus
  */
-public class HomeController implements Initializable {
+public class MDViewRiskFactorsController implements Initializable {
 
     /**
      * Initializes the controller class.

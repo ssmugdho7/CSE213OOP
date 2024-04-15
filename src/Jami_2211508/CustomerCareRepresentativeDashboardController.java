@@ -26,26 +26,26 @@ import javafx.stage.Stage;
  *
  * @author Asus
  */
-public class ManagingDirectorDashboardController implements Initializable {
+public class CustomerCareRepresentativeDashboardController implements Initializable {
 
     @FXML
-    private Button ViewPayrollData;
-    @FXML
-    private Button ViewAuditReport;
-    @FXML
-    private Button ViewReimbursementProcess;
-    @FXML
-    private Button WriteTermsPolicy;
-    @FXML
-    private Button ViewExtimatedCostButton;
-    @FXML
-    private Button ViewRiskFactorsButton;
-    @FXML
-    private Button ViewAttendenceOvertimeButton;
-    @FXML
-    private Button suggestionsforchangesButton;
-    @FXML
     private BorderPane borderPane;
+    @FXML
+    private Button CustomerComplain;
+    @FXML
+    private Button RequestReimnursement;
+    @FXML
+    private Button AssignDutytoFieldTechnician;
+    @FXML
+    private Button AssignDutytoNetworkEngineer;
+    @FXML
+    private Button AssignDutytoTechnicalSupport;
+    @FXML
+    private Button AttendencAndOvertime;
+    @FXML
+    private Button TermsPolicy;
+    @FXML
+    private Button CustomerRatings;
     @FXML
     private Button logOutButton;
 
@@ -56,55 +56,56 @@ public class ManagingDirectorDashboardController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
+
     private void loadUI(String ui) {
         Parent root;
         try {
             root = FXMLLoader.load(getClass().getResource(ui+".fxml"));
             borderPane.setCenter(root);
         } catch (IOException ex) {
-            Logger.getLogger(ManagingDirectorDashboardController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CustomerCareRepresentativeDashboardController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }
 
     @FXML
-    private void ViewPayrollDataOnClick(MouseEvent event) {
-        loadUI("MD View Payroll Data");
+    private void CustomerComplainButtonOnClick(MouseEvent event) {
+        loadUI("CSR View Customer Complain");
     }
 
     @FXML
-    private void ViewAuditReportOnClick(MouseEvent event) {
-        loadUI("MD View Audit Report");
+    private void RequestReimnursementButtonOnClick(MouseEvent event) {
+        loadUI("CSR Request Reimnursement");
     }
 
     @FXML
-    private void ViewReimbursementProcessOnClick(MouseEvent event) {
-        loadUI("MD View Reimbursement Process");
+    private void AssignDutytoFieldTechnicianButtonOnClick(MouseEvent event) {
+        loadUI("CSR Assign Duty to Field Technician");
     }
 
     @FXML
-    private void WriteTermsPolicyOnClick(MouseEvent event) {
-        loadUI("MD Write Terms Policy");
+    private void AssignDutytoNetworkEngineerButtonOnClick(MouseEvent event) {
+        loadUI("CSR Assign Duty to Network Engineer");
     }
 
     @FXML
-    private void ViewExtimatedCostButtonOnClick(MouseEvent event) {
-        loadUI("MD View Extimated Cost");
+    private void AssignDutytoTechnicalSupportButtonOnClick(MouseEvent event) {
+        loadUI("CSR Assign Duty to Technical Support");
     }
 
     @FXML
-    private void ViewRiskFactorsButtonOnClick(MouseEvent event) {
-        loadUI("MD View Risk Factors");
+    private void AttendencAndOvertimeButtonOnClick(MouseEvent event) {
+        loadUI("CSR Attendence and Overtime");
     }
 
     @FXML
-    private void ViewAttendenceOvertimeButtonOnClick(MouseEvent event) {
-        loadUI("MD View Attendence Overtime");
+    private void TermsPolicyButtonOnClick(MouseEvent event) {
+        loadUI("CSR View Terms Policy");
     }
 
     @FXML
-    private void suggestionsforchangesButtonOnClick(MouseEvent event) {
-        loadUI("MD Views Cost Management suggestions");
+    private void CustomerRatingsButtonOnClick(MouseEvent event) {
+        loadUI("CSR View Customer Ratings");
     }
 
     @FXML

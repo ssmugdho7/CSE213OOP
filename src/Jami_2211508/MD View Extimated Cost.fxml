@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="582.0" prefWidth="789.0" style="-fx-background-color: #DDA0DD;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jami_2211508.MDViewExtimatedCostController">
+   <children>
+      <Label fx:id="ExtimatedCostTableView" layoutX="235.0" layoutY="14.0" text="View Extimated Cost">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="32.0" />
+         </font>
+      </Label>
+      <TableView layoutX="7.0" layoutY="89.0" prefHeight="415.0" prefWidth="774.0" style="-fx-background-color: #E6E6FA;">
+        <columns>
+          <TableColumn fx:id="noOfSubscriberTableCol" prefWidth="134.0" text="NO of Subscribers" />
+          <TableColumn fx:id="averageRevenueTableCol" prefWidth="131.0" text="Average Revenue" />
+            <TableColumn fx:id="fixedCostTableCol" prefWidth="103.0" text="Fixed Cost" />
+            <TableColumn fx:id="variableCostTableCol" prefWidth="125.0" text="Variable Cost" />
+            <TableColumn fx:id="aditionalCostTableCol" prefWidth="133.0" text="Additional Cost" />
+            <TableColumn fx:id="calculationTableCol" prefWidth="147.0" text="Calculation" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
