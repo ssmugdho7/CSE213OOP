@@ -58,8 +58,7 @@ public class AccountantDashboardController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         monthComboBox.getItems().addAll(
                 "January", "February", "March", "April", "May", "June",
-                "July", "August", "September", "October", "November", "December"
-        );
+                "July", "August", "September", "October", "November", "December");
 
         try {
             // Open the binary f1le for reading
