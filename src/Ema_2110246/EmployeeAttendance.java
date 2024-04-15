@@ -69,7 +69,7 @@ public class EmployeeAttendance implements Serializable {
     }
 
     
-    // Method to write Invoice objects to a binary file
+    // Method to write objects to a binary file
     public static boolean writeToFileToEmployeeAttendance(List<EmployeeAttendance> attendance, String filename) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
             for (EmployeeAttendance xyz : attendance) {
@@ -85,7 +85,7 @@ public class EmployeeAttendance implements Serializable {
 
     
     
-    // Method to read invoices from a binary file
+    // Method to read  from a binary file
     public static List< EmployeeAttendance> readFromFileToEmployeeAttendance(String filename) {
         List< EmployeeAttendance> attendance= new ArrayList<>(); 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
@@ -120,8 +120,7 @@ public class EmployeeAttendance implements Serializable {
         return writeToFileToEmployeeAttendance(attendances, filename);
     }
 
-//inoivces = old invoice 
-//invoice = new invoice
+
      
     }
      

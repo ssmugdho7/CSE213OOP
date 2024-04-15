@@ -61,7 +61,7 @@ public class  Cost_Management implements Serializable {
    
     
     
-    // Method to write Invoice objects to a binary file
+    
     public static boolean writeToFileToCost_Management(List<Cost_Management> process, String filename) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
             for (Cost_Management xyz : process) {
@@ -75,7 +75,7 @@ public class  Cost_Management implements Serializable {
         }
     }
 
-    // Method to read invoices from a binary file
+    
     public static List<Cost_Management> readFromFileToCost_Management(String filename) {
         List<Cost_Management> process = new ArrayList<>(); 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
@@ -110,8 +110,7 @@ public class  Cost_Management implements Serializable {
         return writeToFileToCost_Management(processes, filename);
     }
 
-//inoivces = old invoice 
-//invoice = new invoice
+
     
     
 }

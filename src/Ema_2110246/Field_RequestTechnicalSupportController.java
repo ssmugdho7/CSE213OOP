@@ -65,7 +65,7 @@ public class Field_RequestTechnicalSupportController implements Initializable {
    
    
   Field_RequestTechnicalSupport support= new Field_RequestTechnicalSupport(reason, show, date);
-  //pushing to model Class done   
+    
    
   
    boolean addStatus = Field_RequestTechnicalSupport.addToInstanceToField_RequestTechnicalSupport(support," Field_RequestTechnicalSupport.bin"); //file writing
@@ -91,12 +91,7 @@ public class Field_RequestTechnicalSupportController implements Initializable {
 
     
     }
-    //process = new data 
-    //processes = old data
-     //attendence= new data
-     //attdences= old data
-    //support= new support 
-    // supports= old support
+    
 
     @FXML
     private void backButtonOnClick(ActionEvent event) {

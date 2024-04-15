@@ -68,7 +68,7 @@ public class PackagesRate implements Serializable{
     
     
     
-    // Method to write Invoice objects to a binary file
+    // Method to write  objects to a binary file
     public static boolean writeToFileToPackagesRate(List<PackagesRate>packag, String filename) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
             for (PackagesRate xyz : packag) {

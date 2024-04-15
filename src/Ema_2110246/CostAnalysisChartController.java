@@ -80,16 +80,6 @@ ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
 costRatioChart.setData(pieChartData);
 
 XYChart.Series<String, Number> series = new XYChart.Series<>();
-/*or (CostEstimation cost : costs) {
-    //double totalCost = cost.getFixedCosts() + cost.getVariableCosts() + cost.getAdditionalCost();
-    double totalCostWithRevenue = cost.getFixedCosts() + cost.getVariableCosts() + cost.getAdditionalCost() + cost.getRevenue();
-    series.getData().add(new XYChart.Data<>("Subscriber " + cost.getSubscriber(), (int) totalCostWithRevenue));
-    //series.getData().add(new XYChart.Data<>("Subscriber " + cost.getSubscriber(), (int) totalCost));
-}
-
-barchart.getData().add(series);*/
-// Create an XYChart.Series to hold the data for the bar chart
-//XYChart.Series<String, Integer> series = new XYChart.Series<>();
 
 // Add data points to the series
 series.getData().add(new XYChart.Data<>("Subscribers", subscriber));

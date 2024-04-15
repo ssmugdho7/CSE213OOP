@@ -56,8 +56,7 @@ public class UpdatedRatesAndControlPopularPackagesChartController implements Ini
             float speed = Float.parseFloat(speedTextFiled.getText());
             float rate = Float.parseFloat(rateTextField.getText());
 
-        // Creating an instance of Invoice
-       // RiskFactors factor = new RiskFactors(riskCategory, riskFactorDescription,  recommendations, assessmentDate);
+        
         PackagesRate packag = new PackagesRate(packageName,  popularity,  speed,  rate);
         boolean addStatus = PackagesRate.addToInstanceToPackagesRate (packag,"PackagesRate.bin");
         //boolean addStatus = MarketingManager.addToInstanceToPackagesRate (packag,"PackagesRate.bin"); 
@@ -98,5 +97,3 @@ public class UpdatedRatesAndControlPopularPackagesChartController implements Ini
     }
     
 }
-//package= new data
-//packages= old data

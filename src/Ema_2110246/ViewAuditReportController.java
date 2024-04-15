@@ -73,6 +73,8 @@ public class ViewAuditReportController implements Initializable {
         alert.showAndWait();*/
        String display = displayTexxtArea.getText ();
        displayTexxtArea.setText(reports.toString());
+       
+       
     }
 
 

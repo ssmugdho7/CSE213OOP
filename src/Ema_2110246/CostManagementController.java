@@ -57,7 +57,7 @@ public class CostManagementController implements Initializable {
         
         
    Cost_Management process = new Cost_Management(suggestion,budgetPlan,saveMoneyby);
-  //pushing to model Class done   
+     
       
    
   
@@ -85,8 +85,7 @@ public class CostManagementController implements Initializable {
 
     
     }
-    //process = new data 
-    //processes = old data
+    
 
     @FXML
     private void backButtonOnClick(ActionEvent event) {

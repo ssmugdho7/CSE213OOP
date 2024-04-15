@@ -91,8 +91,6 @@ public class EmployeeAttendanceController implements Initializable {
         try{
         String designation = EmployeeDesignatioonComboBox.getValue();
         String remarks = remarksTextArea.getText ();
-        //String overtimeHours = overtimeHoursTextFiled.getText();
-        //float overtimeHoursValue = Float.parseFloat(overtimeHours);
         float overtimeHours = Float.parseFloat(overtimeHoursTextFiled.getText());
         LocalDate date = checkInDateDatePicker.getValue();
         
@@ -100,7 +98,7 @@ public class EmployeeAttendanceController implements Initializable {
    
    
   EmployeeAttendance attendance= new EmployeeAttendance(designation,date,overtimeHours, remarks);
-  //pushing to model Class done   
+   
    
   
    boolean addStatus = EmployeeAttendance.addToInstanceToEmployeeAttendance(attendance," EmployeeAttendance.bin"); //file writing
@@ -128,10 +126,7 @@ public class EmployeeAttendanceController implements Initializable {
 
     
     }
-    //process = new data 
-    //processes = old data
-     //attendence= new data
-     //attdences= old data
+    
 
 
 

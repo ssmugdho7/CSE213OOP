@@ -88,7 +88,7 @@ public class Reimbursement implements Serializable{
     }
     
      
-    //request reimbursement
+    //write request reimbursement
     public static boolean writeReimbursements(ObservableList<Reimbursement> reimbursements, String fileName) {
         try (FileOutputStream fos = new FileOutputStream(fileName);
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {

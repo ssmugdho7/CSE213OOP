@@ -70,7 +70,7 @@ public class RiskFactors implements Serializable {
     
     
     
-    // Method to write Invoice objects to a binary file
+    // Method to write  objects to a binary file
     public static boolean writeToFileToRiskFactors(List<RiskFactors> factor, String filename) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
             for (RiskFactors xyz : factor) {
@@ -86,7 +86,7 @@ public class RiskFactors implements Serializable {
 
     
     
-    // Method to read invoices from a binary file
+    // Method to read  from a binary file
     public static List< RiskFactors> readFromFileToRiskFactors(String filename) {
         List<RiskFactors>factor= new ArrayList<>(); 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
@@ -121,13 +121,5 @@ public class RiskFactors implements Serializable {
         return writeToFileToRiskFactors(factors, filename);
     }
 
-//inoivces = old invoice 
-//invoice = new invoice
-   
-    //support= new support 
-    // supports= old support
-    //suppt= new support 
-    // suppts= old supp
-    // factor = new factor
-    // factors = old factor
+
 }

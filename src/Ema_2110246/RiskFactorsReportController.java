@@ -70,7 +70,7 @@ public class RiskFactorsReportController implements Initializable {
    
    
    RiskFactors factor = new RiskFactors(riskCategory, riskFactorDescription,  recommendations, assessmentDate);
-  //pushing to model Class done   
+     
    
   
    boolean addStatus =  RiskFactors.addToInstanceToRiskFactors(factor," RiskFactors.bin"); //file writing

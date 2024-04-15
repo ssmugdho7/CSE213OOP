@@ -56,7 +56,7 @@ public class Field_RequestTechnicalSupport implements Serializable{
     }
      
      
-     // Method to write Invoice objects to a binary file
+     // Method to write  objects to a binary file
     public static boolean writeToFileToField_RequestTechnicalSupport(List<Field_RequestTechnicalSupport> support, String filename) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
             for (Field_RequestTechnicalSupport xyz : support) {
@@ -72,7 +72,7 @@ public class Field_RequestTechnicalSupport implements Serializable{
 
     
     
-    // Method to read invoices from a binary file
+    // Method to read  from a binary file
     public static List< Field_RequestTechnicalSupport> readFromFileToField_RequestTechnicalSupport(String filename) {
         List<Field_RequestTechnicalSupport>support= new ArrayList<>(); 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
@@ -96,7 +96,7 @@ public class Field_RequestTechnicalSupport implements Serializable{
 
 
 
-    // Method to add a new instance to the list and write to file
+    
 
 
     public static boolean addToInstanceToField_RequestTechnicalSupport( Field_RequestTechnicalSupport support, String filename) {
@@ -107,10 +107,6 @@ public class Field_RequestTechnicalSupport implements Serializable{
         return writeToFileToField_RequestTechnicalSupport(supports, filename);
     }
 
-//inoivces = old invoice 
-//invoice = new invoice
-   //support= new support 
-    // supports= old support
-    
+
     
 }

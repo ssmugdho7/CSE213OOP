@@ -75,7 +75,7 @@ public class Field_RequestNetworkEngineerSupportController implements Initializa
    
    
   Field_RequestNetworkEngineerSupport suppt = new Field_RequestNetworkEngineerSupport(reason, device, issue, address,  customerId, date);
-  //pushing to model Class done   
+     
    
   
    boolean addStatus = Field_RequestNetworkEngineerSupport.addToInstanceToField_RequestNetworkEngineerSupport(suppt,"Field_RequestNetworkEngineerSupport.bin"); //file writing
@@ -102,15 +102,7 @@ public class Field_RequestNetworkEngineerSupportController implements Initializa
 
     
     }
-    //process = new data 
-    //processes = old data
-     //attendence= new data
-     //attdences= old data
-    //support= new support 
-    // supports= old support
     
-    //suppt= new support 
-    // suppts= old supp
 
     @FXML
     private void backButtonOnClick(ActionEvent event) {

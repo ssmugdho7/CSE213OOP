@@ -87,7 +87,7 @@ public class Field_RequestNetworkEngineerSupport implements Serializable{
     
     
     
-    // Method to write Invoice objects to a binary file
+    // Method to write I objects to a binary file
     public static boolean writeToFileToField_RequestNetworkEngineerSupport(List<Field_RequestNetworkEngineerSupport> suppt, String filename) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
             for (Field_RequestNetworkEngineerSupport xyz : suppt) {
@@ -103,7 +103,7 @@ public class Field_RequestNetworkEngineerSupport implements Serializable{
 
     
     
-    // Method to read invoices from a binary file
+    // Method to read  from a binary file
     public static List< Field_RequestNetworkEngineerSupport> readFromFileToField_RequestNetworkEngineerSupport(String filename) {
         List<Field_RequestNetworkEngineerSupport>suppt= new ArrayList<>(); 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
@@ -138,11 +138,5 @@ public class Field_RequestNetworkEngineerSupport implements Serializable{
         return writeToFileToField_RequestNetworkEngineerSupport(suppts, filename);
     }
 
-//inoivces = old invoice 
-//invoice = new invoice
-   
-    //support= new support 
-    // supports= old support
-    //suppt= new support 
-    // suppts= old supp
+
 }
