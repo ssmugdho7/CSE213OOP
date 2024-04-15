@@ -122,12 +122,12 @@ public class RequestReimbursementPaymentController implements Initializable {
         Reimbursement reimbursement = new Reimbursement(employeeName, expenseAmount, reimbursementDateValue,
                 designation, paymentMethod, expenseDistribution);
 
-        ArrayList<Reimbursement> existingReimbursements = MarketingManager.loadReimbursements("Reimbursement.bin");
+        ArrayList<Reimbursement> existingReimbursements = Reimbursement.loadReimbursements("Reimbursement.bin");
         existingReimbursements.add(reimbursement);
 
         ObservableList<Reimbursement> observableReimbursements = FXCollections.observableArrayList(existingReimbursements);
 
-        boolean success = MarketingManager.writeReimbursements(observableReimbursements, "Reimbursement.bin");
+        boolean success = Reimbursement.writeReimbursements(observableReimbursements, "Reimbursement.bin");
 
         if (success) {
             showAlert("Success", "Reimbursement submitted successfully.", Alert.AlertType.INFORMATION);

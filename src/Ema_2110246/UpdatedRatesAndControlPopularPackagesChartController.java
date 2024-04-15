@@ -59,7 +59,9 @@ public class UpdatedRatesAndControlPopularPackagesChartController implements Ini
         // Creating an instance of Invoice
        // RiskFactors factor = new RiskFactors(riskCategory, riskFactorDescription,  recommendations, assessmentDate);
         PackagesRate packag = new PackagesRate(packageName,  popularity,  speed,  rate);
-        boolean addStatus = PackagesRate.addToInstanceToPackagesRate (packag,"PackagesRate.bin"); 
+        boolean addStatus = PackagesRate.addToInstanceToPackagesRate (packag,"PackagesRate.bin");
+        //boolean addStatus = MarketingManager.addToInstanceToPackagesRate (packag,"PackagesRate.bin"); 
+   
    
         
         if (addStatus) {
