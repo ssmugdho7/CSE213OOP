@@ -85,7 +85,7 @@ public class EstimateCostAnalysisController implements Initializable,Serializabl
      } 
          
          catch (NumberFormatException e) {
-          showAlert(Alert.AlertType.ERROR, "Invalid Input", "Please enter valid numeric values for Customer ID and Amount.");
+          showAlert(Alert.AlertType.ERROR, "Invalid Input", "Please enter valid  values .");
         }
   }
 
