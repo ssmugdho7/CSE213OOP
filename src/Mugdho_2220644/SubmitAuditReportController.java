@@ -36,17 +36,15 @@ public class SubmitAuditReportController implements Initializable {
     private TextArea CommentsTextArea;
     @FXML
     private DatePicker auditDate;
-<<<<<<< HEAD
-<<<<<<< HEAD
+
    private List<AuditReport> reports = new ArrayList<>();
     @FXML
     private Button backButton;
-=======
 //    private List<AuditReport> report = new ArrayList<>();
->>>>>>> 363a6f0be640125a1aca3db692f852b0e387b64c
-=======
+
+
 //    private List<AuditReport> report = new ArrayList<>();
->>>>>>> 363a6f0be640125a1aca3db692f852b0e387b64c
+
 
     /**
      * Initializes the controller class.
