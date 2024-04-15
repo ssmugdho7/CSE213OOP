@@ -11,7 +11,7 @@
 
 <BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="702.0" prefWidth="1242.0" style="-fx-background-color: #DDA0DD;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jami_2211508.ManagingDirectorDashboardController">
    <left>
-      <VBox prefHeight="702.0" prefWidth="314.0" style="-fx-background-color: #BA55D3;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="702.0" prefWidth="314.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="116.0" fitWidth="121.0" pickOnBounds="true" preserveRatio="true">
                <image>

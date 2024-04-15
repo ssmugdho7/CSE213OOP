@@ -107,7 +107,7 @@ public class LoginController implements Initializable {
                 currentStage.setScene(scene);
             }
             if (userType.equals("Managing Director")) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Jami_2211508/ManagingDirectorDashboard.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Jami_2211508/CustomerCareRepresentative_MainDashboard.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 currentStage.setScene(scene);

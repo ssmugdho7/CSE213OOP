@@ -47,8 +47,6 @@ public class CustomerCareRepresentativeDashboardController implements Initializa
     @FXML
     private Button CustomerRatings;
     @FXML
-    private MenuBar customerCareDashboardMenuBar;
-    @FXML
     private Button logOutButton;
 
     /**
