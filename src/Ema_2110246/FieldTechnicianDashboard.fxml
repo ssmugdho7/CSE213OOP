@@ -26,7 +26,7 @@
             <Menu mnemonicParsing="false" style="-fx-background-color: white;" text="External Tasks">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#readUpdatedNetworkInfoButtonOnClick" text="Read Updated Network Info" />
-                  <MenuItem mnemonicParsing="false" onAction="#writeRequiredTechnicalSupportButtonOnClick" text="Write Required Technical Support" />
+                  <MenuItem mnemonicParsing="false" onAction="#writeRequiredTechnicalSupportButtonOnClick" text="Write Required Technical Support Representative" />
                   <MenuItem mnemonicParsing="false" onAction="#writeRequiredNetworkEngineerSupportButtonOnClick" text="Write Required Network Engineer Support " />
                </items>
             </Menu>
