@@ -1,56 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tasin_2211161.TechnicalSupportRepresentativeDashboardController">
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-         <menus>
-            <Menu mnemonicParsing="false" text="Tasks">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#requestReimbursementButtonOnClick" text="Request  Reimbursement" />
-                  <MenuItem mnemonicParsing="false" onAction="#paymentCostChartButtonOnClick" text="Payment Cost Chart" />
-                  <MenuItem mnemonicParsing="false" onAction="#viewNotificationFromCustomerServiceButtonOnClick" text="View Notification From Customer Service" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Edit">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#viewCustomerComplainButtonOnClick" text="View Customer Complain" />
-                  <MenuItem mnemonicParsing="false" onAction="#sendFeedbackToCustomerButtonOnClick" text="Send Feedback To Customer " />
-                  <MenuItem mnemonicParsing="false" onAction="#viewNotificationFromFieldTechnicianButtonOnClick" text="View Notification From Field Technician" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Navigator">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#gobackButtonOnClick" text="go back" />
-               </items>
-            </Menu>
-         </menus>
-      </MenuBar>
-   </top>
-   <bottom>
-      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <buttons>
-            <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#logOutButtonOnClick" text="log out" />
-         </buttons>
-      </ButtonBar>
-   </bottom>
-   <left>
-      <VBox prefHeight="328.0" prefWidth="285.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label text="Technical Support Representative" />
-            <ImageView fitHeight="150.0" fitWidth="221.0" pickOnBounds="true" preserveRatio="true" />
-            <Button mnemonicParsing="false" onAction="#attendanceCheckInButtonOnClick" prefHeight="31.0" prefWidth="220.0" text="Attendance check in" />
-            <Button mnemonicParsing="false" onAction="#viewEmployeeTermsAndPolicyButtonOnClick" prefHeight="31.0" prefWidth="220.0" text="Employee terms and policy" />
-         </children>
-      </VBox>
-   </left>
-</BorderPane>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="842.0" prefWidth="1217.0" style="-fx-background-color: #89CFF0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="406.0" layoutY="59.0" style="-fx-background-color: coral;">
+         <font>
+            <Font name="Constantia" size="28.0" />
+         </font>
+      </Label>
+      <Text fill="#001cff" layoutX="357.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Technical Support Representative " textAlignment="JUSTIFY" wrappingWidth="503.13671875">
+         <font>
+            <Font name="Franklin Gothic Medium" size="30.0" />
+         </font>
+      </Text>
+      <Button layoutX="43.0" layoutY="123.0" mnemonicParsing="false" onAction="#receiveTicketNotificationOnAction" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Receive Ticket Notification">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="43.0" layoutY="189.0" mnemonicParsing="false" onAction="#reviewTicketDetailsOnAction" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Review Ticket Details">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="43.0" layoutY="256.0" mnemonicParsing="false" onAction="#prioritizeAndAssignTicketOnAction" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Prioritize and Assign Ticket">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="43.0" layoutY="322.0" mnemonicParsing="false" onAction="#resolveTicketOnAction" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Resolve Ticket">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="43.0" layoutY="386.0" mnemonicParsing="false" onAction="#accessKnowledgeBaseOnAction" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Access Knowledge Base">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="43.0" layoutY="453.0" mnemonicParsing="false" onAction="#provideStepbyStepGuidanceOnAction" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Provide Step-by-Step Guidance">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="43.0" layoutY="521.0" mnemonicParsing="false" onAction="#initiateContactWithCustomerOnAction" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Initiate Contact with Customer">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="74.0" fitWidth="121.0" layoutX="43.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../BackUp%20Project%20Folder/Link3_Technologies_Ltd_Logo.svg.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="43.0" layoutY="592.0" mnemonicParsing="false" onAction="#rateServiceExperienceOnAction" prefHeight="45.0" prefWidth="253.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Rate Service Experience">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="92.0" layoutY="677.0" mnemonicParsing="false" onAction="#logoutOnAction" prefHeight="45.0" prefWidth="137.0" style="-fx-background-color: red; -fx-background-radius: 200;" text="Logout">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="248.0" fitWidth="261.0" layoutX="658.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../BackUp%20Project%20Folder/customer-service-agent.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="432.0" fitWidth="492.0" layoutX="536.0" layoutY="415.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../BackUp%20Project%20Folder/steptodown.com_367791.jpg" />
+         </image>
+      </ImageView>
+      <Line endX="-29.0" endY="454.0" layoutX="479.0" layoutY="188.0" startX="-29.0" startY="-24.0" />
+   </children>
+</Pane>

@@ -19,10 +19,6 @@ import javafx.scene.layout.BorderPane;
  */
 public class NetworkEngineerDashboardController implements Initializable {
 
-    @FXML
-    private BorderPane borderPane;
-    @FXML
-    private Button logOutButton;
 
     /**
      * Initializes the controller class.
@@ -33,40 +29,40 @@ public class NetworkEngineerDashboardController implements Initializable {
     }    
 
     @FXML
-    private void requestReimbursementButtonOnClick(ActionEvent event) {
+    private void checkStatusOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void paymentCostChartButtonOnClick(ActionEvent event) {
+    private void viewPerformanceOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void viewNotificationFromCustomerServiceRepresentativeButtonOnClick(ActionEvent event) {
+    private void perofromanceMaintenanceOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void writeUpdatedNetworkInfoButtonOnClick(ActionEvent event) {
-    }
-
-
-    @FXML
-    private void tbaButtonOnClick(ActionEvent event) {
+    private void monitorBandwithOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void gobackButtonOnClick(ActionEvent event) {
+    private void analyzeLatencyOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void attendanceCheckInButtonOnClick(ActionEvent event) {
+    private void optimizeRoutingOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void viewEmployeeTermsAndPolicyButtonOnClick(ActionEvent event) {
+    private void configureFirewallOnAction(ActionEvent event) {
     }
 
     @FXML
-    private void logOutButtonOnClick(ActionEvent event) {
+    private void conductCapacityPlanningOnAction(ActionEvent event) {
     }
+
+    @FXML
+    private void logoutOnAction(ActionEvent event) {
+    }
+
     
 }

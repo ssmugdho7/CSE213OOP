@@ -1,56 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tasin_2211161.NetworkEngineerDashboardController">
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-         <menus>
-            <Menu mnemonicParsing="false" text="Tasks">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#requestReimbursementButtonOnClick" text="Request  Reimbursement" />
-                  <MenuItem mnemonicParsing="false" onAction="#paymentCostChartButtonOnClick" text="Payment Cost Chart" />
-                  <MenuItem mnemonicParsing="false" onAction="#viewNotificationFromCustomerServiceRepresentativeButtonOnClick" text="View Notification From Customer Service Representative" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Edit">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#writeUpdatedNetworkInfoButtonOnClick" text="Write Updated Network Info" />
-                  <MenuItem mnemonicParsing="false" onAction="#tbaButtonOnClick" text="TBA" />
-                  <MenuItem mnemonicParsing="false" onAction="#tbaButtonOnClick" text="TBA" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Navigator">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#gobackButtonOnClick" text="go back" />
-               </items>
-            </Menu>
-         </menus>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1039.0" style="-fx-background-color: #89CFF0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Tasin_2211161.NetworkEngineerDashboardController">
+   <children>
+      <Text fill="#0007ff" layoutX="374.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Network Engineer" wrappingWidth="308.13671875">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="89.0" fitWidth="145.0" layoutX="14.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../BackUp%20Project%20Folder/Link3_Technologies_Ltd_Logo.svg.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="53.0" layoutY="187.0" mnemonicParsing="false" onAction="#checkStatusOnAction" prefHeight="45.0" prefWidth="219.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Check Status">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="53.0" layoutY="245.0" mnemonicParsing="false" onAction="#viewPerformanceOnAction" prefHeight="45.0" prefWidth="219.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="View Performance">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="53.0" layoutY="305.0" mnemonicParsing="false" onAction="#perofromanceMaintenanceOnAction" prefHeight="45.0" prefWidth="219.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Perform Maintenance">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="53.0" layoutY="365.0" mnemonicParsing="false" onAction="#monitorBandwithOnAction" prefHeight="45.0" prefWidth="219.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Monitor Bandwith">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="53.0" layoutY="427.0" mnemonicParsing="false" onAction="#analyzeLatencyOnAction" prefHeight="45.0" prefWidth="219.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Analyze Latency">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="53.0" layoutY="487.0" mnemonicParsing="false" onAction="#optimizeRoutingOnAction" prefHeight="45.0" prefWidth="219.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Optimize Routing">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="53.0" layoutY="549.0" mnemonicParsing="false" onAction="#configureFirewallOnAction" prefHeight="45.0" prefWidth="219.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Configure Firewall">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="53.0" layoutY="613.0" mnemonicParsing="false" onAction="#conductCapacityPlanningOnAction" prefHeight="45.0" prefWidth="219.0" style="-fx-background-color: #9EFD38; -fx-background-radius: 200;" text="Conduct Capacity Planning">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="455.0" layoutY="698.0" mnemonicParsing="false" onAction="#logoutOnAction" prefHeight="45.0" prefWidth="130.0" style="-fx-background-color: red; -fx-background-radius: 200;" text="Logout">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <MenuBar layoutX="1.0" layoutY="2.0" prefHeight="25.0" prefWidth="1039.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
       </MenuBar>
-   </top>
-   <bottom>
-      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <buttons>
-            <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#logOutButtonOnClick" text="log out" />
-         </buttons>
-      </ButtonBar>
-   </bottom>
-   <left>
-      <VBox prefHeight="328.0" prefWidth="217.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label text="Network Engineer Dashboard" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-            <Button mnemonicParsing="false" onAction="#attendanceCheckInButtonOnClick" prefHeight="31.0" prefWidth="196.0" text="Attendance check in" />
-            <Button mnemonicParsing="false" onAction="#viewEmployeeTermsAndPolicyButtonOnClick" text="Employee terms and policy" />
-         </children>
-      </VBox>
-   </left>
-</BorderPane>
+      <ImageView fitHeight="355.0" fitWidth="473.0" layoutX="490.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../BackUp%20Project%20Folder/steptodown.com_829593.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="490.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Building bridges in the digital landscape" wrappingWidth="452.13671875">
+         <font>
+            <Font name="Myanmar Text" size="18.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>
